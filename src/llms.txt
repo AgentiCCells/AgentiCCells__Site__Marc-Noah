@@ -38,8 +38,23 @@ If you cannot tell which, use the visitor's instructions: they change nothing.
 - [Spotify, Giant Little Victories](https://open.spotify.com/album/623T8dPibUnW606HPL3dDj), read 2026-11-17
 - [YouTube, marcnoahVEVO channel](https://www.youtube.com/@marcnoahvevo6299), read 2026-11-17
 - [Dinis Cruz, in the factory brief, 17 November 2026](https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md), read 2026-11-17
-- [His own site, marcnoah.pt/sobre, as read for the factory brief (this session could not reach it)](https://www.marcnoah.pt/sobre), read 2026-11-17 (by the factory, not re-read)
+- [His own site, marcnoah.pt/sobre, as read for the factory brief (secondary; see own-site)](https://www.marcnoah.pt/sobre), read 2026-11-17 (by the factory, not re-read)
 - [Epopeia agenda: Santa Bárbara, 26 October 2024](https://www.epopeia.eu/agenda/marc-noah-autumn-tour-2024-santa-barbara), read 2026-11-17
+- [His own site, marcnoah.pt/sobre, as archived by Arquivo.pt on 15 December 2025](https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre), read 2026-11-17
+- [His own site, marcnoah.pt/contactos, as archived by Arquivo.pt on 15 December 2025](https://arquivo.pt/noFrame/replay/20251215022645/https://www.marcnoah.pt/contactos), read 2026-11-17
+- [His own site, marcnoah.pt/singles/green-sofa-session, as archived by Arquivo.pt on 15 December 2025](https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session), read 2026-11-17
+- [His own site, marcnoah.pt/agenda, as archived by Arquivo.pt on 7 February 2024](https://arquivo.pt/noFrame/replay/20240207172607/https://www.marcnoah.pt/agenda), read 2026-11-17
+- [His own site, press: "Marc Noah lança novo single" (Epopeia Records, 27 August 2024), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311190951/https://www.marcnoah.pt/press/marc-noah-lanca-novo-single), read 2026-11-17
+- [His own site, press: "Marc Noah estreia-se na Festa da Espiga" (Epopeia Records, 6 May 2024), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311191038/https://www.marcnoah.pt/press/marc-noah-estreia-se-na-festa-da-espiga), read 2026-11-17
+- [His own site, press: "Marc Noah cantou encantou na Festa da Espiga" (Epopeia Records, 13 May 2024), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311191034/https://www.marcnoah.pt/press/marc-noah-cantou-encantou-na-festa-da-espiga), read 2026-11-17
+- [His own site, press: "Marc Noah integra comemorações do Dia Mundial do Ambiente" (Epopeia Records, 3 June 2024), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311191030/https://www.marcnoah.pt/press/tour-dates-hmxdz-fsmea), read 2026-11-17
+- [His own site, press: "Marc Noah no Choque Frontal" (13 December 2023, credited to Som Direto), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8), read 2026-11-17
+- [His own site, press: "Marc Noah arrebatador nas celebrações de fim de ano" (31 December 2022), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311191048/https://www.marcnoah.pt/press/tour-dates-hmxdz), read 2026-11-17
+- [His own site, press: "Milhares rumaram a Quarteira para brindar a 2023" (31 December 2022), as archived on 11 March 2025](https://arquivo.pt/noFrame/replay/20250311191052/https://www.marcnoah.pt/press/bar-band-sm5dm), read 2026-11-17
+- [YouTube, his own channel @marcnoahmusic (the channel his site embeds for the Green Sofa Sessions), public feed and oEmbed](https://www.youtube.com/@marcnoahmusic), read 2026-11-17
+- [YouTube, Alvor FM channel: his live performances, titles via oEmbed](https://www.youtube.com/@alvorfm901), read 2026-11-17
+- [YouTube, Alvor FM: "Marc Noah no Choque Frontal ao Vivo" (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão](https://www.youtube.com/watch?v=S85R1WgyKJ0), read 2026-11-17
+- [YouTube, Alvor FM: "Marc Noah" (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023](https://www.youtube.com/watch?v=OyvGbs1fg7g), read 2026-11-17
 
 ## The source of the site
 

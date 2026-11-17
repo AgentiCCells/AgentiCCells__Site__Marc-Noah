@@ -11,7 +11,7 @@
       "text": "Marc Noah lives in the south of Portugal, in the Algarve. His own site names Quarteira, on the coast between Faro and Albufeira, and most of his concerts are in the towns around it.",
       "src": [
         "dinis",
-        "brief",
+        "own-site",
         "epopeia"
       ]
     },
@@ -205,9 +205,11 @@
     {
       "title": "Green Sofa Session",
       "kind": "EP",
-      "text": "Named by his label as released before the album; sold with tickets for his March 2025 concert in Loulé. Its date and tracks are to be confirmed with Marc.",
+      "text": "His first EP, released at the end of 2023: three songs, Lie to Me, Sunshine and Mother, each in a studio version and a live version, and his first physical release. The live versions were filmed as the Green Sofa Sessions, on the green sofa from his living room. Sold with tickets for his March 2025 concert in Loulé.",
       "src": [
-        "epopeia",
+        "own-site",
+        "own-gss",
+        "own-espiga",
         "epo-roadtrip"
       ]
     },
@@ -238,9 +240,11 @@
       "lat": 37.07,
       "home": true,
       "algarve": true,
-      "text": "Where he lives, according to his own site. He played the Centro Autárquico in November 2024 and the Mercadinho de Verão in July 2025, and filmed part of the Roadtrip video here.",
+      "text": "Where he lives, according to his own site. He played the town’s New Year celebrations on the seafront in December 2022, the Centro Autárquico in November 2024 and the Mercadinho de Verão in July 2025, and filmed part of the Roadtrip video here.",
       "src": [
-        "brief",
+        "own-site",
+        "own-nye",
+        "own-nye2",
         "epopeia",
         "epo-roadtrip"
       ]
@@ -251,8 +255,9 @@
       "lon": -8.02,
       "lat": 37.14,
       "algarve": true,
-      "text": "The town he has played most: Bafo de Baco, the Noite Branca, the castle (Sons no Castelo) and the Festival Emersivo.",
+      "text": "The town he has played most: the Cine Teatro Louletano, Bafo de Baco, the Noite Branca, the castle (Sons no Castelo) and the Festival Emersivo.",
       "src": [
+        "own-agenda",
         "epopeia",
         "avoz"
       ]
@@ -263,8 +268,9 @@
       "lon": -8.06,
       "lat": 37.24,
       "algarve": true,
-      "text": "A village in the hills north of Loulé; one of the places in the Roadtrip video.",
+      "text": "A village in the hills north of Loulé. He opened the night of the Festa da Espiga here with his band in May 2024; one of the places in the Roadtrip video.",
       "src": [
+        "own-espiga2",
         "epo-roadtrip"
       ]
     },
@@ -285,8 +291,9 @@
       "lon": -7.93,
       "lat": 37.02,
       "algarve": true,
-      "text": "His label has an office here. Festival Muralhas (2025), FNAC Faro (2024), and a place in the Roadtrip video. He sat on the jury of the XXIV Fartuna at the Teatro das Figuras in 2025.",
+      "text": "His label has an office here. Festival F (2023), Festival Muralhas (2025), FNAC Faro (2023 and 2024), and a place in the Roadtrip video. He sat on the jury of the XXIV Fartuna at the Teatro das Figuras in 2025.",
       "src": [
+        "own-agenda",
         "epopeia",
         "epo-roadtrip"
       ]
@@ -320,8 +327,9 @@
       "lon": -8.3,
       "lat": 37.13,
       "algarve": true,
-      "text": "FNAC Guia, November 2024.",
+      "text": "FNAC at the Algarve Shopping in Guia, September 2023 and November 2024.",
       "src": [
+        "own-agenda",
         "epopeia"
       ]
     },
@@ -331,8 +339,11 @@
       "lon": -8.54,
       "lat": 37.14,
       "algarve": true,
-      "text": "Food Trucks Festival, August 2026.",
+      "text": "Twice at TEMPO, the Teatro Municipal de Portimão, in 2023: the 9.º Festival Acústico of Alvor FM in October and Choque Frontal ao Vivo in December, both posted on YouTube by Alvor FM. Food Trucks Festival, August 2026.",
       "src": [
+        "yt-acustico",
+        "yt-choque",
+        "own-choque",
         "epopeia"
       ]
     },
@@ -373,9 +384,10 @@
     },
     {
       "name": "The rest of mainland Portugal",
-      "text": "Leiria, Viseu, Paços de Ferreira, Vila Nova de Famalicão, Torres Vedras, Almada and Vila Ruiva, November 2024, around the album launch.",
+      "text": "Leiria, Viseu, Paços de Ferreira, Vila Nova de Famalicão, Torres Vedras, Almada and Vila Ruiva, November 2024, around the album launch. Earlier: Tokyo ao Vivo in Lisbon (July 2023) and the 7arte Café in Castro Verde (December 2022).",
       "src": [
-        "epopeia"
+        "epopeia",
+        "own-agenda"
       ]
     },
     {
@@ -686,15 +698,147 @@
       "note": "Showcase."
     },
     {
+      "date": "2024-06-08",
+      "place": "Cachopo",
+      "venue": "Parque da Fonte Férrea, World Environment Day",
+      "kind": "concert",
+      "src": [
+        "own-cachopo"
+      ],
+      "time": "17:00",
+      "note": "Solo and acoustic, as announced.",
+      "algarve": true
+    },
+    {
+      "date": "2024-05-10",
+      "place": "Salir",
+      "venue": "Festa da Espiga",
+      "kind": "concert",
+      "src": [
+        "own-espiga",
+        "own-espiga2"
+      ],
+      "time": "21:30",
+      "note": "With his band; he opened the night."
+    },
+    {
+      "date": "2023-12-15",
+      "place": "Castro Verde",
+      "venue": "7Arte Café",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ],
+      "note": "Listed in advance on his site."
+    },
+    {
+      "date": "2023-12-13",
+      "place": "Portimão",
+      "venue": "Choque Frontal ao Vivo, TEMPO, Teatro Municipal de Portimão",
+      "kind": "concert",
+      "src": [
+        "own-agenda",
+        "own-choque",
+        "yt-choque"
+      ],
+      "note": "With his band; filmed."
+    },
+    {
+      "date": "2023-10-04",
+      "place": "Portimão",
+      "venue": "9.º Festival Acústico (Alvor FM), TEMPO, Teatro Municipal de Portimão",
+      "kind": "concert",
+      "src": [
+        "yt-acustico"
+      ],
+      "note": "Filmed by Alvor FM; date from the video description."
+    },
+    {
+      "date": "2023-09-17",
+      "place": "Albufeira",
+      "venue": "FNAC Algarve Shopping, Guia",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
+    },
+    {
+      "date": "2023-09-09",
+      "place": "Faro",
+      "venue": "Festival F",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
+    },
+    {
+      "date": "2023-09-05",
+      "place": "Faro",
+      "venue": "FNAC Faro",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
+    },
+    {
+      "date": "2023-08-26",
+      "place": "Loulé",
+      "venue": "Noite Branca",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
+    },
+    {
+      "date": "2023-07-01",
+      "place": "Lisbon",
+      "venue": "Tokyo ao Vivo",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
+    },
+    {
       "date": "2023-03-25",
       "place": "Olhão",
       "venue": "República 14",
       "kind": "concert",
       "src": [
-        "maisalgarve"
+        "maisalgarve",
+        "own-agenda"
       ],
       "time": "19:00 and 21:30",
       "note": "Two sessions."
+    },
+    {
+      "date": "2022-12-30",
+      "place": "Quarteira",
+      "venue": "New Year celebrations, Passeio das Dunas",
+      "kind": "concert",
+      "src": [
+        "own-agenda",
+        "own-nye",
+        "own-nye2"
+      ],
+      "note": "With his band."
+    },
+    {
+      "date": "2022-12-16",
+      "place": "Castro Verde",
+      "venue": "7arte Café",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
+    },
+    {
+      "date": "2022-10-22",
+      "place": "Loulé",
+      "venue": "Cine Teatro Louletano",
+      "kind": "concert",
+      "src": [
+        "own-agenda"
+      ]
     }
   ],
   "formats": [
@@ -744,9 +888,14 @@
       "src": "epopeia"
     },
     {
+      "name": "YouTube (his own channel)",
+      "url": "https://www.youtube.com/@marcnoahmusic",
+      "src": "own-gss"
+    },
+    {
       "name": "His own site",
       "url": "https://www.marcnoah.pt/",
-      "src": "brief"
+      "src": "own-site"
     },
     {
       "name": "Epopeia Records",
@@ -755,9 +904,11 @@
     }
   ],
   "booking": {
-    "text": "For concerts and festivals, his label, Epopeia Records, takes bookings: use the Booking button on his artist page, which also links his production dossier. His own site, marcnoah.pt, has his own contact routes.",
+    "text": "For concerts and festivals, his label, Epopeia Records, takes bookings: write to geral@epopeia-records.pt, the address his own site gives, or use the Booking button on his artist page, which also links his production dossier.",
     "url": "https://www.epopeia.eu/artistas/marc-noah",
-    "src": "epopeia"
+    "src": "epopeia",
+    "email": "geral@epopeia-records.pt",
+    "emailSrc": "own-contact"
   },
   "sources": {
     "epopeia": {
@@ -851,7 +1002,7 @@
       "short": "Dinis Cruz, 17 Nov 2026"
     },
     "brief": {
-      "title": "His own site, marcnoah.pt/sobre, as read for the factory brief (this session could not reach it)",
+      "title": "His own site, marcnoah.pt/sobre, as read for the factory brief (secondary; see own-site)",
       "url": "https://www.marcnoah.pt/sobre",
       "read": "2026-11-17 (by the factory, not re-read)",
       "short": "marcnoah.pt, via the factory brief"
@@ -861,17 +1012,120 @@
       "url": "https://www.epopeia.eu/agenda/marc-noah-autumn-tour-2024-santa-barbara",
       "read": "2026-11-17",
       "short": "Epopeia agenda, 26 Oct 2024"
+    },
+    "own-site": {
+      "title": "His own site, marcnoah.pt/sobre, as archived by Arquivo.pt on 15 December 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre",
+      "read": "2026-11-17",
+      "captured": "2025-12-15",
+      "short": "marcnoah.pt (archived 15 Dec 2025)"
+    },
+    "own-contact": {
+      "title": "His own site, marcnoah.pt/contactos, as archived by Arquivo.pt on 15 December 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20251215022645/https://www.marcnoah.pt/contactos",
+      "read": "2026-11-17",
+      "captured": "2025-12-15",
+      "short": "marcnoah.pt contacts (archived 15 Dec 2025)"
+    },
+    "own-gss": {
+      "title": "His own site, marcnoah.pt/singles/green-sofa-session, as archived by Arquivo.pt on 15 December 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session",
+      "read": "2026-11-17",
+      "captured": "2025-12-15",
+      "short": "marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)"
+    },
+    "own-agenda": {
+      "title": "His own site, marcnoah.pt/agenda, as archived by Arquivo.pt on 7 February 2024",
+      "url": "https://arquivo.pt/noFrame/replay/20240207172607/https://www.marcnoah.pt/agenda",
+      "read": "2026-11-17",
+      "captured": "2024-02-07",
+      "short": "marcnoah.pt agenda (archived 7 Feb 2024)"
+    },
+    "own-ttb": {
+      "title": "His own site, press: \"Marc Noah lança novo single\" (Epopeia Records, 27 August 2024), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311190951/https://www.marcnoah.pt/press/marc-noah-lanca-novo-single",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 27 Aug 2024"
+    },
+    "own-espiga": {
+      "title": "His own site, press: \"Marc Noah estreia-se na Festa da Espiga\" (Epopeia Records, 6 May 2024), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311191038/https://www.marcnoah.pt/press/marc-noah-estreia-se-na-festa-da-espiga",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 6 May 2024"
+    },
+    "own-espiga2": {
+      "title": "His own site, press: \"Marc Noah cantou encantou na Festa da Espiga\" (Epopeia Records, 13 May 2024), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311191034/https://www.marcnoah.pt/press/marc-noah-cantou-encantou-na-festa-da-espiga",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 13 May 2024"
+    },
+    "own-cachopo": {
+      "title": "His own site, press: \"Marc Noah integra comemorações do Dia Mundial do Ambiente\" (Epopeia Records, 3 June 2024), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311191030/https://www.marcnoah.pt/press/tour-dates-hmxdz-fsmea",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 3 Jun 2024"
+    },
+    "own-choque": {
+      "title": "His own site, press: \"Marc Noah no Choque Frontal\" (13 December 2023, credited to Som Direto), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 13 Dec 2023"
+    },
+    "own-nye": {
+      "title": "His own site, press: \"Marc Noah arrebatador nas celebrações de fim de ano\" (31 December 2022), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311191048/https://www.marcnoah.pt/press/tour-dates-hmxdz",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 31 Dec 2022"
+    },
+    "own-nye2": {
+      "title": "His own site, press: \"Milhares rumaram a Quarteira para brindar a 2023\" (31 December 2022), as archived on 11 March 2025",
+      "url": "https://arquivo.pt/noFrame/replay/20250311191052/https://www.marcnoah.pt/press/bar-band-sm5dm",
+      "read": "2026-11-17",
+      "captured": "2025-03-11",
+      "short": "marcnoah.pt press, 31 Dec 2022 (Passeio das Dunas)"
+    },
+    "yt-own": {
+      "title": "YouTube, his own channel @marcnoahmusic (the channel his site embeds for the Green Sofa Sessions), public feed and oEmbed",
+      "url": "https://www.youtube.com/@marcnoahmusic",
+      "read": "2026-11-17",
+      "short": "YouTube (@marcnoahmusic)"
+    },
+    "yt-alvor": {
+      "title": "YouTube, Alvor FM channel: his live performances, titles via oEmbed",
+      "url": "https://www.youtube.com/@alvorfm901",
+      "read": "2026-11-17",
+      "short": "YouTube (Alvor FM)"
+    },
+    "yt-choque": {
+      "title": "YouTube, Alvor FM: \"Marc Noah no Choque Frontal ao Vivo\" (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão",
+      "url": "https://www.youtube.com/watch?v=S85R1WgyKJ0",
+      "read": "2026-11-17",
+      "short": "Alvor FM video, Choque Frontal"
+    },
+    "yt-acustico": {
+      "title": "YouTube, Alvor FM: \"Marc Noah\" (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023",
+      "url": "https://www.youtube.com/watch?v=OyvGbs1fg7g",
+      "read": "2026-11-17",
+      "short": "Alvor FM video, 9.º Festival Acústico"
     }
   },
   "needs": [
-    "Photos of Marc he is happy for the site to use (and who took them, for the credit).",
-    "Permission to embed his official Spotify and YouTube players, or to keep links only.",
-    "A read of marcnoah.pt/sobre: this session could not reach his site, so Quarteira and his own wording come from the factory brief. Is Quarteira right, and may we quote his Sobre page?",
-    "Quarteira: the site now names it in its first line, on the map and in the footer as where he lives. Please confirm it, or tell us what to say instead.",
-    "Green Sofa Session: release date, tracks and a link to listen.",
-    "Who wrote what: his label calls him a cantautor, and its Roadtrip article calls him that song’s author. For the other seven album songs (and the EP and singles), confirm he wrote words and music, and name any co-writers he wants credited.",
-    "The date and place of his Festival F appearance, and anything coming up next.",
-    "A booking route he wants on the site (his own site, or the label).",
+    "Photographs: the label's photos are now on the site, credited to Epopeia Records. How should photographers be credited, by name or as Epopeia Records? One original file names a photographer.",
+    "Which photograph does he want first, on the home page and when the site is shared?",
+    "Lyrics: Dinis cleared quoting short lyric lines (17 November 2026). The site uses only the four lines his own site shows as headlines (Mother, Towers & Bridges, Lie To Me, Roadtrip). Is he happy with those, and are there other lines he would rather see?",
+    "Quarteira: his own site (as archived in December 2025) says he lives there, and the site now says so in its first line, on the map and in the footer. Please confirm it is still right.",
+    "Tavira: one article on his own site says he has Australian and Tavira roots. Does he want that on the site?",
+    "His own site, marcnoah.pt, could not be reached on 17 November 2026; we read the copies kept by Arquivo.pt. Is the site still live, and should we link to it?",
+    "Green Sofa Session: the exact release date and a link to listen (his site says the end of 2023; three songs, each in a studio and a live version).",
+    "Who wrote what: his label calls him a cantautor, and its Roadtrip article calls him that song's author. For the other seven album songs (and the EP and singles), confirm he wrote words and music, and name any co-writers he wants credited.",
+    "Anything coming up next: no future dates are listed by his label as of 17 November 2026.",
+    "Booking: the site gives geral@epopeia-records.pt (from his own site) and his Epopeia artist page. Is that the route he wants?",
     "Whether he wants a Portuguese version of the site (a decision for Dinis and Marc)."
   ]
 }
