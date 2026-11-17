@@ -206,7 +206,7 @@ out('videos/index.html', page({ path: '/videos/', title: 'Watch Marc Noah play',
 <h1 style="margin-top:0">Watch him play</h1>
 <p class="lede muted">With his band, on his own, on a green sofa, and in his videos: ${VIDEOS.length} films, each playing here when you press it, filed by the way you can book him.</p>
 <div class="watch" id="watch">
-${watchGroups(c, { book: '/live/#book' })}
+${watchGroups(c, { book: '/live/#book', h: 2, eager: true })}
 </div>
 <p class="small">${esc(VIDEOS_NOTE)}${c(F.VIDEOS_SRC)} ${esc(STILLS_CREDIT)}${c('yt-frames')}</p>
 ` }));

@@ -82,16 +82,30 @@ export const PLAYICON = PLAYI;
 // A link that opens the one player of the page. Without JS it is a plain link to the video on YouTube.
 export const playAttrs = v => `href="${ytUrl(v.id)}" data-yt="${esc(EMBEDS.youtube(v.id))}" data-title="${esc(vLabel(v))}"`;
 // A video card: poster, play mark, title and a line built from VIDEOS only (review 1.2).
-export const videoCard = (v, { cls = '', big = false } = {}) => {
+// Posters (round 2 follow-up 2): only a first-screen poster is eager. Every other poster is deferred:
+// a blank inline placeholder in src, the real files in data-src/data-srcset, set by our script when the
+// card comes near the viewport (Chromium's own loading="lazy" starts 1250 px or more ahead, which loaded
+// every poster on the home at 1366 px); the plain <img> stays in <noscript>. sizes matches the drawn width,
+// so a 557 px card takes the 640 px file at 1366 px (the 1280 px file only on dense screens).
+const BLANK = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 9%27/%3E';
+export const videoCard = (v, { cls = '', big = false, eager = false } = {}) => {
   const title = v.song || (v.event ? v.event.split(',')[0] : v.title);
   const sub = [v.caption, v.date ? fmtDate(v.date) : '', chan(v) === 'his own channel' ? 'his own channel' : chan(v)].filter(Boolean).join(' · ');
+  const src = `/assets/video/${v.id}-640.jpg`, set = `/assets/video/${v.id}-640.jpg 640w, /assets/video/${v.id}.jpg 1280w`;
+  const rest = `sizes="${big ? '(min-width:900px) 640px, 100vw' : '(min-width:900px) 290px, 60vw'}" width="640" height="360" alt=""`;
+  const img = eager ? `<img src="${src}" srcset="${set}" ${rest} decoding="async">`
+    : `<img class="lz" src="${BLANK}" data-src="${src}" data-srcset="${set}" ${rest} loading="lazy" decoding="async"><noscript><img src="${src}" srcset="${set}" ${rest} loading="lazy" decoding="async"></noscript>`;
   return `<a class="vc${big ? ' xl' : ''}${cls ? ` ${cls}` : ''}" ${playAttrs(v)}>
-<span class="vimg"><img src="/assets/video/${v.id}-640.jpg" srcset="/assets/video/${v.id}-640.jpg 640w, /assets/video/${v.id}.jpg 1280w" sizes="${big ? '(min-width:900px) 50vw, 100vw' : '(min-width:900px) 25vw, 70vw'}" width="640" height="360" alt="" loading="lazy" decoding="async"><span class="pb">${PLAYI}</span></span>
+<span class="vimg">${img}<span class="pb">${PLAYI}</span></span>
 <span class="vt"><b><span class="vh">Play </span>${esc(title)}</b><small>${esc(sub)}</small></span></a>`;
 };
 // The one player of the site: a <dialog>; our script inserts the iframe on a press and removes it on close.
-export const playerDialog = () => `<dialog id="player" class="player" aria-labelledby="pl-t">
+// Close comes before the film in the DOM, so Shift+Tab from the film reaches it in one step. Esc cannot
+// close the player once YouTube's cross-origin frame has the keyboard (round 2 follow-up 1); the hidden
+// note says so to screen readers, and the dialog's description points to it.
+export const playerDialog = () => `<dialog id="player" class="player" aria-labelledby="pl-t" aria-describedby="pl-k">
 <div class="pl-head"><h2 id="pl-t">Video</h2><form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<p class="vh" id="pl-k">Close is the button before the film. Esc closes the player until the film takes the keyboard; after that, press Shift and Tab to reach Close, then Enter.</p>
 <div class="pbox"></div>
 <p class="pl-note">Playing from YouTube (youtube-nocookie.com). <a id="pl-yt" href="https://www.youtube.com/@marcnoahmusic">Open on YouTube</a></p>
 </dialog>`;
@@ -152,7 +166,9 @@ a=t.closest('a[data-sp]');if(a&&!mod){e.preventDefault();var f=frame(a.getAttrib
 var b=t.closest('button[data-f]');if(b){var w=b.closest('.watch'),g=b.getAttribute('data-f');w.querySelectorAll('button[data-f]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
 w.querySelectorAll('.group[data-g]').forEach(function(x){x.hidden=!(g==='all'||x.getAttribute('data-g')===g);});}});
 d.querySelectorAll('dialog').forEach(function(dl){dl.addEventListener('click',function(e){if(e.target!==dl)return;var r=dl.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dl.close();});
-dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});})();
+dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});
+function show(i){if(!i.dataset.src)return;i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
+var lz=d.querySelectorAll('img.lz');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var r=e.target.closest('.rail,.sofa');(r?r.querySelectorAll('img.lz'):[e.target]).forEach(function(i){show(i);io.unobserve(i);});});},{rootMargin:'200px 0px'});lz.forEach(function(i){io.observe(i);});}else lz.forEach(show);})();
 </script>`;
 
 // ---------- the main menu and footer, shared by generate.mjs, designs.mjs and behind.mjs ----------
@@ -314,21 +330,23 @@ export const bookCard = (c, { id = 'book', head = 'Book him', tag = 'h3' } = {})
 
 // ---------- Watch him play (round 2, change 1): the films grouped by VIDEOS[].format ----------
 // groups: which formats to show; chips: the filter (anchor links without JS, buttons with it);
-// book: where the "Book" buttons go. Headings are h3 (the block sits under an h2).
+// book: where the "Book" buttons go. h: the group heading level (3 under an h2; 2 on /videos/, under the h1),
+// the rail heading one below. eager: the band-set posters are on the first screen (only on /videos/).
 const fmt = n => FORMATS.find(f => f.name === n);
-export function watchGroups(c, { groups = ['band', 'solo', 'session', 'official'], book = '#book', chips = true } = {}) {
+export function watchGroups(c, { groups = ['band', 'solo', 'session', 'official'], book = '#book', chips = true, h = 3, eager = false } = {}) {
   const of = f => VIDEOS.filter(v => v.format === f);
   const B = fmt('Band'), S = fmt('Solo'), D = fmt('Duo');
   const band = of('band'), sets = band.filter(v => v.event && !v.formatBasis), songs = band.filter(v => v.formatBasis);
   const solo = of('solo'), sofa = of('session');
   const official = of('official').sort((a, b) => b.published.localeCompare(a.published));
-  const ghead = (id, eyebrow, h, text, btn) => `<div class="ghead"><div><p class="eyebrow">${esc(eyebrow)}</p><h3 id="${id}">${esc(h)}</h3><p class="muted">${text}</p></div>${btn ? `<a class="btn line" href="${book}">${esc(btn)}</a>` : ''}</div>`;
+  const lv = h;
+  const ghead = (id, eyebrow, hd, text, btn) => `<div class="ghead"><div><p class="eyebrow">${esc(eyebrow)}</p><h${lv} id="${id}">${esc(hd)}</h${lv}><p class="muted">${text}</p></div>${btn ? `<a class="btn line" href="${book}">${esc(btn)}</a>` : ''}</div>`;
   const G = {
     band: () => `<div class="group" data-g="band" id="g-band">
 ${ghead('gh-band', `Band · ${B.mins} min`, 'With the band', `${esc(B.people)}, ${esc(B.on.toLowerCase())}, as his label lists the format.${c(FORMATS_SRC)}`, 'Book the band')}
-<div class="bandgrid">${sets.map(v => videoCard(v, { big: true })).join('\n')}</div>
+<div class="bandgrid">${sets.map(v => videoCard(v, { big: true, eager })).join('\n')}</div>
 ${c(vSrc(sets))}
-<h4 class="railh">Song by song from the same show, filmed by Alvor FM</h4>
+<h${lv + 1} class="railh">Song by song from the same show, filmed by Alvor FM</h${lv + 1}>
 <p class="small">Their frames carry the Choque Frontal ao Vivo mark and show him close up; we file them with the band set from that.${c(vSrc(songs))}</p>
 <ul class="rail">${songs.map(v => `<li>${videoCard(v)}</li>`).join('')}</ul>
 </div>`,

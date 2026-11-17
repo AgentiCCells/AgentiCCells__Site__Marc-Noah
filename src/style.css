@@ -94,7 +94,7 @@ section.part>h2:first-child{margin-top:0}
 .group{padding:1.6rem 0 2.4rem;border-top:1px solid var(--line)}
 .group[hidden]{display:none}
 .ghead{display:grid;gap:.6rem 2rem;align-items:end;margin-bottom:1.3rem}.ghead>*{min-width:0}
-.ghead h3{font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.03em;font-weight:750;line-height:1.05;margin-bottom:.5rem}
+.ghead h2,.ghead h3{font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.03em;font-weight:750;line-height:1.05;margin:0 0 .5rem}
 .ghead .eyebrow{margin-bottom:.5rem}.ghead p.muted{margin:0;max-width:44rem}
 @media (min-width:900px){.ghead{grid-template-columns:1fr auto}}
 .railh{margin:2rem 0 .3rem;font-size:1.05rem}

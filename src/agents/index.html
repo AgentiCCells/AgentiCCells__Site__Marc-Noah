@@ -126,8 +126,9 @@ You are editing the Marc Noah site in AgentiCCells/AgentiCCells__Site__Marc-Noah
 <p class="credit">Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence.<span class="fn"><a href="#src-4" aria-label="Source 4: Epopeia photos">4</a></span><br>Video stills: each video’s own YouTube frame, from its channel. Not covered by this site’s licence.<span class="fn"><a href="#src-5" aria-label="Source 5: YouTube poster frames">5</a></span></p>
 <p class="quiet">About this site: <a href="/sources/">sources</a> · <a href="/d/">six designs</a> · <a href="/videos/">every film</a> · <a href="/agents/">use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · <a href="/behind-the-scenes/">behind the scenes</a> · <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah">source code</a> · version __VERSION__ · Marc approves every change about him. Photographs from his label, used with permission. Audio and video play from YouTube and Spotify. Lyric lines are quoted only as his own site shows them. Made with the AgentiCCells site factory. Code Apache-2.0, text and drawings CC BY 4.0; the photographs and video stills are not covered.</p>
 </div></footer>
-<dialog id="player" class="player" aria-labelledby="pl-t">
+<dialog id="player" class="player" aria-labelledby="pl-t" aria-describedby="pl-k">
 <div class="pl-head"><h2 id="pl-t">Video</h2><form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<p class="vh" id="pl-k">Close is the button before the film. Esc closes the player until the film takes the keyboard; after that, press Shift and Tab to reach Close, then Enter.</p>
 <div class="pbox"></div>
 <p class="pl-note">Playing from YouTube (youtube-nocookie.com). <a id="pl-yt" href="https://www.youtube.com/@marcnoahmusic">Open on YouTube</a></p>
 </dialog>
@@ -145,7 +146,9 @@ a=t.closest('a[data-sp]');if(a&&!mod){e.preventDefault();var f=frame(a.getAttrib
 var b=t.closest('button[data-f]');if(b){var w=b.closest('.watch'),g=b.getAttribute('data-f');w.querySelectorAll('button[data-f]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
 w.querySelectorAll('.group[data-g]').forEach(function(x){x.hidden=!(g==='all'||x.getAttribute('data-g')===g);});}});
 d.querySelectorAll('dialog').forEach(function(dl){dl.addEventListener('click',function(e){if(e.target!==dl)return;var r=dl.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dl.close();});
-dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});})();
+dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});
+function show(i){if(!i.dataset.src)return;i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
+var lz=d.querySelectorAll('img.lz');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var r=e.target.closest('.rail,.sofa');(r?r.querySelectorAll('img.lz'):[e.target]).forEach(function(i){show(i);io.unobserve(i);});});},{rootMargin:'200px 0px'});lz.forEach(function(i){io.observe(i);});}else lz.forEach(show);})();
 </script>
 </body>
 </html>

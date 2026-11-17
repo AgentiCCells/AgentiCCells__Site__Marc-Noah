@@ -23,3 +23,22 @@ Carried follow-ups: the read-date note's "sources page" link and "his artist pag
 - **Count marker visible text:** "how" (its name contains it, WCAG 2.5.3).
 - The live band photograph keeps its alt from `PHOTOS` though it sits behind text.
 - Screenshots are cut at 6000 px and the 1366 px ones resized to 1024 px wide to stay under 3 MB.
+
+## Follow-ups (after the review of the live site)
+
+By developer.marc-noah@AgentiCCells.dinis, 17 November 2026. Measured with Playwright (Chromium, headless) on a local build served by http-server, viewports 390 x 844 and 1366 x 768, image bytes summed from the responses of type image after load and network idle, before any scrolling.
+
+1. **Player and Esc (review follow-up 1).** Close stays the first control in the dialog and comes before the film in the DOM, so `showModal()` puts focus on it and Shift+Tab from the film reaches it in one step. A visually hidden note (`#pl-k`, the dialog's `aria-describedby`) tells screen readers: "Close is the button before the film. Esc closes the player until the film takes the keyboard; after that, press Shift and Tab to reach Close, then Enter." Our script never focuses the iframe. Limit, recorded: about 1.5 to 2.5 s after opening, YouTube's cross-origin frame takes focus itself and Esc then goes to the film; a page cannot catch keys inside a cross-origin frame, so no workaround was tried. Measured on /videos/ at both widths: Enter on a card opens with focus on Close; after 2.5 s focus is in the iframe and Esc does not close; one Shift+Tab reaches Close; Enter closes, removes the iframe and returns focus to the card.
+2. **Posters (review follow-up 2).** Chromium's own `loading="lazy"` starts 1250 px or more ahead, so it loaded every poster on the home at 1366 px. Now only first-screen posters are eager (the two band-set posters on /videos/; none on the home). Every other poster has a blank inline SVG in `src`, the real files in `data-src`/`data-srcset`, `loading="lazy"`, `decoding="async"`, width and height, and a plain `<img>` in `<noscript>`; our script sets the files when the card is within 200 px of the viewport (a whole rail or sofa row at once). `sizes` now matches the drawn width (`(min-width:900px) 640px, 100vw` for large cards, `(min-width:900px) 290px, 60vw` for small), so at 1366 px the 557 px cards take the 640 px file.
+
+| Page, width | Before: posters on first load | After: posters on first load | After: all images on first load |
+|---|---|---|---|
+| /, 390 | 14, 467 KB | 0, 0 KB | 1 (hero photo), 38 KB |
+| /, 1366 | 21, 751 KB | 0, 0 KB | 1 (hero photo), 122 KB |
+| /videos/, 390 | 21, 609 KB | 2, 52 KB | 2, 52 KB |
+| /videos/, 1366 | 21, 751 KB | 2, 52 KB | 2, 52 KB |
+
+   Source: local Playwright measurement, 17 November 2026 (the reviewer measured 302 KB and 591 KB on the live site, counting transfer size; these are decoded body sizes). After scrolling the home to the end, all 21 posters load at both widths, nothing is left deferred and no request goes to another host.
+3. **/videos/ headings (review follow-up 3).** `watchGroups()` takes a heading level: on /videos/ the group headings are `h2` and the rail heading `h3` (h1, h2, h3); on the home and the designs they stay `h3` and `h4` under their `h2`. Style moved from `.ghead h3` to `.ghead h2, .ghead h3`.
+
+Gates: generate, build, validate OK, leak scan OK. Screenshots of / and /videos/ at both widths checked locally after scrolling: posters show.
