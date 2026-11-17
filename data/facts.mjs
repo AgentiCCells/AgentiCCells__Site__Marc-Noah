@@ -432,7 +432,7 @@ export const LIVE = {
   formatsHead: 'How he plays', // chips from FORMATS (src FORMATS_SRC)
   stagesHead: 'Stages he has played',
   button: 'Book through his Epopeia artist page', url: BOOKING.url, src: BOOKING.src,
-  count: { text: `${COUNTS.concerts} concerts listed by his label, his own site and the press since ${monthYear(COUNTS.first)} (our count), ${COUNTS.concertsAlgarve} of them in the Algarve.`, by: 'computed', src: COUNTS.src },
+  count: { text: `${COUNTS.concerts} concerts listed by his label, his own site, Alvor FM and the press since ${monthYear(COUNTS.first)} (our count), ${COUNTS.concertsAlgarve} of them in the Algarve.`, by: 'computed', src: COUNTS.src },
   noVenue: 'venue not named by his label',
   otherHead: 'Other appearances',
   otherKinds: ['jury', 'radio', 'video', 'release'],
