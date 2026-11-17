@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marc Noah, singer-songwriter, Algarve (round 2 mock-up)</title><meta name="description" content="Round 2 design mock-up for the Marc Noah site, built from data/facts.mjs and data/photos.mjs.">
+<style>
+:root{color-scheme:dark;--bg:#0b0f14;--s1:#131a22;--s2:#1a222c;--line:#2a3440;--ink:#f2ede6;--muted:#a7b0ba;--faint:#8b95a1;--accent:#e2a878;--on-accent:#1b1009;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--wrap:76rem;--g:16px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);overflow-wrap:break-word}
+img{display:block;max-width:100%;height:auto}picture{display:contents}svg{max-width:100%}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:.2em}a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--g)}
+@media (min-width:900px){:root{--g:40px}}
+.eyebrow{margin:0 0 .9rem;font-size:.75rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:var(--sans);margin:0}
+h2.sec{font-size:clamp(2rem,7vw,3.6rem);line-height:1;letter-spacing:-.03em;font-weight:750;margin-bottom:1rem}
+p{margin:0 0 1rem}
+.lede{font-size:clamp(1.12rem,3.6vw,1.35rem);line-height:1.5;color:var(--ink);max-width:36rem}
+.muted{color:var(--muted)}.small{font-size:.88rem;color:var(--muted)}
+section.band{padding:clamp(4rem,10vw,7.5rem) 0}
+.rule{border-top:1px solid var(--line)}
+
+/* Header: transparent over the home hero, solid dark elsewhere */
+.top{position:relative;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top.over{position:absolute;left:0;right:0;top:0;background:linear-gradient(rgba(5,8,12,.7),rgba(5,8,12,0));border:0}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 2rem;padding-top:.4rem;padding-bottom:.4rem}
+.brand{font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.95rem;text-decoration:none;min-height:44px;display:flex;align-items:center}
+.top nav{display:flex;margin:0 -.55rem}
+.top nav a{min-height:44px;display:flex;align-items:center;padding:0 .55rem;text-decoration:none;font-size:.92rem;letter-spacing:.04em}
+.top nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--accent)}
+.sm{display:none}@media (max-width:599px){.lg{display:none}.sm{display:inline}.top nav a{padding:0 .5rem;font-size:.9rem}}
+
+/* Markers: quiet */
+.fn{white-space:normal}.fn a{white-space:nowrap}
+.fn a{display:inline-block;min-width:24px;height:24px;line-height:24px;padding:0 3px;font-size:11px;font-weight:600;text-align:center;vertical-align:top;position:relative;top:-.35em;color:var(--faint);text-decoration:none;border-radius:4px}
+.fn a:hover{color:var(--accent);background:var(--s2)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:.4rem 1.5rem .4rem .45rem;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;letter-spacing:.01em}
+.btn .disc{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--on-accent);color:var(--accent)}.btn .disc svg{width:18px;height:18px;margin-left:2px}
+.btn small{display:block;font-weight:500;font-size:.78rem;opacity:.8}
+.btn:hover{background:var(--ink);color:var(--on-accent)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--muted);padding:.4rem 1.3rem;min-height:48px}.btn.line:hover{border-color:var(--accent);color:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 0}
+.more{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+
+/* Hero */
+.hero{position:relative;min-height:min(100svh,58rem);display:flex;align-items:flex-end;overflow:hidden;background:#06090c}
+.hero>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,12,.97) 0,rgba(6,9,12,.9) 50%,rgba(6,9,12,.45) 66%,rgba(6,9,12,0) 80%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(2rem,6vh,4.5rem)}
+.hero h1{font-size:clamp(4.6rem,23vw,9.5rem);line-height:.86;letter-spacing:-.045em;font-weight:800;margin:0 0 1.1rem}
+.hero h1 span{display:block}
+.hero .lede{max-width:28rem;margin:0}
+@media (min-width:900px){.hero>picture>img{object-position:50% 28%}.hero::after{background:linear-gradient(90deg,rgba(6,9,12,.92) 0,rgba(6,9,12,.55) 38%,rgba(6,9,12,0) 62%),linear-gradient(0deg,rgba(6,9,12,.6),rgba(6,9,12,0) 30%)}.hero h1 span{display:inline}.hero h1 span+span{margin-left:.22em}.hero h1{font-size:clamp(5rem,8.4vw,8.5rem)}}
+
+/* Words */
+.words{display:grid;gap:2.5rem;align-items:center}
+.words figure{margin:0}
+.q{font-family:var(--serif);font-style:italic;font-size:clamp(1.7rem,5.6vw,2.9rem);line-height:1.2;letter-spacing:-.01em;margin:0 0 1.2rem}
+.q::before{content:"\201C"}.q::after{content:"\201D"}
+.q i{font-style:normal}
+.pt{font-family:var(--serif);font-style:italic;color:var(--muted);margin:0 0 .6rem}
+figcaption{font-size:.88rem;color:var(--muted)}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:900px){.words{grid-template-columns:5fr 7fr;gap:5rem}}
+
+/* Video */
+.vids{display:grid;gap:1.25rem}
+.embed{position:relative;background:#000;overflow:hidden;border-radius:4px}
+.r169{aspect-ratio:16/9}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.embed.sp.open{aspect-ratio:auto;height:352px}.embed.sp.open iframe{position:static;height:352px}
+.facade{position:absolute;inset:0;display:block;color:var(--ink);text-decoration:none}
+.facade.sq{position:relative}
+.facade img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.86}
+.facade:hover img{transform:scale(1.03);opacity:1}
+.facade::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,0) 55%)}
+.pb{position:absolute;z-index:2;left:50%;top:46%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(11,15,20,.55);border:2px solid var(--ink);display:grid;place-items:center;backdrop-filter:blur(4px)}
+.pb svg{width:24px;height:24px;margin-left:3px}
+.big .pb{width:84px;height:84px}.big .pb svg{width:30px;height:30px}
+.facade:hover .pb{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ft{position:absolute;z-index:2;left:1rem;right:1rem;bottom:.9rem}
+.ft b{display:block;font-size:1.15rem;line-height:1.2;letter-spacing:-.01em}.big .ft b{font-size:clamp(1.4rem,3vw,2rem)}
+.ft small{display:block;font-size:.8rem;color:#d3d8de}
+@media (min-width:900px){.vids{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}.vids .big{grid-row:span 2;aspect-ratio:auto;min-height:100%}}
+.vids2{display:grid;gap:1.25rem;margin-top:1.25rem}@media (min-width:700px){.vids2{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.chan{list-style:none;margin:1.5rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:0 1.5rem}
+.chan a{min-height:44px;display:inline-flex;align-items:center}
+
+/* Songs */
+.songs{display:grid;gap:2.5rem}
+@media (min-width:900px){.songs{grid-template-columns:26rem 1fr;gap:4.5rem;align-items:start}}
+.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tracks li{display:grid;grid-template-columns:2.2rem 1fr auto;align-items:center;gap:.2rem .8rem;min-height:60px;padding:.35rem 0;border-bottom:1px solid var(--line)}
+.tracks .n{color:var(--faint);font-variant-numeric:tabular-nums;font-size:.9rem}
+.tracks b{font-weight:600;font-size:1.08rem}
+.tracks .tag{display:block;font-size:.82rem;color:var(--muted)}
+.tracks .go{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:flex-end;gap:.4rem;font-size:.88rem;font-weight:600;text-decoration:none;color:var(--accent)}
+.tracks .go svg{width:14px;height:14px}
+.tracks .len{color:var(--faint);font-size:.9rem;font-variant-numeric:tabular-nums}
+
+/* Algarve split */
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:center}.split>*,.songs>*,.words>*,.livegrid>*,.solo>*,.bandgrid>*,.ghead>*{min-width:0}
+.split .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:900px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5rem}.split.rev .ph{order:2}}
+.rmap{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;margin-top:1.25rem}
+.rmap text{paint-order:stroke;stroke:#0e1620;stroke-width:4px}
+
+/* Live: photo band */
+.live{position:relative;overflow:hidden}
+.live>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:.38}
+.live::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0,rgba(11,15,20,.55) 30%,rgba(11,15,20,.8) 100%)}
+.live .wrap{position:relative}
+.livegrid{display:grid;gap:2.5rem}@media (min-width:900px){.livegrid{grid-template-columns:7fr 5fr;gap:5rem}}
+.stages{list-style:none;padding:0;margin:0}
+.stages li{padding:.8rem 0;border-bottom:1px solid rgba(167,176,186,.25)}
+.stages time{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.stages b{font-weight:600}
+.book{background:rgba(19,26,34,.92);border:1px solid var(--line);padding:1.6rem;border-radius:4px}
+.book h3{font-size:1.5rem;letter-spacing:-.02em;margin-bottom:.6rem}
+.formats{list-style:none;padding:0;margin:1rem 0;display:grid;gap:.5rem}
+.formats li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding:.45rem 0;font-size:.95rem}
+.formats span{color:var(--muted);text-align:right}
+.mail{display:inline-flex;align-items:center;min-height:44px;font-size:clamp(1.05rem,4.6vw,1.3rem);font-weight:700;word-break:break-all}
+
+/* Sources and footer */
+.sources{padding-top:3rem;padding-bottom:2rem;font-size:.85rem;color:var(--muted)}
+.sources h2{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:.6rem}
+.sources ol{padding-left:1.6rem;margin:.5rem 0}
+.sources li a{color:var(--muted);display:inline-flex;align-items:center;min-height:44px;line-height:1.35}
+@media (min-width:900px){.sources ol{columns:2;column-gap:3rem}.sources li{break-inside:avoid}}
+.foot{border-top:1px solid var(--line);background:#080b0f;padding:3rem 0 2.5rem}
+.foot .name{font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .2rem}
+.foot .row{display:flex;flex-wrap:wrap;gap:0 1.4rem;margin:.8rem 0}
+.foot .row a{min-height:44px;display:inline-flex;align-items:center;font-size:.95rem}
+.foot .credit{font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;margin-top:1.5rem}
+.foot .quiet{font-size:.78rem;color:var(--faint)}.foot .quiet a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+.mock{background:#e2a878;color:#1b1009;font:600 13px/1.4 var(--sans);text-align:center;padding:.5rem var(--g)}
+
+/* About */
+.ahead{display:grid;gap:0}
+.ahead .ph img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%}
+.ahead .tx{padding:2.2rem var(--g) 0}
+.ahead h1{font-size:clamp(3.4rem,15vw,6.5rem);line-height:.9;letter-spacing:-.045em;font-weight:800;margin-bottom:1.2rem}
+@media (min-width:900px){.ahead{grid-template-columns:1fr 1fr;align-items:center;max-width:var(--wrap);margin:0 auto;padding:4rem var(--g) 0;gap:5rem}.ahead .tx{padding:0}.ahead .ph img{aspect-ratio:4/5}}
+.story h2{font-size:clamp(1.8rem,5.5vw,2.8rem);line-height:1.05;letter-spacing:-.03em;font-weight:750;margin-bottom:1rem}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem;margin-top:0}.pair img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.qband{position:relative;min-height:34rem;display:flex;align-items:flex-end;overflow:hidden}
+.qband>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.qband::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,12,.97) 0,rgba(6,9,12,.9) 60%,rgba(6,9,12,.2) 92%)}
+.qband .wrap{position:relative;z-index:2;padding-top:6rem;padding-bottom:3.5rem}
+.qband .q{font-size:clamp(1.35rem,4.2vw,2.2rem);max-width:52rem}
+@media (min-width:900px){.qband::after{background:linear-gradient(90deg,rgba(6,9,12,.96) 0,rgba(6,9,12,.88) 52%,rgba(6,9,12,.2) 82%)}.qband{min-height:40rem;align-items:center}.qband .q,.qband .pt,.qband figcaption{max-width:40rem}}
+.bio{display:grid;gap:1.5rem}
+.bio div p{margin:0 0 .4rem}
+.bio .ptx{font-family:var(--serif);font-style:italic;color:var(--muted)}
+@media (min-width:900px){.bio div{display:grid;grid-template-columns:1fr 1fr;gap:3rem}}
+.gal{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem}
+.gal figure{margin:0}.gal img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.gal figcaption{padding:.45rem 0 0;font-size:.8rem;line-height:1.4}
+.gal a{display:block;text-decoration:none;color:inherit}
+@media (min-width:900px){.gal{grid-template-columns:repeat(3,1fr);gap:1.5rem}.gal li.w{grid-column:span 2}.gal li.w img{aspect-ratio:auto;height:100%;max-height:none}}
+/* Lyric lines (change 3) */
+.lyr{margin:0 0 2rem}.lyr blockquote{margin:0 0 .5rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.45rem,5vw,2.4rem);line-height:1.2;max-width:46rem;color:var(--ink)}
+.lyr blockquote::before{content:"\201C";color:var(--accent)}.lyr blockquote::after{content:"\201D";color:var(--accent)}
+.lyr figcaption{font-size:.85rem}
+.lyrs{display:grid;gap:.5rem 3rem}.lyrs .lyr{border-top:1px solid var(--line);padding-top:1.2rem}.lyrs .lyr blockquote{font-size:clamp(1.3rem,4.4vw,1.8rem)}
+@media (min-width:900px){.lyrs{grid-template-columns:1fr 1fr}}
+/* Watch him play (change 1) */
+.watch{background:linear-gradient(#0b0f14,#0e141b 30%,#0b0f14)}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--g)*-1) 2rem;padding:0 var(--g)}
+.tabs a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 1.1rem;border-radius:999px;border:1px solid var(--line);background:var(--s1);text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap}
+.tabs a[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.group{padding:1.6rem 0 2.4rem;border-top:1px solid var(--line)}
+.group[hidden]{display:none}
+.ghead{display:grid;gap:.6rem 2rem;align-items:end;margin-bottom:1.3rem}
+.ghead h3{font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.03em;font-weight:750;line-height:1.05;margin-bottom:.5rem}
+.ghead .eyebrow{margin-bottom:.5rem}.ghead p.muted{margin:0;max-width:44rem}
+@media (min-width:900px){.ghead{grid-template-columns:1fr auto}}
+.vc{position:relative;display:block;text-decoration:none;color:var(--ink)}
+.vimg{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:4px;background:#000}
+.vimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.9}
+.vc:hover .vimg img,.vc:focus-visible .vimg img{transform:scale(1.04);opacity:1}
+.vc .pb{top:50%;width:52px;height:52px}.vc .pb svg{width:20px;height:20px}
+.vc.xl .pb{width:76px;height:76px}.vc.xl .pb svg{width:28px;height:28px}
+.vc:hover .pb{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.vt{display:block;padding:.6rem 0 0}.vt b{display:block;font-size:1rem;line-height:1.25}.vc.xl .vt b{font-size:clamp(1.15rem,2.6vw,1.5rem)}
+.vt small{display:block;color:var(--muted);font-size:.82rem;margin-top:.15rem}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.bandgrid{display:grid;gap:1.4rem}@media (min-width:900px){.bandgrid{grid-template-columns:1.35fr 1fr;align-items:start}}
+.solo{display:grid;gap:1.4rem}@media (min-width:900px){.solo{grid-template-columns:1.2fr 1fr;align-items:start}}
+.rail{list-style:none;margin:0;padding:0 var(--g) .4rem;display:grid;grid-auto-flow:column;grid-auto-columns:62%;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(var(--g)*-1);margin-right:calc(var(--g)*-1);scroll-padding:0 var(--g)}
+.rail li{scroll-snap-align:start}
+@media (min-width:900px){.solo .rail{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;margin:0;padding:0}.solo .rail li:nth-child(n+5){display:none}.rail.wide{grid-auto-columns:calc((100% - 3*.9rem)/4);margin:0;padding:0}}
+.sofa{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.9rem}
+@media (min-width:900px){.sofa{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}}
+.vc.tall .vimg{aspect-ratio:4/5}
+.player{width:min(70rem,calc(100% - 16px));padding:0;border:1px solid var(--line);border-radius:8px;background:#000;color:var(--ink)}
+.player::backdrop{background:rgba(3,5,8,.9)}
+.pl-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.4rem .4rem .4rem 1rem;background:var(--s1)}
+.pl-head p{margin:0;font-weight:600;font-size:.95rem}
+.pbox{aspect-ratio:16/9;background:#000}.pbox iframe{width:100%;height:100%;border:0;display:block}
+.pl-note{margin:0;padding:.5rem 1rem;font-size:.8rem;color:var(--muted);background:var(--s1)}.pl-note a{display:inline-flex;min-height:44px;align-items:center}
+.vids-in{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.25rem}
+.vids-in a{display:inline-flex;align-items:center;gap:.3rem;min-height:44px;padding:0 .6rem;border:1px solid var(--line);border-radius:999px;font-size:.75rem;text-decoration:none;color:var(--muted)}
+.vids-in a:hover{border-color:var(--accent);color:var(--accent)}.vids-in svg{width:10px;height:10px}
+/* Designs control and dialog (change 2) */
+.dsw-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:0 1rem;border:1px solid rgba(242,237,230,.45);border-radius:999px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.04em;background:rgba(11,15,20,.35)}
+.dsw-btn svg{width:14px;height:14px;fill:var(--accent)}
+.dsw-btn:hover{border-color:var(--accent)}
+@media (max-width:899px){.top .brand{order:1}.dsw-btn{order:2}.top nav{order:3;width:100%}}
+.dlg{width:min(66rem,calc(100% - 24px));max-height:calc(100svh - 24px);padding:0;border:1px solid var(--line);border-radius:10px;background:var(--s1);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.dlg::backdrop{background:rgba(3,5,8,.78);backdrop-filter:blur(6px)}
+.dlg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.3rem 1.3rem .4rem}
+.dlg-head h2{font-size:1.7rem;letter-spacing:-.02em;font-weight:750}.dlg-head p{margin:.2rem 0 0;color:var(--muted);font-size:.92rem}
+.x{min-height:44px;min-width:44px;padding:0 1rem;border-radius:999px;border:1px solid var(--line);background:var(--s2);color:var(--ink);font:600 .88rem var(--sans);cursor:pointer}
+.x:hover{border-color:var(--accent)}
+.dgrid{list-style:none;margin:0;padding:.8rem 1.3rem;display:grid;gap:.6rem}
+.dgrid a{display:grid;grid-template-columns:8.5rem minmax(0,1fr);grid-template-rows:auto 1fr;gap:.15rem .9rem;padding:.5rem;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);background:var(--bg)}
+.dgrid img{grid-row:span 2;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:4px}
+.dgrid .dn{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .6rem}.dgrid b{font-size:1.02rem}
+.dgrid .cur{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.dgrid .cur.dim{color:var(--faint)}
+.dgrid .di{font-size:.82rem;line-height:1.4;color:var(--muted)}
+.dgrid a:hover,.dgrid a[aria-current]{border-color:var(--accent)}
+.dgrid a:hover img{filter:brightness(1.08)}
+.dlg-foot{padding:0 1.3rem 1rem;margin:0}
+@media (min-width:700px){.dgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}.dgrid a{grid-template-columns:1fr;grid-template-rows:auto;padding:.6rem .6rem .9rem}.dgrid img{grid-row:auto;margin-bottom:.5rem}.dlg-head{padding:1.6rem 1.6rem .4rem}.dgrid{padding:1rem 1.6rem}.dlg-foot{padding:0 1.6rem 1.3rem}}
+</style></head><body>
+<header class="top over"><div class="wrap">
+<a class="brand" href="#" aria-current="page">Marc Noah</a>
+<nav aria-label="Main"><a href="#">Songs</a><a href="#"><span class="lg">The Algarve</span><span class="sm">Algarve</span></a><a href="#">Live</a><a href="#">About</a><a href="#"><span class="lg">Listen and book</span><span class="sm">Book</span></a></nav>
+<a class="dsw-btn" href="#" data-dialog="designs" aria-haspopup="dialog"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>Designs</a>
+</div></header>
+<dialog id="designs" class="dlg" aria-labelledby="dlg-h">
+<div class="dlg-head"><div><h2 id="dlg-h">Designs</h2><p>The same facts about Marc Noah, laid out 6 ways. Choose one to see it.</p></div>
+<form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<ul class="dgrid">
+<li><a href="#" aria-current="page"><img src="thumb-editorial.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Editorial</b><span class="cur">Showing</span></span><span class="di">Dark and photo-led: his label's photographs lead, and his videos and album play in the page.</span></a></li>
+<li><a href="#"><img src="thumb-coast.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>The Coast</b><span class="cur dim">Home in round 1</span></span><span class="di">Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.</span></a></li>
+<li><a href="#"><img src="thumb-azulejo.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Azulejo</b></span><span class="di">Portuguese blue and white tiles: each of his eight songs is a tile.</span></a></li>
+<li><a href="#"><img src="thumb-poster.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Tour Poster</b></span><span class="di">A screen-printed gig poster: the dates and the towns lead, loud and close.</span></a></li>
+<li><a href="#"><img src="thumb-songbook.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>The Songbook</b></span><span class="di">A songwriter’s ruled notebook: one entry per song, in the order he released them.</span></a></li>
+<li><a href="#"><img src="thumb-cassette.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Side A, Side B</b></span><span class="di">A cassette inlay card for the 1980s and 1990s music that shaped his sound: the album as Side A and Side B.</span></a></li>
+</ul>
+<p class="dlg-foot"><a class="more" href="#">All designs on one page</a></p>
+</dialog>
+<main id="main">
+<section class="hero" aria-labelledby="h">
+<picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/chair-dark-800.jpg"><img src="../../../../../src/assets/photos/chair-dark.jpg" width="1500" height="1200" alt="Marc Noah sitting in an armchair against a dark background, head lowered" fetchpriority="high"></picture>
+<div class="wrap">
+<p class="eyebrow">Singer-songwriter, Algarve</p>
+<h1 id="h"><span>Marc</span><span>Noah</span></h1>
+<p class="lede">He lives on the Algarve coast and writes the songs he sings.<span class="fn"><a href="#src-1" aria-label="Source 1: Dinis Cruz, 17 Nov 2026">1</a><a href="#src-2" aria-label="Source 2: marcnoah.pt (archived 15 Dec 2025)">2</a><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></p>
+<p class="btns"><a class="btn" href="https://www.youtube.com/watch?v=S85R1WgyKJ0" data-yt="S85R1WgyKJ0" data-title="Marc Noah no Choque Frontal ao Vivo"><span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span>Watch him live with his band<small>Choque Frontal ao Vivo, Portimão, December 2023</small></span></a></p>
+<p class="small" style="margin:.6rem 0 0">Filmed by Alvor FM.<span class="fn"><a href="#src-4" aria-label="Source 4: Alvor FM video, Choque Frontal">4</a></span> <a class="more" href="#watch" style="color:var(--ink)">Or choose: band, solo, sessions, videos</a></p>
+</div>
+</section>
+
+<section class="band watch" id="watch" aria-labelledby="wth"><div class="wrap">
+<p class="eyebrow">Watch</p>
+<h2 class="sec" id="wth">Watch him play</h2>
+<p class="lede muted" style="margin-bottom:1.4rem">With his band, on his own, on a green chair around the Algarve, and in his videos. 21 films; each plays here when you press it.</p>
+<nav class="tabs" aria-label="Show videos"><a href="#g-all" data-f="all" aria-pressed="true">All</a><a href="#g-band" data-f="band" aria-pressed="false">With the band</a><a href="#g-solo" data-f="solo" aria-pressed="false">Solo</a><a href="#g-sofa" data-f="sofa" aria-pressed="false">Green Sofa</a><a href="#g-videos" data-f="videos" aria-pressed="false">Videos</a></nav>
+<div class="group" data-g="band" id="g-band">
+<div class="ghead"><div><p class="eyebrow">Band · 75 min</p><h3 id="gb">With the band</h3><p class="muted">6 musicians, 4 technical crew, indoor and outdoor, as his label lists the format.<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span> On film: a full set at the Teatro Municipal de Portimão, and Sons no Castelo in Loulé, August 2026.<span class="fn"><a href="#src-4" aria-label="Source 4: Alvor FM video, Choque Frontal">4</a><a href="#src-5" aria-label="Source 5: YouTube (@marcnoahmusic)">5</a></span></p></div><a class="btn line" href="#book">Book the band</a></div>
+<div class="bandgrid">
+<a class="vc xl" href="https://www.youtube.com/watch?v=S85R1WgyKJ0" data-yt="S85R1WgyKJ0" data-title="Marc Noah no Choque Frontal ao Vivo">
+<span class="vimg"><img src="posters/S85R1WgyKJ0.jpg" width="960" height="540" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Choque Frontal ao Vivo</b><small>Full set · TEMPO, Portimão · 13 December 2023 · Alvor FM</small></span></a>
+<a class="vc xl" href="https://www.youtube.com/watch?v=q2P-ScNIL7w" data-yt="q2P-ScNIL7w" data-title="Concerto Marc Noah - Sons Do Castelo Agosto 26">
+<span class="vimg"><img src="posters/q2P-ScNIL7w.jpg" width="960" height="540" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Sons no Castelo, Loulé</b><small>Concert · August 2026 · his own channel</small></span></a>
+</div></div>
+<div class="group" data-g="solo" id="g-solo">
+<div class="ghead"><div><p class="eyebrow">Solo · 60 min · duo 70 min</p><h3 id="gs">On his own</h3><p class="muted">Voice and acoustic guitar: 1 musician, 2 technical crew, indoor; or as a duo.<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span> On film: the 9.º Festival Acústico, and a song-by-song set for Alvor FM. No duo film is listed yet.<span class="fn"><a href="#src-6" aria-label="Source 6: Alvor FM video, 9.º Festival Acústico">6</a><a href="#src-7" aria-label="Source 7: YouTube (Alvor FM)">7</a></span></p></div><a class="btn line" href="#book">Book him solo or as a duo</a></div>
+<div class="solo">
+<a class="vc xl" href="https://www.youtube.com/watch?v=OyvGbs1fg7g" data-yt="OyvGbs1fg7g" data-title="Marc Noah">
+<span class="vimg"><img src="posters/OyvGbs1fg7g.jpg" width="960" height="540" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>9.º Festival Acústico</b><small>Solo set · TEMPO, Portimão · 4 October 2023 · Alvor FM</small></span></a>
+<ul class="rail" aria-label="Song by song, for Alvor FM"><li><a class="vc " href="https://www.youtube.com/watch?v=QyZMI8sPgow" data-yt="QyZMI8sPgow" data-title="Marc Noah - Lie To Me">
+<span class="vimg"><img src="posters/QyZMI8sPgow.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Lie to Me</b><small>Live · Alvor FM</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=f__TLj6ccQI" data-yt="f__TLj6ccQI" data-title="Marc Noah - No More Dreaming">
+<span class="vimg"><img src="posters/f__TLj6ccQI.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>No More Dreaming</b><small>Live · Alvor FM</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=GdY-l97_vCU" data-yt="GdY-l97_vCU" data-title="Marc Noah - To The Bone">
+<span class="vimg"><img src="posters/GdY-l97_vCU.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>To The Bone</b><small>Live · Alvor FM</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=RgJHbdZNpLM" data-yt="RgJHbdZNpLM" data-title="Marc Noah - Sunshine">
+<span class="vimg"><img src="posters/RgJHbdZNpLM.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Sunshine</b><small>Live · Alvor FM</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=0u0iQvyGcCg" data-yt="0u0iQvyGcCg" data-title="Marc Noah - Mother">
+<span class="vimg"><img src="posters/0u0iQvyGcCg.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Mother</b><small>Live · Alvor FM</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=ANPCpT8ufMA" data-yt="ANPCpT8ufMA" data-title="Marc Noah - Towers &amp; Bridges">
+<span class="vimg"><img src="posters/ANPCpT8ufMA.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Towers and Bridges</b><small>Live · Alvor FM</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=JB0jvIitE9I" data-yt="JB0jvIitE9I" data-title="Marc Noah - Slowtalk">
+<span class="vimg"><img src="posters/JB0jvIitE9I.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Slowtalk</b><small>Live · Alvor FM</small></span></a></li></ul>
+</div></div>
+<div class="group" data-g="sofa" id="g-sofa">
+<div class="ghead"><div><p class="eyebrow">Green Sofa Sessions</p><h3 id="gf">One chair, one guitar</h3><p class="muted">The live versions of his first EP, filmed as the Green Sofa Sessions on the green sofa from his living room, then taken outdoors.<span class="fn"><a href="#src-8" aria-label="Source 8: marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)">8</a><a href="#src-5" aria-label="Source 5: YouTube (@marcnoahmusic)">5</a></span></p></div></div>
+<ul class="sofa"><li><a class="vc tall" href="https://www.youtube.com/watch?v=ZBwgJ7Lg7-o" data-yt="ZBwgJ7Lg7-o" data-title="Green Sofa Session #1 Lie To Me">
+<span class="vimg"><img src="posters/ZBwgJ7Lg7-o.jpg" width="960" height="540" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Lie to Me</b><small>At home, the green chair</small></span></a></li><li><a class="vc tall" href="https://www.youtube.com/watch?v=5H8PBg1tQHc" data-yt="5H8PBg1tQHc" data-title="Green Sofa Session #2 Sunshine">
+<span class="vimg"><img src="posters/5H8PBg1tQHc.jpg" width="960" height="540" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Sunshine</b><small>Among pine trees</small></span></a></li><li><a class="vc tall" href="https://www.youtube.com/watch?v=RRTVycYkcOo" data-yt="RRTVycYkcOo" data-title="&quot;Mother&quot; Green Sofa Sessions">
+<span class="vimg"><img src="posters/RRTVycYkcOo.jpg" width="960" height="540" alt="" loading="lazy" decoding="async" style="object-position:45% 50%"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Mother</b><small>On a seafront promenade</small></span></a></li><li><a class="vc tall" href="https://www.youtube.com/watch?v=6yUpmlZzrk0" data-yt="6yUpmlZzrk0" data-title="Sofa Sessions #4   Towers And Bridges">
+<span class="vimg"><img src="posters/6yUpmlZzrk0.jpg" width="432" height="540" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Towers and Bridges</b><small>By a lighthouse, on a jetty</small></span></a></li></ul>
+</div>
+<div class="group" data-g="videos" id="g-videos">
+<div class="ghead"><div><p class="eyebrow">Videos</p><h3 id="gv">His videos</h3><p class="muted">Music and lyric videos on his label's Vevo channel, newest first.<span class="fn"><a href="#src-9" aria-label="Source 9: YouTube (marcnoahVEVO)">9</a></span></p></div></div>
+<ul class="rail wide"><li><a class="vc " href="https://www.youtube.com/watch?v=adbD0f2FYLA" data-yt="adbD0f2FYLA" data-title="Marc Noah - Roadtrip">
+<span class="vimg"><img src="posters/adbD0f2FYLA.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Roadtrip</b><small>12 March 2025</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=ll9tQ_BhrCA" data-yt="ll9tQ_BhrCA" data-title="Marc Noah - To The Bone (Official Lyric Video)">
+<span class="vimg"><img src="posters/ll9tQ_BhrCA.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>To The Bone Official Lyric Video</b><small>12 June 2024</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=K8795UoBqTg" data-yt="K8795UoBqTg" data-title="Marc Noah - Towers &amp; Bridges">
+<span class="vimg"><img src="posters/K8795UoBqTg.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Towers &amp; Bridges</b><small>4 November 2023</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=JMd-r6okn80" data-yt="JMd-r6okn80" data-title="Marc Noah - Mother - Official Lyric Video">
+<span class="vimg"><img src="posters/JMd-r6okn80.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Mother, Official Lyric Video</b><small>27 August 2023</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=SaiC6jdsCy8" data-yt="SaiC6jdsCy8" data-title="Marc Noah - Sunshine - Official Lyric Video">
+<span class="vimg"><img src="posters/SaiC6jdsCy8.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Sunshine, Official Lyric Video</b><small>5 May 2023</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=oyE1KP8hUFU" data-yt="oyE1KP8hUFU" data-title="Marc Noah - Lie to Me - Official Music Video">
+<span class="vimg"><img src="posters/oyE1KP8hUFU.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Lie to Me, Official Music Video</b><small>4 March 2023</small></span></a></li><li><a class="vc " href="https://www.youtube.com/watch?v=wvsYVb5d1xQ" data-yt="wvsYVb5d1xQ" data-title="Marc Noah - Lie to Me - Official Lyric Video">
+<span class="vimg"><img src="posters/wvsYVb5d1xQ.jpg" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></span>
+<span class="vt"><b><span class="vh">Play </span>Lie to Me, Official Lyric Video</b><small>23 February 2023</small></span></a></li></ul>
+</div>
+<p class="small" style="margin-top:1.4rem">Videos play from YouTube (youtube-nocookie.com) only when a visitor presses play. Official videos are on his label's Vevo channel; live videos are by Alvor FM, a radio station in Portimão, and on his own channel.<span class="fn"><a href="#src-9" aria-label="Source 9: YouTube (marcnoahVEVO)">9</a><a href="#src-7" aria-label="Source 7: YouTube (Alvor FM)">7</a><a href="#src-5" aria-label="Source 5: YouTube (@marcnoahmusic)">5</a><a href="#src-8" aria-label="Source 8: marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)">8</a></span> Captions and subtitles are YouTube's.</p>
+</div></section>
+
+<section class="band rule" aria-labelledby="wh"><div class="wrap words">
+<div class="frame"><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/portrait-bw-800.jpg"><img src="../../../../../src/assets/photos/portrait-bw.jpg" width="1063" height="1063" alt="Marc Noah, black and white portrait in a collarless shirt" loading="lazy" decoding="async"></picture></div>
+<div>
+<p class="eyebrow" id="wh">The composer, in his own words</p>
+<figure><blockquote class="q" style="margin:0 0 1.2rem">My first album, <i>Giant Little Victories</i>, is a message of personal overcoming and of celebration.</blockquote>
+<p class="pt" lang="pt-PT">O meu 1º álbum: &quot;Giant Little Victories&quot; é uma mensagem de superação pessoal e de celebração.</p>
+<figcaption>Marc Noah, on Giant Little Victories (our translation)<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></figcaption></figure>
+<p style="margin-top:1.5rem" class="muted">His label calls him a <i lang="pt">cantautor</i>: he writes the songs he sings. His songs, it says, come from real episodes in a darker period of his life.<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></p>
+<a class="more" href="#">His story</a>
+</div></div></section>
+
+<section class="band rule" aria-labelledby="sh"><div class="wrap">
+<p class="eyebrow">Listen</p>
+<h2 class="sec" id="sh">Giant Little Victories</h2>
+<figure class="lyr"><blockquote>Take me, set me free, take me to a place where we can only be</blockquote><figcaption>From <b>Roadtrip</b><span class="fn"><a href="#src-2" aria-label="Source 2: marcnoah.pt (archived 15 Dec 2025)">2</a></span></figcaption></figure>
+<p class="lede muted" style="margin-bottom:2rem">His first album, eight songs, November 2024, on Epopeia Records, a label with an office in Faro.<span class="fn"><a href="#src-10" aria-label="Source 10: Epopeia agenda, album release">10</a><a href="#src-11" aria-label="Source 11: Apple Music">11</a><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></p>
+<div class="songs">
+<div><div class="embed sp" id="sp-album">
+<a class="facade sq" href="https://open.spotify.com/album/623T8dPibUnW606HPL3dDj" data-embed="https://open.spotify.com/embed/album/623T8dPibUnW606HPL3dDj" data-title="Giant Little Victories, Marc Noah, on Spotify" data-h="352">
+<picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/giant-little-victories-cover-800.jpg"><img src="../../../../../src/assets/photos/giant-little-victories-cover.jpg" width="1500" height="1500" alt="Cover of the album Giant Little Victories: a childhood photograph under the title" loading="lazy" decoding="async"></picture>
+<span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
+<span class="ft"><b>Play the album</b><small>Giant Little Victories · 8 songs · plays from Spotify</small></span>
+</a></div>
+<p class="btns"><a class="btn line" href="https://music.apple.com/pt/album/giant-little-victories/1847519743">Apple Music</a><a class="btn line" href="https://www.youtube.com/watch?v=6sXuvZaI7lM">YouTube</a></p></div>
+<div><ol class="tracks">
+<li><span class="n">01</span><span><b>To The Bone</b><span class="vids-in"><a href="https://www.youtube.com/watch?v=ll9tQ_BhrCA" data-yt="ll9tQ_BhrCA" data-title="Marc Noah - To The Bone (Official Lyric Video)" aria-label="Play Marc Noah - To The Bone (Official Lyric Video)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Lyric video</a><a href="https://www.youtube.com/watch?v=GdY-l97_vCU" data-yt="GdY-l97_vCU" data-title="Marc Noah - To The Bone" aria-label="Play Marc Noah - To The Bone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a></span></span><span class="len">3:29</span></li>
+<li><span class="n">02</span><span><b>Lie to Me</b><span class="tag">single, February 2023<span class="fn"><a href="#src-11" aria-label="Source 11: Apple Music">11</a></span></span><span class="vids-in"><a href="https://www.youtube.com/watch?v=oyE1KP8hUFU" data-yt="oyE1KP8hUFU" data-title="Marc Noah - Lie to Me - Official Music Video" aria-label="Play Marc Noah - Lie to Me - Official Music Video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Video</a><a href="https://www.youtube.com/watch?v=wvsYVb5d1xQ" data-yt="wvsYVb5d1xQ" data-title="Marc Noah - Lie to Me - Official Lyric Video" aria-label="Play Marc Noah - Lie to Me - Official Lyric Video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Lyric video</a><a href="https://www.youtube.com/watch?v=QyZMI8sPgow" data-yt="QyZMI8sPgow" data-title="Marc Noah - Lie To Me" aria-label="Play Marc Noah - Lie To Me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a><a href="https://www.youtube.com/watch?v=ZBwgJ7Lg7-o" data-yt="ZBwgJ7Lg7-o" data-title="Green Sofa Session #1 Lie To Me" aria-label="Play Green Sofa Session #1 Lie To Me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Sofa</a></span></span><span class="len">3:43</span></li>
+<li><span class="n">03</span><span><b>Towers and Bridges</b><span class="vids-in"><a href="https://www.youtube.com/watch?v=K8795UoBqTg" data-yt="K8795UoBqTg" data-title="Marc Noah - Towers &amp; Bridges" aria-label="Play Marc Noah - Towers &amp; Bridges"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Video</a><a href="https://www.youtube.com/watch?v=ANPCpT8ufMA" data-yt="ANPCpT8ufMA" data-title="Marc Noah - Towers &amp; Bridges" aria-label="Play Marc Noah - Towers &amp; Bridges"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a><a href="https://www.youtube.com/watch?v=6yUpmlZzrk0" data-yt="6yUpmlZzrk0" data-title="Sofa Sessions #4   Towers And Bridges" aria-label="Play Sofa Sessions #4   Towers And Bridges"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Sofa</a></span></span><span class="len">3:11</span></li>
+<li><span class="n">04</span><span><b>Mother</b><span class="vids-in"><a href="https://www.youtube.com/watch?v=JMd-r6okn80" data-yt="JMd-r6okn80" data-title="Marc Noah - Mother - Official Lyric Video" aria-label="Play Marc Noah - Mother - Official Lyric Video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Lyric video</a><a href="https://www.youtube.com/watch?v=0u0iQvyGcCg" data-yt="0u0iQvyGcCg" data-title="Marc Noah - Mother" aria-label="Play Marc Noah - Mother"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a><a href="https://www.youtube.com/watch?v=RRTVycYkcOo" data-yt="RRTVycYkcOo" data-title="&quot;Mother&quot; Green Sofa Sessions" aria-label="Play &quot;Mother&quot; Green Sofa Sessions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Sofa</a></span></span><span class="len">3:13</span></li>
+<li><span class="n">05</span><span><b>Sunshine</b><span class="tag">single, May 2023<span class="fn"><a href="#src-11" aria-label="Source 11: Apple Music">11</a></span></span><span class="vids-in"><a href="https://www.youtube.com/watch?v=SaiC6jdsCy8" data-yt="SaiC6jdsCy8" data-title="Marc Noah - Sunshine - Official Lyric Video" aria-label="Play Marc Noah - Sunshine - Official Lyric Video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Lyric video</a><a href="https://www.youtube.com/watch?v=RgJHbdZNpLM" data-yt="RgJHbdZNpLM" data-title="Marc Noah - Sunshine" aria-label="Play Marc Noah - Sunshine"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a><a href="https://www.youtube.com/watch?v=5H8PBg1tQHc" data-yt="5H8PBg1tQHc" data-title="Green Sofa Session #2 Sunshine" aria-label="Play Green Sofa Session #2 Sunshine"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Sofa</a></span></span><span class="len">3:31</span></li>
+<li><span class="n">06</span><span><b>Roadtrip</b><span class="tag">most played in his label’s catalogue, March 2025<span class="fn"><a href="#src-12" aria-label="Source 12: Epopeia Jornal, 1 Apr 2025">12</a></span></span><span class="vids-in"><a href="https://www.youtube.com/watch?v=adbD0f2FYLA" data-yt="adbD0f2FYLA" data-title="Marc Noah - Roadtrip" aria-label="Play Marc Noah - Roadtrip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Video</a></span></span><span class="len">3:37</span></li>
+<li><span class="n">07</span><span><b>Slowtalk</b><span class="vids-in"><a href="https://www.youtube.com/watch?v=JB0jvIitE9I" data-yt="JB0jvIitE9I" data-title="Marc Noah - Slowtalk" aria-label="Play Marc Noah - Slowtalk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a></span></span><span class="len">3:37</span></li>
+<li><span class="n">08</span><span><b>No More Dreaming</b><span class="tag">most played in his label’s catalogue, April 2025<span class="fn"><a href="#src-13" aria-label="Source 13: Epopeia Jornal, 2 May 2025">13</a></span></span><span class="vids-in"><a href="https://www.youtube.com/watch?v=f__TLj6ccQI" data-yt="f__TLj6ccQI" data-title="Marc Noah - No More Dreaming" aria-label="Play Marc Noah - No More Dreaming"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Live</a></span></span><span class="len">3:25</span></li>
+</ol>
+<p class="small" style="margin-top:1rem">Track order from Apple Music; under each song, its videos, live versions and sessions, each playing here.<span class="fn"><a href="#src-11" aria-label="Source 11: Apple Music">11</a><a href="#src-9" aria-label="Source 9: YouTube (marcnoahVEVO)">9</a></span> <a class="more" href="#">All the songs, the singles and the EP</a></p></div>
+</div></div></section>
+
+<section class="band rule" aria-labelledby="ah"><div class="wrap split">
+<div class="ph"><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/sofa-session-quarteira-800.jpg"><img src="../../../../../src/assets/photos/sofa-session-quarteira.jpg" width="1200" height="1235" alt="Marc Noah with an acoustic guitar on a green chair on the seafront promenade" loading="lazy" decoding="async"></picture></div>
+<div>
+<p class="eyebrow">Home</p>
+<h2 class="sec" id="ah">The Algarve</h2>
+<p class="lede">Marc Noah lives in the south of Portugal, in the Algarve. His own site names Quarteira, on the coast between Faro and Albufeira, and most of his concerts are in the towns around it.<span class="fn"><a href="#src-1" aria-label="Source 1: Dinis Cruz, 17 Nov 2026">1</a><a href="#src-2" aria-label="Source 2: marcnoah.pt (archived 15 Dec 2025)">2</a><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></p>
+<figure style="margin:0"><svg class="rmap" viewBox="360 34 430 250" role="img" aria-labelledby="hmt hmd">
+<title id="hmt">Map of the central Algarve: Quarteira, and the Algarve places of the Roadtrip video</title>
+<desc id="hmd">A drawn map of the Algarve coast from Albufeira to Olhão. Quarteira, where he lives, is the largest pin. Loulé, the town he has played most, is marked. A dashed line joins Salir, Quarteira, Faro and Olhão, four Algarve places his label names for the Roadtrip video; the label does not give the order, and this line is ours.</desc>
+<rect x="0" y="0" width="1000" height="340" fill="#0e1620"/>
+<polygon points="0,0 136,-92 99,23 62,122 19,229 49,252 86,229 136,214 216,191 259,168 302,168 352,183 407,183 475,191 537,198 568,206 617,229 648,252 691,275 728,252 784,214 845,168 907,137 987,114 981,-92 1000,0" fill="#1c2530" stroke="#3a4654" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="592,69 568,198 673,237 728,229" fill="none" stroke="#c98d5e" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-size="21" fill="#ece6dc" font-family="system-ui,sans-serif">
+<circle cx="617" cy="145" r="7" fill="#8b95a1" stroke="#0b0f14" stroke-width="3"/><text x="630" y="152" text-anchor="start" font-weight="600">Loulé</text>
+<circle cx="592" cy="69" r="8" fill="#c98d5e" stroke="#0b0f14" stroke-width="3"/><text x="606" y="76" text-anchor="start" font-weight="600">Salir</text>
+<circle cx="673" cy="237" r="8" fill="#c98d5e" stroke="#0b0f14" stroke-width="3"/><text x="665" y="205" text-anchor="middle" font-weight="600">Faro</text>
+<circle cx="728" cy="229" r="8" fill="#c98d5e" stroke="#0b0f14" stroke-width="3"/><text x="726" y="213" text-anchor="middle" font-weight="600">Olhão</text>
+<circle cx="568" cy="198" r="13" fill="#e2a878" stroke="#0b0f14" stroke-width="3"/><text x="550" y="232" text-anchor="end" font-weight="700" fill="#e2a878" font-size="23">Quarteira, home</text>
+<text x="420" y="270" font-size="20" font-style="italic" fill="#a7b0ba">Atlantic Ocean</text>
+</g>
+</svg>
+<figcaption style="margin-top:.5rem">Home in Quarteira. The dashed line joins four Algarve places named for the Roadtrip video; the label does not give the order, and this line is ours. A sketch, not to scale.<span class="fn"><a href="#src-2" aria-label="Source 2: marcnoah.pt (archived 15 Dec 2025)">2</a><a href="#src-14" aria-label="Source 14: Epopeia Jornal, 28 Feb 2025">14</a></span></figcaption></figure>
+<a class="more" href="#">Every place he has played</a>
+</div></div></section>
+
+<section class="band live" aria-labelledby="lh">
+<picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/live-acoustic-800.jpg"><img src="../../../../../src/assets/photos/live-acoustic.jpg" width="1500" height="1500" alt="Marc Noah singing and playing acoustic guitar on an outdoor stage at dusk" loading="lazy" decoding="async"></picture>
+<div class="wrap">
+<p class="eyebrow">Live</p>
+<h2 class="sec" id="lh">On stage</h2>
+<div class="livegrid">
+<div><p class="lede">40 concerts listed by his label, his own site and the press since October 2022 (our count), 26 of them in the Algarve.<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a><a href="#src-15" aria-label="Source 15: Epopeia agenda, 10 Oct 2026">15</a><a href="#src-16" aria-label="Source 16: Epopeia agenda, 7 Aug 2026">16</a><a href="#src-17" aria-label="Source 17: A Voz do Algarve, 5 Aug 2026">17</a><a href="#src-18" aria-label="Source 18: Epopeia Jornal, 3 Jun 2025">18</a><a href="#src-14" aria-label="Source 14: Epopeia Jornal, 28 Feb 2025">14</a><a href="#src-19" aria-label="Source 19: Postal do Algarve, 28 Jun 2024">19</a><a href="#src-20" aria-label="Source 20: marcnoah.pt press, 3 Jun 2024">20</a><a href="#src-21" aria-label="Source 21: marcnoah.pt press, 6 May 2024">21</a><a href="#src-22" aria-label="Source 22: marcnoah.pt press, 13 May 2024">22</a><a href="#src-23" aria-label="Source 23: marcnoah.pt agenda (archived 7 Feb 2024)">23</a><a href="#src-24" aria-label="Source 24: marcnoah.pt press, 13 Dec 2023">24</a><a href="#src-4" aria-label="Source 4: Alvor FM video, Choque Frontal">4</a><a href="#src-6" aria-label="Source 6: Alvor FM video, 9.º Festival Acústico">6</a><a href="#src-25" aria-label="Source 25: Mais Algarve, 22 Mar 2023">25</a><a href="#src-26" aria-label="Source 26: marcnoah.pt press, 31 Dec 2022">26</a><a href="#src-27" aria-label="Source 27: marcnoah.pt press, 31 Dec 2022 (Passeio das Dunas)">27</a></span></p>
+<ul class="stages"><li><time datetime="2026-10-10">10 October 2026</time><b>Festival Emersivo</b>, Loulé<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a><a href="#src-15" aria-label="Source 15: Epopeia agenda, 10 Oct 2026">15</a></span></li><li><time datetime="2026-08-07">7 August 2026</time><b>Sons no Castelo, Alcaidaria do Castelo de Loulé</b>, Loulé<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a><a href="#src-16" aria-label="Source 16: Epopeia agenda, 7 Aug 2026">16</a><a href="#src-17" aria-label="Source 17: A Voz do Algarve, 5 Aug 2026">17</a></span></li><li><time datetime="2025-08-16">16 August 2025</time><b>Festival Muralhas</b>, Faro<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></li><li><time datetime="2025-06-07">7 June 2025</time><b>Rock na Ribeira, Parque da Família</b>, Pechão<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a><a href="#src-18" aria-label="Source 18: Epopeia Jornal, 3 Jun 2025">18</a></span></li><li><time datetime="2024-07-05">5 July 2024</time><b>Fortaleza de Sagres, opening the Fortaleza Cultural programme</b>, Sagres<span class="fn"><a href="#src-19" aria-label="Source 19: Postal do Algarve, 28 Jun 2024">19</a></span></li></ul>
+<a class="more" href="#">Every date, with its source</a></div>
+<div class="book" id="book"><h3>Book him</h3>
+<p class="muted">His label, Epopeia Records, takes bookings for concerts and festivals.<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></p>
+<ul class="formats"><li><b>Solo</b><span>60 min, indoor</span></li><li><b>Duo</b><span>70 min, indoor</span></li><li><b>Band</b><span>75 min, indoor and outdoor<br>6 musicians, 4 technical crew</span></li></ul>
+<p class="small">Formats as his label lists them.<span class="fn"><a href="#src-3" aria-label="Source 3: Epopeia artist page">3</a></span></p>
+<p style="margin:1.2rem 0 .2rem" class="small">Write to</p>
+<p><a class="mail" href="mailto:geral@epopeia-records.pt">geral@epopeia-records.pt</a><span class="fn"><a href="#src-28" aria-label="Source 28: marcnoah.pt contacts (archived 15 Dec 2025)">28</a></span></p>
+<p class="btns"><a class="btn line" href="https://www.epopeia.eu/artistas/marc-noah">His artist page at Epopeia</a></p>
+</div></div></div></section>
+</main>
+<section class="sources wrap" aria-labelledby="srch"><h2 id="srch">Sources</h2>
+<p>Every source was read on 17 November 2026, except where noted. His own site, marcnoah.pt/sobre: read for the factory brief on 17 November 2026; now secondary to the Arquivo.pt copy (own-site). The full register is on <a href="#">the sources page</a>.</p>
+<ol><li id="src-1"><a href="https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md">Dinis Cruz, in the factory brief, 17 November 2026</a></li>
+<li id="src-2"><a href="https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre">His own site, marcnoah.pt/sobre, as archived by Arquivo.pt on 15 December 2025</a></li>
+<li id="src-3"><a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia Records, artist page</a></li>
+<li id="src-4"><a href="https://www.youtube.com/watch?v=S85R1WgyKJ0">YouTube, Alvor FM: &quot;Marc Noah no Choque Frontal ao Vivo&quot; (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão</a></li>
+<li id="src-5"><a href="https://www.youtube.com/@marcnoahmusic">YouTube, his own channel @marcnoahmusic (the channel his site embeds for the Green Sofa Sessions), public feed and oEmbed</a></li>
+<li id="src-6"><a href="https://www.youtube.com/watch?v=OyvGbs1fg7g">YouTube, Alvor FM: &quot;Marc Noah&quot; (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023</a></li>
+<li id="src-7"><a href="https://www.youtube.com/@alvorfm901">YouTube, Alvor FM channel: his live performances, titles via oEmbed</a></li>
+<li id="src-8"><a href="https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session">His own site, marcnoah.pt/singles/green-sofa-session, as archived by Arquivo.pt on 15 December 2025</a></li>
+<li id="src-9"><a href="https://www.youtube.com/@marcnoahvevo6299">YouTube, marcnoahVEVO channel</a></li>
+<li id="src-10"><a href="https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024">Epopeia agenda: Giant Little Victories release</a></li>
+<li id="src-11"><a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music catalogue, Marc Noah</a></li>
+<li id="src-12"><a href="https://www.epopeia.eu/jornal/marco-roadtrip-marc-noah-monthly-on-top">Epopeia Jornal, 1 April 2025: Roadtrip tops the Monthly on Top</a></li>
+<li id="src-13"><a href="https://www.epopeia.eu/jornal/marc-noah-continua-a-liderar-o-monthly-on-top">Epopeia Jornal, 2 May 2025: No More Dreaming tops the Monthly on Top</a></li>
+<li id="src-14"><a href="https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo">Epopeia Jornal, 28 February 2025: Roadtrip and a concert in Loulé</a></li>
+<li id="src-15"><a href="https://www.epopeia.eu/agenda/emersivo-marc-noah">Epopeia agenda: Festival Emersivo, 10 October 2026</a></li>
+<li id="src-16"><a href="https://www.epopeia.eu/agenda/marcnoah-loule-castelo">Epopeia agenda: Castelo de Loulé, 7 August 2026</a></li>
+<li id="src-17"><a href="https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525">A Voz do Algarve, 5 August 2026: Sons no Castelo, Loulé</a></li>
+<li id="src-18"><a href="https://www.epopeia.eu/jornal/marc-noah-e-the-elephant-woman-no-rock-na-ribeira">Epopeia Jornal, 3 June 2025: Rock na Ribeira</a></li>
+<li id="src-19"><a href="https://postal.pt/algarve/programacao-da-fortaleza-de-sagres-vai-ser-apresentada-e-e-dedicada-aos-patrimonios-de-liberdade/">Postal do Algarve, 28 June 2024: Fortaleza de Sagres programme</a></li>
+<li id="src-20"><a href="https://arquivo.pt/noFrame/replay/20250311191030/https://www.marcnoah.pt/press/tour-dates-hmxdz-fsmea">His own site, press: &quot;Marc Noah integra comemorações do Dia Mundial do Ambiente&quot; (Epopeia Records, 3 June 2024), as archived on 11 March 2025</a></li>
+<li id="src-21"><a href="https://arquivo.pt/noFrame/replay/20250311191038/https://www.marcnoah.pt/press/marc-noah-estreia-se-na-festa-da-espiga">His own site, press: &quot;Marc Noah estreia-se na Festa da Espiga&quot; (Epopeia Records, 6 May 2024), as archived on 11 March 2025</a></li>
+<li id="src-22"><a href="https://arquivo.pt/noFrame/replay/20250311191034/https://www.marcnoah.pt/press/marc-noah-cantou-encantou-na-festa-da-espiga">His own site, press: &quot;Marc Noah cantou encantou na Festa da Espiga&quot; (Epopeia Records, 13 May 2024), as archived on 11 March 2025</a></li>
+<li id="src-23"><a href="https://arquivo.pt/noFrame/replay/20240207172607/https://www.marcnoah.pt/agenda">His own site, marcnoah.pt/agenda, as archived by Arquivo.pt on 7 February 2024</a></li>
+<li id="src-24"><a href="https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8">His own site, press: &quot;Marc Noah no Choque Frontal&quot; (13 December 2023, credited to Som Direto), as archived on 11 March 2025</a></li>
+<li id="src-25"><a href="https://maisalgarve.pt/2023/03/22/republica-14-olhao-concerto-de-marc-noah/">Mais Algarve, 22 March 2023: concert at República 14, Olhão</a></li>
+<li id="src-26"><a href="https://arquivo.pt/noFrame/replay/20250311191048/https://www.marcnoah.pt/press/tour-dates-hmxdz">His own site, press: &quot;Marc Noah arrebatador nas celebrações de fim de ano&quot; (31 December 2022), as archived on 11 March 2025</a></li>
+<li id="src-27"><a href="https://arquivo.pt/noFrame/replay/20250311191052/https://www.marcnoah.pt/press/bar-band-sm5dm">His own site, press: &quot;Milhares rumaram a Quarteira para brindar a 2023&quot; (31 December 2022), as archived on 11 March 2025</a></li>
+<li id="src-28"><a href="https://arquivo.pt/noFrame/replay/20251215022645/https://www.marcnoah.pt/contactos">His own site, marcnoah.pt/contactos, as archived by Arquivo.pt on 15 December 2025</a></li></ol></section>
+<p class="mock">Mock-up, round 2 (designer.marc-noah@AgentiCCells.dinis, 17 November 2026). Not the live site; links inside the site are placeholders.</p>
+<footer class="foot"><div class="wrap">
+<p class="name">Marc Noah</p>
+<p class="muted">Singer-songwriter. Lives in Quarteira, on the Algarve coast.<span class="fn"><a href="#src-2" aria-label="Source 2: marcnoah.pt (archived 15 Dec 2025)">2</a><a href="#src-1" aria-label="Source 1: Dinis Cruz, 17 Nov 2026">1</a></span></p>
+<p class="row"><a href="https://open.spotify.com/artist/7gYCZ94lNuTfJA3g5MCJxd">Spotify</a><a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music</a><a href="https://www.youtube.com/@marcnoahvevo6299">YouTube (Vevo)</a><a href="https://www.instagram.com/marcnoahmusic/">Instagram</a><a href="https://www.facebook.com/marcnoahmusic">Facebook</a><a href="https://www.youtube.com/@marcnoahmusic">YouTube (his own channel)</a><a href="https://www.marcnoah.pt/">His own site</a></p>
+<p class="row"><a href="mailto:geral@epopeia-records.pt">Bookings: geral@epopeia-records.pt</a><span class="fn"><a href="#src-28" aria-label="Source 28: marcnoah.pt contacts (archived 15 Dec 2025)">28</a></span><a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia Records</a></p>
+<p class="credit">Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence.<span class="fn"><a href="#src-29" aria-label="Source 29: Epopeia photos">29</a></span></p>
+<p class="quiet">About this site: <a href="#">sources</a> · <a href="#">five designs</a> · <a href="#">use with AI</a> · <a href="#">llms.txt</a> · <a href="#">behind the scenes</a> · <a href="#">source code</a> · version v0.1.N · Marc approves every change about him. Code Apache-2.0, text CC BY 4.0; the photographs are not covered.</p>
+</div></footer>
+<dialog id="player" class="player" aria-labelledby="pl-t">
+<div class="pl-head"><p id="pl-t">Video</p><form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<div class="pbox"></div>
+<p class="pl-note">Playing from YouTube (youtube-nocookie.com). <a id="pl-yt" href="#">Open on YouTube</a></p>
+</dialog>
+<script>
+/* Click to play: nothing loads from YouTube or Spotify until a visitor presses play. Ours, a few lines. */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-embed]');if(!a||e.metaKey||e.ctrlKey)return;e.preventDefault();
+var box=a.parentNode,f=document.createElement('iframe');f.src=a.getAttribute('data-embed');f.title=a.getAttribute('data-title');
+f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
+if(a.getAttribute('data-h')){box.classList.add('open');f.height=a.getAttribute('data-h');}box.replaceChildren(f);f.focus();});
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('a[data-play]');if(!b)return;var t=document.getElementById(b.getAttribute('data-play'));var a=t&&t.querySelector('a[data-embed]');if(!a)return;e.preventDefault();t.scrollIntoView({block:'center'});a.click();});
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-dialog]');if(!t)return;var d=document.getElementById(t.getAttribute('data-dialog'));if(!d||!d.showModal)return;e.preventDefault();d.showModal();});
+document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-yt]');if(!a||e.metaKey||e.ctrlKey)return;var d=document.getElementById('player');if(!d||!d.showModal)return;e.preventDefault();
+var id=a.getAttribute('data-yt'),f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';f.title=a.getAttribute('data-title');
+f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
+d.querySelector('.pbox').replaceChildren(f);d.querySelector('#pl-t').textContent=a.getAttribute('data-title');d.querySelector('#pl-yt').href=a.href;d.showModal();});
+document.addEventListener('close',function(e){if(e.target.id==='player')e.target.querySelector('.pbox').replaceChildren();},true);
+document.querySelectorAll('.tabs a[data-f]').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var f=t.getAttribute('data-f');
+document.querySelectorAll('.tabs a').forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false');});
+document.querySelectorAll('.group[data-g]').forEach(function(g){g.hidden=!(f==='all'||g.getAttribute('data-g')===f);});});});
+</script>
+</body></html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Marc Noah (round 2 mock-up)</title><meta name="description" content="Round 2 design mock-up for the Marc Noah site, built from data/facts.mjs and data/photos.mjs.">
+<style>
+:root{color-scheme:dark;--bg:#0b0f14;--s1:#131a22;--s2:#1a222c;--line:#2a3440;--ink:#f2ede6;--muted:#a7b0ba;--faint:#8b95a1;--accent:#e2a878;--on-accent:#1b1009;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--wrap:76rem;--g:16px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);overflow-wrap:break-word}
+img{display:block;max-width:100%;height:auto}picture{display:contents}svg{max-width:100%}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:.2em}a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--g)}
+@media (min-width:900px){:root{--g:40px}}
+.eyebrow{margin:0 0 .9rem;font-size:.75rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:var(--sans);margin:0}
+h2.sec{font-size:clamp(2rem,7vw,3.6rem);line-height:1;letter-spacing:-.03em;font-weight:750;margin-bottom:1rem}
+p{margin:0 0 1rem}
+.lede{font-size:clamp(1.12rem,3.6vw,1.35rem);line-height:1.5;color:var(--ink);max-width:36rem}
+.muted{color:var(--muted)}.small{font-size:.88rem;color:var(--muted)}
+section.band{padding:clamp(4rem,10vw,7.5rem) 0}
+.rule{border-top:1px solid var(--line)}
+
+/* Header: transparent over the home hero, solid dark elsewhere */
+.top{position:relative;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top.over{position:absolute;left:0;right:0;top:0;background:linear-gradient(rgba(5,8,12,.7),rgba(5,8,12,0));border:0}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 2rem;padding-top:.4rem;padding-bottom:.4rem}
+.brand{font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.95rem;text-decoration:none;min-height:44px;display:flex;align-items:center}
+.top nav{display:flex;margin:0 -.55rem}
+.top nav a{min-height:44px;display:flex;align-items:center;padding:0 .55rem;text-decoration:none;font-size:.92rem;letter-spacing:.04em}
+.top nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--accent)}
+.sm{display:none}@media (max-width:599px){.lg{display:none}.sm{display:inline}.top nav a{padding:0 .5rem;font-size:.9rem}}
+
+/* Markers: quiet */
+.fn{white-space:normal}.fn a{white-space:nowrap}
+.fn a{display:inline-block;min-width:24px;height:24px;line-height:24px;padding:0 3px;font-size:11px;font-weight:600;text-align:center;vertical-align:top;position:relative;top:-.35em;color:var(--faint);text-decoration:none;border-radius:4px}
+.fn a:hover{color:var(--accent);background:var(--s2)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:.4rem 1.5rem .4rem .45rem;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;letter-spacing:.01em}
+.btn .disc{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--on-accent);color:var(--accent)}.btn .disc svg{width:18px;height:18px;margin-left:2px}
+.btn small{display:block;font-weight:500;font-size:.78rem;opacity:.8}
+.btn:hover{background:var(--ink);color:var(--on-accent)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--muted);padding:.4rem 1.3rem;min-height:48px}.btn.line:hover{border-color:var(--accent);color:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 0}
+.more{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+
+/* Hero */
+.hero{position:relative;min-height:min(100svh,58rem);display:flex;align-items:flex-end;overflow:hidden;background:#06090c}
+.hero>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,12,.97) 0,rgba(6,9,12,.9) 50%,rgba(6,9,12,.45) 66%,rgba(6,9,12,0) 80%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(2rem,6vh,4.5rem)}
+.hero h1{font-size:clamp(4.6rem,23vw,9.5rem);line-height:.86;letter-spacing:-.045em;font-weight:800;margin:0 0 1.1rem}
+.hero h1 span{display:block}
+.hero .lede{max-width:28rem;margin:0}
+@media (min-width:900px){.hero>picture>img{object-position:50% 28%}.hero::after{background:linear-gradient(90deg,rgba(6,9,12,.92) 0,rgba(6,9,12,.55) 38%,rgba(6,9,12,0) 62%),linear-gradient(0deg,rgba(6,9,12,.6),rgba(6,9,12,0) 30%)}.hero h1 span{display:inline}.hero h1 span+span{margin-left:.22em}.hero h1{font-size:clamp(5rem,8.4vw,8.5rem)}}
+
+/* Words */
+.words{display:grid;gap:2.5rem;align-items:center}
+.words figure{margin:0}
+.q{font-family:var(--serif);font-style:italic;font-size:clamp(1.7rem,5.6vw,2.9rem);line-height:1.2;letter-spacing:-.01em;margin:0 0 1.2rem}
+.q::before{content:"\201C"}.q::after{content:"\201D"}
+.q i{font-style:normal}
+.pt{font-family:var(--serif);font-style:italic;color:var(--muted);margin:0 0 .6rem}
+figcaption{font-size:.88rem;color:var(--muted)}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:900px){.words{grid-template-columns:5fr 7fr;gap:5rem}}
+
+/* Video */
+.vids{display:grid;gap:1.25rem}
+.embed{position:relative;background:#000;overflow:hidden;border-radius:4px}
+.r169{aspect-ratio:16/9}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.embed.sp.open{aspect-ratio:auto;height:352px}.embed.sp.open iframe{position:static;height:352px}
+.facade{position:absolute;inset:0;display:block;color:var(--ink);text-decoration:none}
+.facade.sq{position:relative}
+.facade img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.86}
+.facade:hover img{transform:scale(1.03);opacity:1}
+.facade::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,0) 55%)}
+.pb{position:absolute;z-index:2;left:50%;top:46%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(11,15,20,.55);border:2px solid var(--ink);display:grid;place-items:center;backdrop-filter:blur(4px)}
+.pb svg{width:24px;height:24px;margin-left:3px}
+.big .pb{width:84px;height:84px}.big .pb svg{width:30px;height:30px}
+.facade:hover .pb{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ft{position:absolute;z-index:2;left:1rem;right:1rem;bottom:.9rem}
+.ft b{display:block;font-size:1.15rem;line-height:1.2;letter-spacing:-.01em}.big .ft b{font-size:clamp(1.4rem,3vw,2rem)}
+.ft small{display:block;font-size:.8rem;color:#d3d8de}
+@media (min-width:900px){.vids{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}.vids .big{grid-row:span 2;aspect-ratio:auto;min-height:100%}}
+.vids2{display:grid;gap:1.25rem;margin-top:1.25rem}@media (min-width:700px){.vids2{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.chan{list-style:none;margin:1.5rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:0 1.5rem}
+.chan a{min-height:44px;display:inline-flex;align-items:center}
+
+/* Songs */
+.songs{display:grid;gap:2.5rem}
+@media (min-width:900px){.songs{grid-template-columns:26rem 1fr;gap:4.5rem;align-items:start}}
+.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tracks li{display:grid;grid-template-columns:2.2rem 1fr auto;align-items:center;gap:.2rem .8rem;min-height:60px;padding:.35rem 0;border-bottom:1px solid var(--line)}
+.tracks .n{color:var(--faint);font-variant-numeric:tabular-nums;font-size:.9rem}
+.tracks b{font-weight:600;font-size:1.08rem}
+.tracks .tag{display:block;font-size:.82rem;color:var(--muted)}
+.tracks .go{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:flex-end;gap:.4rem;font-size:.88rem;font-weight:600;text-decoration:none;color:var(--accent)}
+.tracks .go svg{width:14px;height:14px}
+.tracks .len{color:var(--faint);font-size:.9rem;font-variant-numeric:tabular-nums}
+
+/* Algarve split */
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:center}.split>*,.songs>*,.words>*,.livegrid>*,.solo>*,.bandgrid>*,.ghead>*{min-width:0}
+.split .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:900px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5rem}.split.rev .ph{order:2}}
+.rmap{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;margin-top:1.25rem}
+.rmap text{paint-order:stroke;stroke:#0e1620;stroke-width:4px}
+
+/* Live: photo band */
+.live{position:relative;overflow:hidden}
+.live>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:.38}
+.live::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0,rgba(11,15,20,.55) 30%,rgba(11,15,20,.8) 100%)}
+.live .wrap{position:relative}
+.livegrid{display:grid;gap:2.5rem}@media (min-width:900px){.livegrid{grid-template-columns:7fr 5fr;gap:5rem}}
+.stages{list-style:none;padding:0;margin:0}
+.stages li{padding:.8rem 0;border-bottom:1px solid rgba(167,176,186,.25)}
+.stages time{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.stages b{font-weight:600}
+.book{background:rgba(19,26,34,.92);border:1px solid var(--line);padding:1.6rem;border-radius:4px}
+.book h3{font-size:1.5rem;letter-spacing:-.02em;margin-bottom:.6rem}
+.formats{list-style:none;padding:0;margin:1rem 0;display:grid;gap:.5rem}
+.formats li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding:.45rem 0;font-size:.95rem}
+.formats span{color:var(--muted);text-align:right}
+.mail{display:inline-flex;align-items:center;min-height:44px;font-size:clamp(1.05rem,4.6vw,1.3rem);font-weight:700;word-break:break-all}
+
+/* Sources and footer */
+.sources{padding-top:3rem;padding-bottom:2rem;font-size:.85rem;color:var(--muted)}
+.sources h2{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:.6rem}
+.sources ol{padding-left:1.6rem;margin:.5rem 0}
+.sources li a{color:var(--muted);display:inline-flex;align-items:center;min-height:44px;line-height:1.35}
+@media (min-width:900px){.sources ol{columns:2;column-gap:3rem}.sources li{break-inside:avoid}}
+.foot{border-top:1px solid var(--line);background:#080b0f;padding:3rem 0 2.5rem}
+.foot .name{font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .2rem}
+.foot .row{display:flex;flex-wrap:wrap;gap:0 1.4rem;margin:.8rem 0}
+.foot .row a{min-height:44px;display:inline-flex;align-items:center;font-size:.95rem}
+.foot .credit{font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;margin-top:1.5rem}
+.foot .quiet{font-size:.78rem;color:var(--faint)}.foot .quiet a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+.mock{background:#e2a878;color:#1b1009;font:600 13px/1.4 var(--sans);text-align:center;padding:.5rem var(--g)}
+
+/* About */
+.ahead{display:grid;gap:0}
+.ahead .ph img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%}
+.ahead .tx{padding:2.2rem var(--g) 0}
+.ahead h1{font-size:clamp(3.4rem,15vw,6.5rem);line-height:.9;letter-spacing:-.045em;font-weight:800;margin-bottom:1.2rem}
+@media (min-width:900px){.ahead{grid-template-columns:1fr 1fr;align-items:center;max-width:var(--wrap);margin:0 auto;padding:4rem var(--g) 0;gap:5rem}.ahead .tx{padding:0}.ahead .ph img{aspect-ratio:4/5}}
+.story h2{font-size:clamp(1.8rem,5.5vw,2.8rem);line-height:1.05;letter-spacing:-.03em;font-weight:750;margin-bottom:1rem}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem;margin-top:0}.pair img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.qband{position:relative;min-height:34rem;display:flex;align-items:flex-end;overflow:hidden}
+.qband>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.qband::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,12,.97) 0,rgba(6,9,12,.9) 60%,rgba(6,9,12,.2) 92%)}
+.qband .wrap{position:relative;z-index:2;padding-top:6rem;padding-bottom:3.5rem}
+.qband .q{font-size:clamp(1.35rem,4.2vw,2.2rem);max-width:52rem}
+@media (min-width:900px){.qband::after{background:linear-gradient(90deg,rgba(6,9,12,.96) 0,rgba(6,9,12,.88) 52%,rgba(6,9,12,.2) 82%)}.qband{min-height:40rem;align-items:center}.qband .q,.qband .pt,.qband figcaption{max-width:40rem}}
+.bio{display:grid;gap:1.5rem}
+.bio div p{margin:0 0 .4rem}
+.bio .ptx{font-family:var(--serif);font-style:italic;color:var(--muted)}
+@media (min-width:900px){.bio div{display:grid;grid-template-columns:1fr 1fr;gap:3rem}}
+.gal{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem}
+.gal figure{margin:0}.gal img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.gal figcaption{padding:.45rem 0 0;font-size:.8rem;line-height:1.4}
+.gal a{display:block;text-decoration:none;color:inherit}
+@media (min-width:900px){.gal{grid-template-columns:repeat(3,1fr);gap:1.5rem}.gal li.w{grid-column:span 2}.gal li.w img{aspect-ratio:auto;height:100%;max-height:none}}
+/* Lyric lines (change 3) */
+.lyr{margin:0 0 2rem}.lyr blockquote{margin:0 0 .5rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.45rem,5vw,2.4rem);line-height:1.2;max-width:46rem;color:var(--ink)}
+.lyr blockquote::before{content:"\201C";color:var(--accent)}.lyr blockquote::after{content:"\201D";color:var(--accent)}
+.lyr figcaption{font-size:.85rem}
+.lyrs{display:grid;gap:.5rem 3rem}.lyrs .lyr{border-top:1px solid var(--line);padding-top:1.2rem}.lyrs .lyr blockquote{font-size:clamp(1.3rem,4.4vw,1.8rem)}
+@media (min-width:900px){.lyrs{grid-template-columns:1fr 1fr}}
+/* Watch him play (change 1) */
+.watch{background:linear-gradient(#0b0f14,#0e141b 30%,#0b0f14)}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--g)*-1) 2rem;padding:0 var(--g)}
+.tabs a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 1.1rem;border-radius:999px;border:1px solid var(--line);background:var(--s1);text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap}
+.tabs a[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.group{padding:1.6rem 0 2.4rem;border-top:1px solid var(--line)}
+.group[hidden]{display:none}
+.ghead{display:grid;gap:.6rem 2rem;align-items:end;margin-bottom:1.3rem}
+.ghead h3{font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.03em;font-weight:750;line-height:1.05;margin-bottom:.5rem}
+.ghead .eyebrow{margin-bottom:.5rem}.ghead p.muted{margin:0;max-width:44rem}
+@media (min-width:900px){.ghead{grid-template-columns:1fr auto}}
+.vc{position:relative;display:block;text-decoration:none;color:var(--ink)}
+.vimg{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:4px;background:#000}
+.vimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.9}
+.vc:hover .vimg img,.vc:focus-visible .vimg img{transform:scale(1.04);opacity:1}
+.vc .pb{top:50%;width:52px;height:52px}.vc .pb svg{width:20px;height:20px}
+.vc.xl .pb{width:76px;height:76px}.vc.xl .pb svg{width:28px;height:28px}
+.vc:hover .pb{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.vt{display:block;padding:.6rem 0 0}.vt b{display:block;font-size:1rem;line-height:1.25}.vc.xl .vt b{font-size:clamp(1.15rem,2.6vw,1.5rem)}
+.vt small{display:block;color:var(--muted);font-size:.82rem;margin-top:.15rem}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.bandgrid{display:grid;gap:1.4rem}@media (min-width:900px){.bandgrid{grid-template-columns:1.35fr 1fr;align-items:start}}
+.solo{display:grid;gap:1.4rem}@media (min-width:900px){.solo{grid-template-columns:1.2fr 1fr;align-items:start}}
+.rail{list-style:none;margin:0;padding:0 var(--g) .4rem;display:grid;grid-auto-flow:column;grid-auto-columns:62%;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(var(--g)*-1);margin-right:calc(var(--g)*-1);scroll-padding:0 var(--g)}
+.rail li{scroll-snap-align:start}
+@media (min-width:900px){.solo .rail{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;margin:0;padding:0}.solo .rail li:nth-child(n+5){display:none}.rail.wide{grid-auto-columns:calc((100% - 3*.9rem)/4);margin:0;padding:0}}
+.sofa{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.9rem}
+@media (min-width:900px){.sofa{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}}
+.vc.tall .vimg{aspect-ratio:4/5}
+.player{width:min(70rem,calc(100% - 16px));padding:0;border:1px solid var(--line);border-radius:8px;background:#000;color:var(--ink)}
+.player::backdrop{background:rgba(3,5,8,.9)}
+.pl-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.4rem .4rem .4rem 1rem;background:var(--s1)}
+.pl-head p{margin:0;font-weight:600;font-size:.95rem}
+.pbox{aspect-ratio:16/9;background:#000}.pbox iframe{width:100%;height:100%;border:0;display:block}
+.pl-note{margin:0;padding:.5rem 1rem;font-size:.8rem;color:var(--muted);background:var(--s1)}.pl-note a{display:inline-flex;min-height:44px;align-items:center}
+.vids-in{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.25rem}
+.vids-in a{display:inline-flex;align-items:center;gap:.3rem;min-height:44px;padding:0 .6rem;border:1px solid var(--line);border-radius:999px;font-size:.75rem;text-decoration:none;color:var(--muted)}
+.vids-in a:hover{border-color:var(--accent);color:var(--accent)}.vids-in svg{width:10px;height:10px}
+/* Designs control and dialog (change 2) */
+.dsw-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:0 1rem;border:1px solid rgba(242,237,230,.45);border-radius:999px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.04em;background:rgba(11,15,20,.35)}
+.dsw-btn svg{width:14px;height:14px;fill:var(--accent)}
+.dsw-btn:hover{border-color:var(--accent)}
+@media (max-width:899px){.top .brand{order:1}.dsw-btn{order:2}.top nav{order:3;width:100%}}
+.dlg{width:min(66rem,calc(100% - 24px));max-height:calc(100svh - 24px);padding:0;border:1px solid var(--line);border-radius:10px;background:var(--s1);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.dlg::backdrop{background:rgba(3,5,8,.78);backdrop-filter:blur(6px)}
+.dlg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.3rem 1.3rem .4rem}
+.dlg-head h2{font-size:1.7rem;letter-spacing:-.02em;font-weight:750}.dlg-head p{margin:.2rem 0 0;color:var(--muted);font-size:.92rem}
+.x{min-height:44px;min-width:44px;padding:0 1rem;border-radius:999px;border:1px solid var(--line);background:var(--s2);color:var(--ink);font:600 .88rem var(--sans);cursor:pointer}
+.x:hover{border-color:var(--accent)}
+.dgrid{list-style:none;margin:0;padding:.8rem 1.3rem;display:grid;gap:.6rem}
+.dgrid a{display:grid;grid-template-columns:8.5rem minmax(0,1fr);grid-template-rows:auto 1fr;gap:.15rem .9rem;padding:.5rem;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);background:var(--bg)}
+.dgrid img{grid-row:span 2;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:4px}
+.dgrid .dn{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .6rem}.dgrid b{font-size:1.02rem}
+.dgrid .cur{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.dgrid .cur.dim{color:var(--faint)}
+.dgrid .di{font-size:.82rem;line-height:1.4;color:var(--muted)}
+.dgrid a:hover,.dgrid a[aria-current]{border-color:var(--accent)}
+.dgrid a:hover img{filter:brightness(1.08)}
+.dlg-foot{padding:0 1.3rem 1rem;margin:0}
+@media (min-width:700px){.dgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}.dgrid a{grid-template-columns:1fr;grid-template-rows:auto;padding:.6rem .6rem .9rem}.dgrid img{grid-row:auto;margin-bottom:.5rem}.dlg-head{padding:1.6rem 1.6rem .4rem}.dgrid{padding:1rem 1.6rem}.dlg-foot{padding:0 1.6rem 1.3rem}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#">Marc Noah</a>
+<nav aria-label="Main"><a href="#">Songs</a><a href="#"><span class="lg">The Algarve</span><span class="sm">Algarve</span></a><a href="#">Live</a><a href="#" aria-current="page">About</a><a href="#"><span class="lg">Listen and book</span><span class="sm">Book</span></a></nav>
+<a class="dsw-btn" href="#" data-dialog="designs" aria-haspopup="dialog"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>Designs</a>
+</div></header>
+<dialog id="designs" class="dlg" aria-labelledby="dlg-h">
+<div class="dlg-head"><div><h2 id="dlg-h">Designs</h2><p>The same facts about Marc Noah, laid out 6 ways. Choose one to see it.</p></div>
+<form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<ul class="dgrid">
+<li><a href="#"><img src="thumb-editorial.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Editorial</b><span class="cur">Proposed home</span></span><span class="di">Dark and photo-led: his label's photographs lead, and his videos and album play in the page.</span></a></li>
+<li><a href="#"><img src="thumb-coast.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>The Coast</b><span class="cur dim">Home in round 1</span></span><span class="di">Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.</span></a></li>
+<li><a href="#"><img src="thumb-azulejo.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Azulejo</b></span><span class="di">Portuguese blue and white tiles: each of his eight songs is a tile.</span></a></li>
+<li><a href="#"><img src="thumb-poster.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Tour Poster</b></span><span class="di">A screen-printed gig poster: the dates and the towns lead, loud and close.</span></a></li>
+<li><a href="#"><img src="thumb-songbook.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>The Songbook</b></span><span class="di">A songwriter’s ruled notebook: one entry per song, in the order he released them.</span></a></li>
+<li><a href="#"><img src="thumb-cassette.jpg" width="480" height="300" alt="" loading="lazy"><span class="dn"><b>Side A, Side B</b></span><span class="di">A cassette inlay card for the 1980s and 1990s music that shaped his sound: the album as Side A and Side B.</span></a></li>
+</ul>
+<p class="dlg-foot"><a class="more" href="#">All designs on one page</a></p>
+</dialog>
+<main id="main">
+<section class="ahead" aria-labelledby="h">
+<div class="ph"><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/portrait-bw-800.jpg"><img src="../../../../../src/assets/photos/portrait-bw.jpg" width="1063" height="1063" alt="Marc Noah, black and white portrait in a collarless shirt" fetchpriority="high"></picture></div>
+<div class="tx">
+<p class="eyebrow">About</p>
+<h1 id="h">Marc Noah</h1>
+<p class="lede">A Portuguese-Australian singer-songwriter who lives in the Algarve and writes the songs he sings.<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a><a href="#src-2" aria-label="Source 2: Dinis Cruz, 17 Nov 2026">2</a></span></p>
+<figure style="margin:2rem 0 0;border-left:2px solid var(--accent);padding-left:1.2rem"><blockquote class="q" style="font-size:clamp(1.3rem,3.8vw,1.75rem);margin:0 0 .6rem">My first album, <i>Giant Little Victories</i>, is a message of personal overcoming and of celebration.</blockquote>
+<figcaption>Marc Noah, on Giant Little Victories (our translation)<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a></span></figcaption></figure>
+</div></section>
+
+<section class="band story" aria-labelledby="s1"><div class="wrap split">
+<div class="ph"><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/sofa-session-quarteira-800.jpg"><img src="../../../../../src/assets/photos/sofa-session-quarteira.jpg" width="1200" height="1235" alt="Marc Noah with an acoustic guitar on a green chair on the seafront promenade" loading="lazy" decoding="async"></picture></div>
+<div><p class="eyebrow">01</p><h2 id="s1">He lives in the Algarve</h2><p class="lede">Marc Noah lives in the south of Portugal, in the Algarve. His own site names Quarteira, on the coast between Faro and Albufeira, and most of his concerts are in the towns around it.<span class="fn"><a href="#src-2" aria-label="Source 2: Dinis Cruz, 17 Nov 2026">2</a><a href="#src-3" aria-label="Source 3: marcnoah.pt (archived 15 Dec 2025)">3</a><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a></span></p></div>
+</div></section>
+
+<section class="band story rule" aria-labelledby="s2"><div class="wrap split rev">
+<div class="ph"><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/chair-dark-800.jpg"><img src="../../../../../src/assets/photos/chair-dark.jpg" width="1500" height="1200" alt="Marc Noah sitting in an armchair against a dark background, head lowered" loading="lazy" decoding="async" style="object-position:62% 50%"></picture></div>
+<div><p class="eyebrow">02</p><h2 id="s2">He is the composer</h2><p class="lede">His label calls him a singer and composer (cantor e compositor) and a <i lang="pt">cantautor</i>: he writes the songs he sings. His songs, it says, come from real episodes in a darker period of his life, moving from isolation into the light.<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a><a href="#src-2" aria-label="Source 2: Dinis Cruz, 17 Nov 2026">2</a></span></p></div>
+</div></section>
+
+<section class="band story rule" aria-labelledby="s3"><div class="wrap split">
+<div class="pair"><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/giant-little-victories-cover-800.jpg"><img src="../../../../../src/assets/photos/giant-little-victories-cover.jpg" width="1500" height="1500" alt="Cover of the album Giant Little Victories: a childhood photograph under the title" loading="lazy" decoding="async"></picture><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/green-sofa-session-ep-800.jpg"><img src="../../../../../src/assets/photos/green-sofa-session-ep.jpg" width="1500" height="999" alt="The Green Sofa Session EP sleeve, laid out on a table" loading="lazy" decoding="async"></picture></div>
+<div><p class="eyebrow">03</p><h2 id="s3">These are his songs</h2><p class="lede">Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records, a label with an office in Faro. Before it came the EP Green Sofa Session and a run of singles and videos, starting with Lie to Me in February 2023.<span class="fn"><a href="#src-4" aria-label="Source 4: Epopeia agenda, album release">4</a><a href="#src-5" aria-label="Source 5: Apple Music">5</a><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a></span></p><a class="more" href="#">The songs, and the album to play</a></div>
+</div></section>
+
+<section class="qband" aria-labelledby="qh">
+<picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/towers-bridges-clouds-800.jpg"><img src="../../../../../src/assets/photos/towers-bridges-clouds.jpg" width="1500" height="841" alt="Marc Noah, arms folded, above a sea of cloud, behind the scenes of Towers and Bridges (2023)" loading="lazy" decoding="async"></picture>
+<div class="wrap">
+<p class="eyebrow" id="qh">In his own words, on Giant Little Victories</p>
+<figure style="margin:0"><blockquote class="q">My first album, <i>Giant Little Victories</i>, is a message of personal overcoming and of celebration. It is wanting to reinforce the need to celebrate who we are, who we love, our growth and the small victories of life; it is the reaffirmation that when we find ourselves in the dark and the light becomes the constant, we have the power of decision again.</blockquote>
+<p class="pt" lang="pt-PT">O meu 1º álbum: &quot;Giant Little Victories&quot; é uma mensagem de superação pessoal e de celebração. É o querer reforçar a necessidade de celebrar quem somos, quem amamos, o nosso crescimento e as pequenas vitórias da vida, é a reafirmação de que quando nos encontramos no escuro e a luz passa a ser a constante passamos a ter o poder da decisão novamente.</p>
+<figcaption>Marc Noah (our translation)<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a></span></figcaption></figure>
+</div></section>
+
+<section class="band" aria-labelledby="lyh"><div class="wrap">
+<p class="eyebrow">In his songs</p>
+<h2 class="sec" id="lyh">Lines he wrote</h2>
+<div class="lyrs"><figure class="lyr"><blockquote>Sweat &amp; tears made you a Queen, time to live the dream</blockquote><figcaption>From <b>Mother</b><span class="fn"><a href="#src-3" aria-label="Source 3: marcnoah.pt (archived 15 Dec 2025)">3</a></span></figcaption></figure>
+<figure class="lyr"><blockquote>Ahead the horizon, its calls your name, over the mountain there’s no pain</blockquote><figcaption>From <b>Towers &amp; Bridges</b><span class="fn"><a href="#src-3" aria-label="Source 3: marcnoah.pt (archived 15 Dec 2025)">3</a></span></figcaption></figure>
+<figure class="lyr"><blockquote>Lie to me, i don't really care at all,  just don't leave, if you do my life is gone</blockquote><figcaption>From <b>Lie To Me</b><span class="fn"><a href="#src-3" aria-label="Source 3: marcnoah.pt (archived 15 Dec 2025)">3</a></span></figcaption></figure>
+<figure class="lyr"><blockquote>Take me, set me free, take me to a place where we can only be</blockquote><figcaption>From <b>Roadtrip</b><span class="fn"><a href="#src-3" aria-label="Source 3: marcnoah.pt (archived 15 Dec 2025)">3</a></span></figcaption></figure></div>
+</div></section>
+<section class="band" aria-labelledby="bh"><div class="wrap">
+<p class="eyebrow">His label's words</p>
+<h2 class="sec" id="bh">His story, as his label tells it</h2>
+<p class="muted" style="max-width:40rem">From his artist page at Epopeia Records, in Portuguese as published, with our translation beside each paragraph.<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a></span></p>
+<div class="bio"><div><p class="ptx" lang="pt-PT">O cantautor luso-australiano partilha a sua alma em canções que nos envolvem.</p><p>The Portuguese-Australian singer-songwriter shares his soul in songs that wrap around us.</p></div>
+<div><p class="ptx" lang="pt-PT">Marc Noah, cantor e compositor luso-australiano, foi salvo pela música durante toda a sua vida. Ao lidar com questões da adolescência, descobriu que a música era o único sitio onde se sentia são e salvo.</p><p>Marc Noah, Portuguese-Australian singer and composer, has been saved by music all his life. Dealing with the troubles of adolescence, he found that music was the only place where he felt safe and sound.</p></div>
+<div><p class="ptx" lang="pt-PT">Depois de trabalhar no “The Boomerang Bar”, o seu caminho levou-o naturalmente ao que ama e quando o Covid-19 chegou ao mundo, encontrou tempo para organizar as suas letras e melodias.</p><p>After working at “The Boomerang Bar”, his path led him naturally to what he loves, and when Covid-19 reached the world he found time to put his lyrics and melodies in order.</p></div>
+<div><p class="ptx" lang="pt-PT">Influenciado pela música dos anos 80 e 90, [...] do pop ao grunge, dos musicais ao rock, tocou em diversas bandas de covers, sempre evitando ter um “verdadeiro trabalho diurno” que nunca parecia adequar-se às suas medidas. Uma mistura suave de Pop/Indie/Rock é o que melhor define o seu som quando se destaca sozinho ou com sua banda.</p><p>Influenced by the music of the 1980s and 1990s, [...] from pop to grunge, from musicals to rock, he played in several cover bands, always avoiding a “real day job” that never seemed to fit him. A gentle mix of pop, indie and rock best describes his sound, whether he stands out alone or with his band.</p></div>
+<div><p class="ptx" lang="pt-PT">Com o EP “Green Sofa Session” e o álbum “Giant Little Victories” lançados, as suas músicas têm origem em episódios da vida real de um período mais sombrio de sua vida, passando do isolamento para a luz, enquanto mostra a sua música em qualquer palco onde tem a oportunidade de tocar.</p><p>With the EP “Green Sofa Session” and the album “Giant Little Victories” out, his songs come from real-life episodes of a darker period of his life, moving from isolation to the light, while he shows his music on any stage where he gets the chance to play.</p></div></div>
+<p class="small" style="margin-top:1.5rem">The [...] marks a list of artists who influenced him, left out here; read it on the label page.</p>
+</div></section>
+
+<section class="band rule" aria-labelledby="gh"><div class="wrap">
+<p class="eyebrow">Photographs</p>
+<h2 class="sec" id="gh">From his label</h2>
+<ul class="gal"><li class="w"><a href="../../../../../src/assets/photos/towers-bridges-piano.jpg"><figure><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/towers-bridges-piano-800.jpg"><img src="../../../../../src/assets/photos/towers-bridges-piano.jpg" width="1500" height="841" alt="Marc Noah at a piano, in black and white, behind the scenes of Towers and Bridges (2023)" loading="lazy" decoding="async"></picture><figcaption class="muted">At a piano, in black and white, behind the scenes of Towers and Bridges (2023)</figcaption></figure></a></li>
+<li class=""><a href="../../../../../src/assets/photos/green-sofa-session.jpg"><figure><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/green-sofa-session-800.jpg"><img src="../../../../../src/assets/photos/green-sofa-session.jpg" width="1500" height="1500" alt="Marc Noah playing acoustic guitar on a green sofa at home, a dog at his feet" loading="lazy" decoding="async"></picture><figcaption class="muted">Playing acoustic guitar on a green sofa at home, a dog at his feet</figcaption></figure></a></li>
+<li class=""><a href="../../../../../src/assets/photos/live-acoustic.jpg"><figure><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/live-acoustic-800.jpg"><img src="../../../../../src/assets/photos/live-acoustic.jpg" width="1500" height="1500" alt="Marc Noah singing and playing acoustic guitar on an outdoor stage at dusk" loading="lazy" decoding="async"></picture><figcaption class="muted">Singing and playing acoustic guitar on an outdoor stage at dusk</figcaption></figure></a></li>
+<li class="w"><a href="../../../../../src/assets/photos/roadtrip-road.jpg"><figure><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/roadtrip-road-800.jpg"><img src="../../../../../src/assets/photos/roadtrip-road.jpg" width="1500" height="844" alt="A road seen through the windscreen of a vintage car, from the Roadtrip video" loading="lazy" decoding="async"></picture><figcaption class="muted">A road seen through the windscreen of a vintage car, from the Roadtrip video</figcaption></figure></a></li>
+<li class=""><a href="../../../../../src/assets/photos/autumn-leaves-tour.jpg"><figure><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/autumn-leaves-tour-800.jpg"><img src="../../../../../src/assets/photos/autumn-leaves-tour.jpg" width="1500" height="1500" alt="Poster art for the Autumn Leaves acoustic tour 2024: Marc Noah in silhouette, seated" loading="lazy" decoding="async"></picture><figcaption class="muted">Poster art for the Autumn Leaves acoustic tour 2024: Marc Noah in silhouette, seated</figcaption></figure></a></li>
+<li class="w"><a href="../../../../../src/assets/photos/green-sofa-session-ep.jpg"><figure><picture><source media="(max-width:699px)" srcset="../../../../../src/assets/photos/green-sofa-session-ep-800.jpg"><img src="../../../../../src/assets/photos/green-sofa-session-ep.jpg" width="1500" height="999" alt="The Green Sofa Session EP sleeve, laid out on a table" loading="lazy" decoding="async"></picture><figcaption class="muted">The Green Sofa Session EP sleeve, laid out on a table</figcaption></figure></a></li></ul>
+<p class="small" style="margin-top:1.2rem">Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence.<span class="fn"><a href="#src-6" aria-label="Source 6: Epopeia photos">6</a></span></p>
+</div></section>
+
+<section class="band rule" aria-labelledby="vh2"><div class="wrap" style="max-width:52rem;margin-left:auto;margin-right:auto">
+<p class="eyebrow">His sound</p>
+<h2 class="sec" id="vh2">His sound and his voice</h2>
+<p class="lede">His label puts it as a gentle mix of pop, indie and rock. The Algarve press writes of an intimate sound and a husky voice (<i lang="pt">voz rouca</i>) that has become one of his marks.<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a><a href="#src-7" aria-label="Source 7: A Voz do Algarve, 5 Aug 2026">7</a></span></p>
+<p class="btns"><a class="btn" href="https://www.youtube.com/watch?v=adbD0f2FYLA"><span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span>Hear it: Roadtrip<small>Video · 3:37</small></span></a></p>
+</div></section>
+</main>
+<section class="sources wrap" aria-labelledby="srch"><h2 id="srch">Sources</h2>
+<p>Every source was read on 17 November 2026, except where noted. His own site, marcnoah.pt/sobre: read for the factory brief on 17 November 2026; now secondary to the Arquivo.pt copy (own-site). The full register is on <a href="#">the sources page</a>.</p>
+<ol><li id="src-1"><a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia Records, artist page</a></li>
+<li id="src-2"><a href="https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md">Dinis Cruz, in the factory brief, 17 November 2026</a></li>
+<li id="src-3"><a href="https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre">His own site, marcnoah.pt/sobre, as archived by Arquivo.pt on 15 December 2025</a></li>
+<li id="src-4"><a href="https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024">Epopeia agenda: Giant Little Victories release</a></li>
+<li id="src-5"><a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music catalogue, Marc Noah</a></li>
+<li id="src-6"><a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia Records, artist page (photographs)</a></li>
+<li id="src-7"><a href="https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525">A Voz do Algarve, 5 August 2026: Sons no Castelo, Loulé</a></li></ol></section>
+<p class="mock">Mock-up, round 2 (designer.marc-noah@AgentiCCells.dinis, 17 November 2026). Not the live site; links inside the site are placeholders.</p>
+<footer class="foot"><div class="wrap">
+<p class="name">Marc Noah</p>
+<p class="muted">Singer-songwriter. Lives in Quarteira, on the Algarve coast.<span class="fn"><a href="#src-3" aria-label="Source 3: marcnoah.pt (archived 15 Dec 2025)">3</a><a href="#src-2" aria-label="Source 2: Dinis Cruz, 17 Nov 2026">2</a></span></p>
+<p class="row"><a href="https://open.spotify.com/artist/7gYCZ94lNuTfJA3g5MCJxd">Spotify</a><a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music</a><a href="https://www.youtube.com/@marcnoahvevo6299">YouTube (Vevo)</a><a href="https://www.instagram.com/marcnoahmusic/">Instagram</a><a href="https://www.facebook.com/marcnoahmusic">Facebook</a><a href="https://www.youtube.com/@marcnoahmusic">YouTube (his own channel)</a><a href="https://www.marcnoah.pt/">His own site</a></p>
+<p class="row"><a href="mailto:geral@epopeia-records.pt">Bookings: geral@epopeia-records.pt</a><span class="fn"><a href="#src-8" aria-label="Source 8: marcnoah.pt contacts (archived 15 Dec 2025)">8</a></span><a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia Records</a></p>
+<p class="credit">Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence.<span class="fn"><a href="#src-6" aria-label="Source 6: Epopeia photos">6</a></span></p>
+<p class="quiet">About this site: <a href="#">sources</a> · <a href="#">five designs</a> · <a href="#">use with AI</a> · <a href="#">llms.txt</a> · <a href="#">behind the scenes</a> · <a href="#">source code</a> · version v0.1.N · Marc approves every change about him. Code Apache-2.0, text CC BY 4.0; the photographs are not covered.</p>
+</div></footer>
+<dialog id="player" class="player" aria-labelledby="pl-t">
+<div class="pl-head"><p id="pl-t">Video</p><form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<div class="pbox"></div>
+<p class="pl-note">Playing from YouTube (youtube-nocookie.com). <a id="pl-yt" href="#">Open on YouTube</a></p>
+</dialog>
+<script>
+/* Click to play: nothing loads from YouTube or Spotify until a visitor presses play. Ours, a few lines. */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-embed]');if(!a||e.metaKey||e.ctrlKey)return;e.preventDefault();
+var box=a.parentNode,f=document.createElement('iframe');f.src=a.getAttribute('data-embed');f.title=a.getAttribute('data-title');
+f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
+if(a.getAttribute('data-h')){box.classList.add('open');f.height=a.getAttribute('data-h');}box.replaceChildren(f);f.focus();});
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('a[data-play]');if(!b)return;var t=document.getElementById(b.getAttribute('data-play'));var a=t&&t.querySelector('a[data-embed]');if(!a)return;e.preventDefault();t.scrollIntoView({block:'center'});a.click();});
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-dialog]');if(!t)return;var d=document.getElementById(t.getAttribute('data-dialog'));if(!d||!d.showModal)return;e.preventDefault();d.showModal();});
+document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-yt]');if(!a||e.metaKey||e.ctrlKey)return;var d=document.getElementById('player');if(!d||!d.showModal)return;e.preventDefault();
+var id=a.getAttribute('data-yt'),f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';f.title=a.getAttribute('data-title');
+f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
+d.querySelector('.pbox').replaceChildren(f);d.querySelector('#pl-t').textContent=a.getAttribute('data-title');d.querySelector('#pl-yt').href=a.href;d.showModal();});
+document.addEventListener('close',function(e){if(e.target.id==='player')e.target.querySelector('.pbox').replaceChildren();},true);
+document.querySelectorAll('.tabs a[data-f]').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var f=t.getAttribute('data-f');
+document.querySelectorAll('.tabs a').forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false');});
+document.querySelectorAll('.group[data-g]').forEach(function(g){g.hidden=!(f==='all'||g.getAttribute('data-g')===f);});});});
+</script>
+</body></html>
