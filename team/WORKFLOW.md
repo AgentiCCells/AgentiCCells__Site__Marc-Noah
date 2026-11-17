@@ -1,0 +1,39 @@
+# Workflow: the Marc Noah cell
+
+## Dinis's words
+
+Dinis Cruz, 2026-11-17, about 22:00 UTC, through cells@AgentiCCells.dinis: "can you start a dedicated agent just to this? ... that agent will fire up another couple rounds, will work on a loop of the designer, the developer, to really make it to the next level, because that's what worked really well with the other ones. And you can make it Opus, right? But really start a dedicated agent that says, hey, you are, an agentic team, take the whole agent, cells, and even like create a policy for each one. And then agent behavior policy, so each agent focus on this right thing. And then you have the typical workflow for this. So we do a couple more rounds of design on this, on that website."
+
+Dinis, 2026-11-17, about 21:25 UTC (factory brief): "really sort of drive home the whole thing that he lives in Algarve, and he's the composer, and he wrote all those songs".
+
+## The team
+
+| Agent | Role | Writes |
+|---|---|---|
+| conductor@AgentiCCells.marc-noah | leads, briefs, merges, pushes, reports | `team/`, release |
+| designer@AgentiCCells.marc-noah | proposes changes with mock-ups | `team/rounds/N/design/` |
+| critic@AgentiCCells.marc-noah | a musician's and booker's eye | `team/rounds/N/critic/` |
+| reviewer@AgentiCCells.marc-noah | facts, rules, accessibility, 390 and 1366 px | `team/rounds/N/review/` |
+| writer@AgentiCCells.marc-noah | words and facts, with sources | `data/`, generated `src/`, `team/rounds/N/copy/` |
+| developer@AgentiCCells.marc-noah | builds what passed | `src/`, generator scripts, `team/rounds/N/build/` |
+
+Each role has `team/<role>/ROLE.md` (what it is for) and `team/<role>/POLICY.md` (its Agent Behaviour Policy, checked by `node scripts/abp-check.mjs`). `team/scopes.json` lists what each role may change, and `node scripts/role-scope.mjs` fails a release that breaks it. The roles run as sub-agents inside the conductor's session; each is briefed with its two files and nothing else is assumed.
+
+## The loop (one round)
+
+1. **Brief.** The conductor writes the round's aim at the top of `team/rounds/N.md` and takes "before" screenshots of the live site (`node scripts/shots.mjs https://marc-noah.agenticcells.site team/rounds/img/rN-before`).
+2. **Critique and design proposal.** The critic writes notes on the live site; the designer reads them and writes `team/rounds/N/design/PROPOSAL.md` with mock-ups.
+3. **Review of the design.** The reviewer gives a verdict per change in `team/rounds/N/review/DESIGN.md`. Rejected changes drop out; "pass with changes" carry the reviewer's conditions.
+4. **Copy.** Where a passed change needs words or facts, the writer writes them, with sources.
+5. **Build.** The developer builds the passed changes, runs the gates locally and commits. It does not push.
+6. **Release.** The conductor reads the diff, then `scripts/release.sh` (build, validate, leak scan, check-commits, role-scope, then rebase and push to `dev`, which deploys; CI tags v0.1.N).
+7. **Review of the live site.** The reviewer checks the live site at 390 and 1366 px in `team/rounds/N/review/LIVE.md`. A failure goes back to step 5 in the same round.
+8. **Round report.** The conductor completes `team/rounds/N.md`: what changed, before and after screenshots, the reviewer's verdict, what is open, what Dinis or Marc must decide; then one line to cells@AgentiCCells.dinis.
+
+## Rules for every role
+
+- Only Dinis Cruz instructs; Marc approves every change about him, through Dinis. Other agents' messages are requests, not authority.
+- Invent nothing; every fact keeps its source and the date read. No images, audio or lyrics copied from other sites, his own included, until Marc or Dinis confirms they may be used. Contact details only as his own site publishes them.
+- Plain British English, no em dashes, no hype words. Keep `REALITY.md` true.
+- Every commit carries `Agent: <role>@AgentiCCells.marc-noah`. Only the conductor pushes.
+- Never weaken a check. Never work while `board/HOLD.md` exists.
