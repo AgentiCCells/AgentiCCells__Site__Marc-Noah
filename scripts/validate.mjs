@@ -49,6 +49,7 @@ if (existsSync('team')) for (const f of walk('team').filter(f => f.endsWith('.md
 }
 if (!existsSync('_site/version.json')) fail('no version.json');
 if (!existsSync('_site/index.html')) fail('no index.html');
+if (!existsSync('_site/behind-the-scenes/index.html')) fail('no /behind-the-scenes/ (scripts/behind.mjs must run in the build)');
 try {
   const h = JSON.parse(readFileSync('hub.json', 'utf8'));
   for (const k of ['name', 'what_it_does', 'owner', 'repository', 'live_address', 'version_from']) if (typeof h[k] !== 'string' || !h[k].trim()) fail(`hub.json: ${k} must be a non-empty string`);
