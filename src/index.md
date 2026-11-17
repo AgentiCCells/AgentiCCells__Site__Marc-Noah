@@ -228,6 +228,7 @@ Not read: marcnoah.pt (could not be reached from this session on 2026-11-17); Re
 - Who wrote what: his label calls him a cantautor, and its Roadtrip article calls him that song's author. For the other seven album songs (and the EP and singles), confirm he wrote words and music, and name any co-writers he wants credited.
 - Anything coming up next: no future dates are listed by his label as of 17 November 2026.
 - Booking: the site gives geral@epopeia-records.pt (from his own site) and his Epopeia artist page. Is that the route he wants?
+- Alvor FM videos: are the seven single songs (Lie To Me, No More Dreaming and others) from Choque Frontal ao Vivo on 13 December 2023 with the band, as their frames suggest, or did he play any alone?
 - Whether he wants a Portuguese version of the site (a decision for Dinis and Marc).
 
 ---
