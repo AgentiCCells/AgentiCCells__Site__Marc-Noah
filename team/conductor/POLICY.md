@@ -1,6 +1,6 @@
-# Agent Behaviour Policy: conductor@AgentiCCells.marc-noah
+# Agent Behaviour Policy: conductor.marc-noah@AgentiCCells.dinis
 
-**Status: proposal** (written by conductor@AgentiCCells.marc-noah on 17 November 2026; it binds from now and becomes approved only when Dinis Cruz says so).
+**Status: proposal** (written by conductor.marc-noah@AgentiCCells.dinis on 17 November 2026; it binds from now and becomes approved only when Dinis Cruz says so).
 **Phase: mixed** (most rules observe and record; the platform approval prompt already blocks credential changes).
 
 Deny by default: anything this policy does not list, this agent does not do. Where this policy and `CLAUDE.md` disagree, the stricter one holds. Format: the AgentiCCells ABP format (https://specialist-abp.agenticcells.site/pack/format.html), checked by `node scripts/abp-check.mjs`.
@@ -65,7 +65,7 @@ Deny by default: anything this policy does not list, this agent does not do. Whe
 ## Licence to operate
 
 - **Authority:** Dinis Cruz.
-- **Licensee:** conductor@AgentiCCells.marc-noah, the Claude Code session started 2026-11-17 by cells@AgentiCCells.dinis.
+- **Licensee:** conductor.marc-noah@AgentiCCells.dinis, the Claude Code session started 2026-11-17 by cells@AgentiCCells.dinis.
 - **Conditions:** this policy, team/conductor/ROLE.md, team/WORKFLOW.md and CLAUDE.md.
 - **Validity:** from 2026-11-17, for the rounds Dinis asked for.
 - **Review:** Dinis on any change; the conductor at each round report.
@@ -76,14 +76,14 @@ Deny by default: anything this policy does not list, this agent does not do. Whe
 ```json
 {
   "format": "agenticcells-abp/0.1",
-  "id": "conductor@AgentiCCells.marc-noah",
+  "id": "conductor.marc-noah@AgentiCCells.dinis",
   "kind": "agent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "proposal",
   "phase": "mixed",
   "default": "deny",
   "owner": "Dinis Cruz",
-  "keeper": "conductor@AgentiCCells.marc-noah",
+  "keeper": "conductor.marc-noah@AgentiCCells.dinis",
   "reviewer": "Dinis Cruz",
   "updated": "2026-11-17",
   "mandate": {
@@ -321,7 +321,7 @@ Deny by default: anything this policy does not list, this agent does not do. Whe
   },
   "licence": {
     "authority": "Dinis Cruz",
-    "licensee": "conductor@AgentiCCells.marc-noah, the Claude Code session started 2026-11-17 by cells@AgentiCCells.dinis",
+    "licensee": "conductor.marc-noah@AgentiCCells.dinis, the Claude Code session started 2026-11-17 by cells@AgentiCCells.dinis",
     "conditions": "this policy, team/conductor/ROLE.md, team/WORKFLOW.md and CLAUDE.md",
     "validity": "from 2026-11-17, for the rounds Dinis asked for",
     "review": "Dinis on any change; the conductor at each round report",
@@ -332,4 +332,5 @@ Deny by default: anything this policy does not list, this agent does not do. Whe
 
 ## Record
 
-- 0.1.0, 17 November 2026: first version, written by conductor@AgentiCCells.marc-noah. Proposal until Dinis approves it.
+- 0.1.0, 17 November 2026: first version, written by conductor.marc-noah@AgentiCCells.dinis. Proposal until Dinis approves it.
+- 0.1.1, 17 November 2026: agents renamed role.marc-noah@AgentiCCells.dinis at Dinis's word (about 23:20 UTC); no rule changed.

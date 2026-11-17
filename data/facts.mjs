@@ -100,7 +100,7 @@ export const PRESS = [
   { pt: 'Marc Noah, a mais recente revelação da música produzida no algarve', en: 'Marc Noah, the latest revelation in music made in the Algarve', by: 'Algarve Informativo, issue 407 (as quoted on his label’s page)', src: 'epopeia' },
 ];
 
-// Lyric lines (round 2): Dinis Cruz, 2026-11-17, about 23:10 UTC, relayed by conductor@AgentiCCells.marc-noah:
+// Lyric lines (round 2): Dinis Cruz, 2026-11-17, about 23:10 UTC, relayed by conductor.marc-noah@AgentiCCells.dinis:
 // "Yes, you could also quote lyric lines because he actually has some great lyrics." Only the short lines his
 // own site publishes as headlines on /sobre (archived 15 December 2025), exactly as published, his spelling
 // and spacing kept. Never full lyrics. No other lyric lines were found on his archived pages.
@@ -321,7 +321,7 @@ export const VIDEOS_NOTE = 'Videos play from YouTube (youtube-nocookie.com) only
 export const VIDEOS_SRC = ['youtube', 'yt-alvor', 'yt-own', 'own-gss'];
 
 
-// ---------- Round 1 copy for the passed design (writer@AgentiCCells.marc-noah, 2026-11-17) ----------
+// ---------- Round 1 copy for the passed design (writer.marc-noah@AgentiCCells.dinis, 2026-11-17) ----------
 // Every piece names its sources; numbers marked "computed" are our own counts from GIGS, not a source's claim.
 
 const roadtrip = TRACKS.find(t => t.title === 'Roadtrip');

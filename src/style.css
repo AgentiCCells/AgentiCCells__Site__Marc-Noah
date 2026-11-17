@@ -1,5 +1,5 @@
 /* Marc Noah site. Code Apache-2.0. No fonts or files from other hosts.
-   Round 1 (developer@AgentiCCells.marc-noah, 2026-11-17): the passed design, from the
+   Round 1 (developer.marc-noah@AgentiCCells.dinis, 2026-11-17): the passed design, from the
    round 1 mock-ups by designer@ with the reviewer's conditions. */
 :root{--sand:#f7efe2;--paper:#fffaf2;--ink:#1f2328;--muted:#5a5650;--sea:#11607a;--rust:#a8541a;--sun:#f3b45d;--line:#e3d6c1;--btn-ink:#fff;--wrap:68rem}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#14181b;--paper:#1d2327;--ink:#ece6dc;--muted:#b3ada4;--sea:#7cc8de;--rust:#f0a56b;--line:#2f383d;--btn-ink:#0e1416}}

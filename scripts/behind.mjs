@@ -6,7 +6,7 @@
 // Everything on these pages is read at build time from the repository: team/<role>/ROLE.md
 // and POLICY.md, team/scopes.json, team/WORKFLOW.md, team/rounds/, docs/ and `git log`.
 // Nothing is typed in by hand, so a new commit or round changes the pages with no edit.
-// Node built-ins only. Written by developer@AgentiCCells.marc-noah, round 1.
+// Node built-ins only. Written by developer.marc-noah@AgentiCCells.dinis, round 1.
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, copyFileSync } from 'node:fs';
 import { join, dirname, posix } from 'node:path';
@@ -164,7 +164,8 @@ const section = (md, heading) => { const m = md.match(new RegExp(`^## ${heading}
 
 // ---------- the team: ROLE.md and POLICY.md, in plain words ----------
 const scopes = JSON.parse(read('team/scopes.json') || '{"roles":{}}');
-const team = scopes.team || 'AgentiCCells.marc-noah';
+const team = scopes.team || 'AgentiCCells.dinis';
+const suffix = scopes.suffix || '';
 const roleIds = [...new Set([...ROLE_NAMES, ...Object.keys(scopes.roles)])].filter(r => existsSync(`team/${r}/ROLE.md`));
 const field = (md, name) => { const m = md.match(new RegExp(`\\*\\*${name}\\.\\*\\*\\s*([^\\n]+)`)); return m ? m[1].trim() : ''; };
 const roles = roleIds.map(r => {
@@ -174,7 +175,7 @@ const roles = roleIds.map(r => {
   try { data = json ? JSON.parse(json[1]) : {}; } catch { data = {}; }
   const status = policyMd.match(/\*\*Status: ([^*]+)\*\*\s*\(([^)]*)\)/);
   const phase = policyMd.match(/\*\*Phase: ([^*]+)\*\*\s*\(([^)]*)\)/);
-  const title = (roleMd.match(/^# Role: (.*)$/m) || [, `${r}@${team}`])[1];
+  const title = (roleMd.match(/^# Role: (.*)$/m) || [, `${r}${suffix}@${team}`])[1];
   return {
     id: r, title, objective: field(roleMd, 'Objective'), may: field(roleMd, 'May change') || field(roleMd, 'Writes'), hands: field(roleMd, 'Hands over'), stops: field(roleMd, 'Stops'),
     status: data.status || (status && status[1]) || 'not stated', statusNote: status ? status[2] : '',

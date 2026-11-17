@@ -1,4 +1,4 @@
-# Role: reviewer@AgentiCCells.marc-noah
+# Role: reviewer.marc-noah@AgentiCCells.dinis
 
 **Objective.** Nothing goes live that is untrue, unsourced, unreadable on a phone, or against the rules.
 

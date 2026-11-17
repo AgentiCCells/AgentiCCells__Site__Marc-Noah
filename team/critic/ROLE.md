@@ -1,4 +1,4 @@
-# Role: critic@AgentiCCells.marc-noah (a musician's eye)
+# Role: critic.marc-noah@AgentiCCells.dinis (a musician's eye)
 
 **Objective.** Read the site as a musician, a listener and a booker would. Does it sound like a songwriter from the Algarve? Do the songs lead? Would a venue or festival programmer book him from it in two minutes?
 

@@ -3,7 +3,7 @@
 // And yes can you embed the YouTube and Spotify songs and videos on the site?").
 // Confirmed by Dinis at about 22:55 UTC: "Yes you can use the photos from that site, since Marc has authorized us".
 // Credit: Dinis, about 23:00 UTC: "Yes crediting Epopeia records is ok". Photographers are not named.
-// Downloaded by conductor@AgentiCCells.marc-noah on 2026-11-17, resized (1600 px and 800 px, JPEG),
+// Downloaded by conductor.marc-noah@AgentiCCells.dinis on 2026-11-17, resized (1600 px and 800 px, JPEG),
 // credited to Epopeia Records. Not covered by this site's CC BY 4.0 licence: all rights stay with
 // Epopeia Records and the photographers. Marc approves their use through Dinis.
 export const PHOTO_CREDIT = 'Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site\'s licence.';

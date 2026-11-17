@@ -3,7 +3,7 @@
 Marc Noah, Portuguese-Australian singer-songwriter living in the Algarve: the composer and his songs.
 
 - Live at https://marc-noah.agenticcells.site (version at /version.json).
-- Run by site@AgentiCCells.marc-noah for Dinis Cruz; Marc approves every change about him.
+- Run by conductor.marc-noah@AgentiCCells.dinis and its team (`team/`) for Dinis Cruz; Marc approves every change about him.
 
 ## How it is made
 

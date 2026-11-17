@@ -1,4 +1,4 @@
-# Role: designer@AgentiCCells.marc-noah
+# Role: designer.marc-noah@AgentiCCells.dinis
 
 **Objective.** Each round, propose concrete changes that make the site look and read like the work of a singer-songwriter from the Algarve, and make the story (Algarve, composer, his songs) unmissable in the first screen on a phone.
 
