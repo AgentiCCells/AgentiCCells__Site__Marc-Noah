@@ -16,7 +16,7 @@ His label calls him a singer and composer (cantor e compositor) and a cantautor:
 
 ### These are his songs
 
-Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records, a label from Faro. Before it came the EP Green Sofa Session and a run of singles and videos, starting with Lie to Me in February 2023. (Sources: [Epopeia agenda, album release](https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024), [Apple Music](https://music.apple.com/pt/artist/marc-noah/1846838057), [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
+Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records, a label with an office in Faro. Before it came the EP Green Sofa Session and a run of singles and videos, starting with Lie to Me in February 2023. (Sources: [Epopeia agenda, album release](https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024), [Apple Music](https://music.apple.com/pt/artist/marc-noah/1846838057), [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 
 ## His songs
 
@@ -29,7 +29,7 @@ Listen: [Spotify](https://open.spotify.com/album/623T8dPibUnW606HPL3dDj), [Apple
 3. Towers and Bridges (3:11; first released 4 October 2023). [Video](https://www.youtube.com/watch?v=K8795UoBqTg)
 4. Mother (3:13; first released 25 August 2023). [Official lyric video](https://www.youtube.com/watch?v=JMd-r6okn80)
 5. Sunshine (3:31; first released 6 May 2023 as a single). [Official lyric video](https://www.youtube.com/watch?v=SaiC6jdsCy8)
-6. Roadtrip (3:37; first released 18 November 2024). [Video](https://www.youtube.com/watch?v=adbD0f2FYLA). Filmed in places that marked his path: Sydney, Salir, Quarteira, Faro, Olhão. The most played song in the Epopeia catalogue in March 2025. (Sources: [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo), [Epopeia Jornal, 1 Apr 2025](https://www.epopeia.eu/jornal/marco-roadtrip-marc-noah-monthly-on-top))
+6. Roadtrip (3:37; first released 18 November 2024). [Video](https://www.youtube.com/watch?v=adbD0f2FYLA). Filmed in places that marked his path, among them Sydney, Salir, Quarteira, Faro and Olhão. The most played song in the Epopeia catalogue in March 2025. (Sources: [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo), [Epopeia Jornal, 1 Apr 2025](https://www.epopeia.eu/jornal/marco-roadtrip-marc-noah-monthly-on-top))
 7. Slowtalk (3:37; first released 18 November 2024)
 8. No More Dreaming (3:25; first released 18 November 2024). The most played song in the Epopeia catalogue in April 2025. (Source: [Epopeia Jornal, 2 May 2025](https://www.epopeia.eu/jornal/marc-noah-continua-a-liderar-o-monthly-on-top))
 
@@ -85,14 +85,14 @@ The [...] marks a list of artists who influenced him, left out here; read it on 
 - **Loulé**: The town he has played most: Bafo de Baco, the Noite Branca, the castle (Sons no Castelo) and the Festival Emersivo. (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [A Voz do Algarve, 5 Aug 2026](https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525))
 - **Salir**: A village in the hills north of Loulé; one of the places in the Roadtrip video. (Source: [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo))
 - **Boliqueime**: Boliqueime Food Festival, July 2024. (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
-- **Faro**: Home of his label. Festival Muralhas (2025), FNAC Faro (2024), and a place in the Roadtrip video. He sat on the jury of the XXIV Fartuna at the Teatro das Figuras in 2025. (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo))
+- **Faro**: His label has an office here. Festival Muralhas (2025), FNAC Faro (2024), and a place in the Roadtrip video. He sat on the jury of the XXIV Fartuna at the Teatro das Figuras in 2025. (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo))
 - **Olhão**: Two sessions at República 14 in March 2023; a place in the Roadtrip video. (Sources: [Mais Algarve, 22 Mar 2023](https://maisalgarve.pt/2023/03/22/republica-14-olhao-concerto-de-marc-noah/), [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo))
 - **Pechão**: Rock na Ribeira, Parque da Família, June 2025. (Source: [Epopeia Jornal, 3 Jun 2025](https://www.epopeia.eu/jornal/marc-noah-e-the-elephant-woman-no-rock-na-ribeira))
 - **Albufeira (Guia)**: FNAC Guia, November 2024. (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - **Portimão**: Food Trucks Festival, August 2026. (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - **Raposeira**: Junta de Freguesia, November 2024. (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - **Sagres**: His showcase opened the Fortaleza Cultural programme at the Fortaleza de Sagres on 5 July 2024. (Source: [Postal do Algarve, 28 Jun 2024](https://postal.pt/algarve/programacao-da-fortaleza-de-sagres-vai-ser-apresentada-e-e-dedicada-aos-patrimonios-de-liberdade/))
-- **The Azores**: Ponta Delgada (Outro Lado), Ribeira Grande (Vulcana), Rádio Atlântida and a private show, October 2024. (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [A Voz do Algarve, 5 Aug 2026](https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525))
+- **The Azores**: Ponta Delgada (Outro Lado), Ribeira Grande (Vulcana, and the Beach Club Surf & Snack at Santa Bárbara), Rádio Atlântida and a private show, October 2024. (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [A Voz do Algarve, 5 Aug 2026](https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525))
 - **The rest of mainland Portugal**: Leiria, Viseu, Paços de Ferreira, Vila Nova de Famalicão, Torres Vedras, Almada and Vila Ruiva, November 2024, around the album launch. (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - **Sydney**: One of the places in the Roadtrip video that, in his label’s words, marked his path. (Source: [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo))
 
@@ -126,7 +126,7 @@ Formats: Solo, 60 minutes, indoor, 1 musician, 2 technical crew; Duo, 70 minutes
 - 21 November 2024: Albufeira, FNAC Guia (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - 20 November 2024: Faro, FNAC Faro (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - 20 November 2024: Digital platforms, Giant Little Victories released (release) (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [Epopeia agenda, album release](https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024))
-- 26 October 2024: Santa Bárbara, Beach Club Surf & Snack Santa Barbara (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
+- 26 October 2024: Santa Bárbara, Ribeira Grande, Azores, Beach Club Surf & Snack Santa Barbara (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - 25 October 2024: Ribeira Grande, Azores, Vulcana (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - 25 October 2024: Radio, Azores, Rádio Atlântida (radio) (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 - 24 October 2024: Azores, Private show (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
@@ -171,6 +171,7 @@ The home page in five designs with the same facts: [The Coast](https://marc-noah
 - [YouTube, marcnoahVEVO channel](https://www.youtube.com/@marcnoahvevo6299), read 2026-11-17
 - [Dinis Cruz, in the factory brief, 17 November 2026](https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md), read 2026-11-17
 - [His own site, marcnoah.pt/sobre, as read for the factory brief (this session could not reach it)](https://www.marcnoah.pt/sobre), read 2026-11-17 (by the factory, not re-read)
+- [Epopeia agenda: Santa Bárbara, 26 October 2024](https://www.epopeia.eu/agenda/marc-noah-autumn-tour-2024-santa-barbara), read 2026-11-17
 
 Not read: marcnoah.pt (could not be reached from this session on 2026-11-17); Região Sul (blocked); Instagram and Facebook (linked only).
 
@@ -179,10 +180,12 @@ Not read: marcnoah.pt (could not be reached from this session on 2026-11-17); Re
 - Photos of Marc he is happy for the site to use (and who took them, for the credit).
 - Permission to embed his official Spotify and YouTube players, or to keep links only.
 - A read of marcnoah.pt/sobre: this session could not reach his site, so Quarteira and his own wording come from the factory brief. Is Quarteira right, and may we quote his Sobre page?
+- Quarteira: the site now names it in its first line, on the map and in the footer as where he lives. Please confirm it, or tell us what to say instead.
 - Green Sofa Session: release date, tracks and a link to listen.
-- Who wrote what: confirm he wrote words and music for all eight album songs, and any co-writers he wants credited.
+- Who wrote what: his label calls him a cantautor, and its Roadtrip article calls him that song’s author. For the other seven album songs (and the EP and singles), confirm he wrote words and music, and name any co-writers he wants credited.
 - The date and place of his Festival F appearance, and anything coming up next.
 - A booking route he wants on the site (his own site, or the label).
+- Whether he wants a Portuguese version of the site (a decision for Dinis and Marc).
 
 ---
 

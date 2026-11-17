@@ -25,7 +25,7 @@
     },
     {
       "head": "These are his songs",
-      "text": "Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records, a label from Faro. Before it came the EP Green Sofa Session and a run of singles and videos, starting with Lie to Me in February 2023.",
+      "text": "Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records, a label with an office in Faro. Before it came the EP Green Sofa Session and a run of singles and videos, starting with Lie to Me in February 2023.",
       "src": [
         "epo-glv",
         "apple",
@@ -78,6 +78,12 @@
       "len": "3:43",
       "first": "2023-02-04",
       "single": true,
+      "tag": {
+        "text": "single, February 2023",
+        "src": [
+          "apple"
+        ]
+      },
       "video": {
         "kind": "Official music video",
         "url": "https://www.youtube.com/watch?v=oyE1KP8hUFU",
@@ -117,6 +123,12 @@
       "len": "3:31",
       "first": "2023-05-06",
       "single": true,
+      "tag": {
+        "text": "single, May 2023",
+        "src": [
+          "apple"
+        ]
+      },
       "video": {
         "kind": "Official lyric video",
         "url": "https://www.youtube.com/watch?v=SaiC6jdsCy8",
@@ -133,11 +145,38 @@
         "url": "https://www.youtube.com/watch?v=adbD0f2FYLA",
         "date": "2025-03-12"
       },
-      "note": "Filmed in places that marked his path: Sydney, Salir, Quarteira, Faro, Olhão. The most played song in the Epopeia catalogue in March 2025.",
+      "note": "Filmed in places that marked his path, among them Sydney, Salir, Quarteira, Faro and Olhão. The most played song in the Epopeia catalogue in March 2025.",
       "src": [
         "epo-roadtrip",
         "epo-top-mar"
-      ]
+      ],
+      "filmed": {
+        "places": [
+          "Sydney",
+          "Salir",
+          "Quarteira",
+          "Faro",
+          "Olhão"
+        ],
+        "partial": true,
+        "src": [
+          "epo-roadtrip"
+        ]
+      },
+      "author": {
+        "text": "His label’s article on Roadtrip calls him the song’s author.",
+        "pt": "nas palavras do seu autor",
+        "en": "in the words of its author",
+        "src": [
+          "epo-roadtrip"
+        ]
+      },
+      "tag": {
+        "text": "most played in his label’s catalogue, March 2025",
+        "src": [
+          "epo-top-mar"
+        ]
+      }
     },
     {
       "n": 7,
@@ -153,7 +192,13 @@
       "note": "The most played song in the Epopeia catalogue in April 2025.",
       "src": [
         "epo-top-apr"
-      ]
+      ],
+      "tag": {
+        "text": "most played in his label’s catalogue, April 2025",
+        "src": [
+          "epo-top-apr"
+        ]
+      }
     }
   ],
   "other_releases": [
@@ -240,7 +285,7 @@
       "lon": -7.93,
       "lat": 37.02,
       "algarve": true,
-      "text": "Home of his label. Festival Muralhas (2025), FNAC Faro (2024), and a place in the Roadtrip video. He sat on the jury of the XXIV Fartuna at the Teatro das Figuras in 2025.",
+      "text": "His label has an office here. Festival Muralhas (2025), FNAC Faro (2024), and a place in the Roadtrip video. He sat on the jury of the XXIV Fartuna at the Teatro das Figuras in 2025.",
       "src": [
         "epopeia",
         "epo-roadtrip"
@@ -317,10 +362,13 @@
   "beyond": [
     {
       "name": "The Azores",
-      "text": "Ponta Delgada (Outro Lado), Ribeira Grande (Vulcana), Rádio Atlântida and a private show, October 2024.",
+      "text": "Ponta Delgada (Outro Lado), Ribeira Grande (Vulcana, and the Beach Club Surf & Snack at Santa Bárbara), Rádio Atlântida and a private show, October 2024.",
       "src": [
         "epopeia",
         "avoz"
+      ],
+      "placeSrc": [
+        "epo-santa-barbara"
       ]
     },
     {
@@ -572,11 +620,14 @@
     },
     {
       "date": "2024-10-26",
-      "place": "Santa Bárbara",
+      "place": "Santa Bárbara, Ribeira Grande, Azores",
       "venue": "Beach Club Surf & Snack Santa Barbara",
       "kind": "concert",
       "src": [
         "epopeia"
+      ],
+      "placeSrc": [
+        "epo-santa-barbara"
       ]
     },
     {
@@ -712,91 +763,115 @@
     "epopeia": {
       "title": "Epopeia Records, artist page",
       "url": "https://www.epopeia.eu/artistas/marc-noah",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia artist page"
     },
     "epo-roadtrip": {
       "title": "Epopeia Jornal, 28 February 2025: Roadtrip and a concert in Loulé",
       "url": "https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia Jornal, 28 Feb 2025"
     },
     "epo-top-mar": {
       "title": "Epopeia Jornal, 1 April 2025: Roadtrip tops the Monthly on Top",
       "url": "https://www.epopeia.eu/jornal/marco-roadtrip-marc-noah-monthly-on-top",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia Jornal, 1 Apr 2025"
     },
     "epo-top-apr": {
       "title": "Epopeia Jornal, 2 May 2025: No More Dreaming tops the Monthly on Top",
       "url": "https://www.epopeia.eu/jornal/marc-noah-continua-a-liderar-o-monthly-on-top",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia Jornal, 2 May 2025"
     },
     "epo-ribeira": {
       "title": "Epopeia Jornal, 3 June 2025: Rock na Ribeira",
       "url": "https://www.epopeia.eu/jornal/marc-noah-e-the-elephant-woman-no-rock-na-ribeira",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia Jornal, 3 Jun 2025"
     },
     "epo-glv": {
       "title": "Epopeia agenda: Giant Little Victories release",
       "url": "https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia agenda, album release"
     },
     "epo-castelo": {
       "title": "Epopeia agenda: Castelo de Loulé, 7 August 2026",
       "url": "https://www.epopeia.eu/agenda/marcnoah-loule-castelo",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia agenda, 7 Aug 2026"
     },
     "epo-emersivo": {
       "title": "Epopeia agenda: Festival Emersivo, 10 October 2026",
       "url": "https://www.epopeia.eu/agenda/emersivo-marc-noah",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Epopeia agenda, 10 Oct 2026"
     },
     "avoz": {
       "title": "A Voz do Algarve, 5 August 2026: Sons no Castelo, Loulé",
       "url": "https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "A Voz do Algarve, 5 Aug 2026"
     },
     "maisalgarve": {
       "title": "Mais Algarve, 22 March 2023: concert at República 14, Olhão",
       "url": "https://maisalgarve.pt/2023/03/22/republica-14-olhao-concerto-de-marc-noah/",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Mais Algarve, 22 Mar 2023"
     },
     "postal": {
       "title": "Postal do Algarve, 28 June 2024: Fortaleza de Sagres programme",
       "url": "https://postal.pt/algarve/programacao-da-fortaleza-de-sagres-vai-ser-apresentada-e-e-dedicada-aos-patrimonios-de-liberdade/",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Postal do Algarve, 28 Jun 2024"
     },
     "apple": {
       "title": "Apple Music catalogue, Marc Noah",
       "url": "https://music.apple.com/pt/artist/marc-noah/1846838057",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Apple Music"
     },
     "spotify": {
       "title": "Spotify, Giant Little Victories",
       "url": "https://open.spotify.com/album/623T8dPibUnW606HPL3dDj",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Spotify"
     },
     "youtube": {
       "title": "YouTube, marcnoahVEVO channel",
       "url": "https://www.youtube.com/@marcnoahvevo6299",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "YouTube (marcnoahVEVO)"
     },
     "dinis": {
       "title": "Dinis Cruz, in the factory brief, 17 November 2026",
       "url": "https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md",
-      "read": "2026-11-17"
+      "read": "2026-11-17",
+      "short": "Dinis Cruz, 17 Nov 2026"
     },
     "brief": {
       "title": "His own site, marcnoah.pt/sobre, as read for the factory brief (this session could not reach it)",
       "url": "https://www.marcnoah.pt/sobre",
-      "read": "2026-11-17 (by the factory, not re-read)"
+      "read": "2026-11-17 (by the factory, not re-read)",
+      "short": "marcnoah.pt, via the factory brief"
+    },
+    "epo-santa-barbara": {
+      "title": "Epopeia agenda: Santa Bárbara, 26 October 2024",
+      "url": "https://www.epopeia.eu/agenda/marc-noah-autumn-tour-2024-santa-barbara",
+      "read": "2026-11-17",
+      "short": "Epopeia agenda, 26 Oct 2024"
     }
   },
   "needs": [
     "Photos of Marc he is happy for the site to use (and who took them, for the credit).",
     "Permission to embed his official Spotify and YouTube players, or to keep links only.",
     "A read of marcnoah.pt/sobre: this session could not reach his site, so Quarteira and his own wording come from the factory brief. Is Quarteira right, and may we quote his Sobre page?",
+    "Quarteira: the site now names it in its first line, on the map and in the footer as where he lives. Please confirm it, or tell us what to say instead.",
     "Green Sofa Session: release date, tracks and a link to listen.",
-    "Who wrote what: confirm he wrote words and music for all eight album songs, and any co-writers he wants credited.",
+    "Who wrote what: his label calls him a cantautor, and its Roadtrip article calls him that song’s author. For the other seven album songs (and the EP and singles), confirm he wrote words and music, and name any co-writers he wants credited.",
     "The date and place of his Festival F appearance, and anything coming up next.",
-    "A booking route he wants on the site (his own site, or the label)."
+    "A booking route he wants on the site (his own site, or the label).",
+    "Whether he wants a Portuguese version of the site (a decision for Dinis and Marc)."
   ]
 }
