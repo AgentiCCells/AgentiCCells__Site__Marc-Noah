@@ -12,6 +12,8 @@ Dinis, 2026-11-17, about 22:30 UTC, in this session: "he likes to be very profes
 
 Dinis, 2026-11-17, about 22:45 UTC, in this session: "https://www.epopeia.eu/artistas/marc-noah what about the photos from here? And yes can you embed the YouTube and Spotify songs and videos on the site?" The conductor takes this as permission to use the photographs on his label's artist page, credited to Epopeia Records (Dinis may withdraw it), and to embed his YouTube videos and Spotify releases, loaded only when a visitor presses play. Dinis confirmed at about 22:55 UTC: "Yes you can use the photos from that site, since Marc has authorized us". Dinis, about 23:00 UTC: "Yes crediting Epopeia records is ok". Photos from other sites (stock libraries, other artists' pages, Instagram) are still not allowed.
 
+Dinis, 2026-11-17, about 23:05 UTC, in this session: "the designs, the multiple designs, they should show, like for example on wikis, they should show on the top, and they should show on that sort of really nice sort of pop-up that shows the different designs in action, each with a name and with a theme". Round 2 adds a designs control at the top of every page with a preview pop-up.
+
 ## The team
 
 | Agent | Role | Writes |
