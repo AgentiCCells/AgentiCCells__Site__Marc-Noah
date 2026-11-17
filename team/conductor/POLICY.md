@@ -78,7 +78,7 @@ Deny by default: anything this policy does not list, this agent does not do. Whe
   "format": "agenticcells-abp/0.1",
   "id": "conductor.marc-noah@AgentiCCells.dinis",
   "kind": "agent",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "proposal",
   "phase": "mixed",
   "default": "deny",
@@ -334,3 +334,4 @@ Deny by default: anything this policy does not list, this agent does not do. Whe
 
 - 0.1.0, 17 November 2026: first version, written by conductor.marc-noah@AgentiCCells.dinis. Proposal until Dinis approves it.
 - 0.1.1, 17 November 2026: agents renamed role.marc-noah@AgentiCCells.dinis at Dinis's word (about 23:20 UTC); no rule changed.
+- 0.1.2, 17 November 2026: N5 matches what Dinis cleared (photos from his label, embeds on click, short lyric lines), after the round 2 review.
