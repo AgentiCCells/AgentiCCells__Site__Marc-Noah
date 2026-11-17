@@ -28,20 +28,17 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="top">
-<a class="brand" href="/">Marc Noah <span>singer-songwriter, Algarve</span></a>
+<header class="top wrap">
+<a class="brand" href="/">Marc Noah</a>
 <nav aria-label="Main">
-<a href="/">Home</a>
 <a href="/songs/">Songs</a>
-<a href="/algarve/">The Algarve</a>
+<a href="/algarve/"><span class="lg">The Algarve</span><span class="sm">Algarve</span></a>
 <a href="/live/">Live</a>
 <a href="/about/">About</a>
-<a href="/listen/">Listen and book</a>
-<a href="/d/">Five designs</a>
-<a href="/agents/" aria-current="page">Use with AI</a>
+<a href="/listen/"><span class="lg">Listen and book</span><span class="sm">Book</span></a>
 </nav>
 </header>
-<main id="main">
+<main id="main" class="wrap">
 
 <h1>Use with AI</h1>
 <p class="lead">This site is written for people and for AI agents. Point your assistant at <a href="/llms.txt">llms.txt</a>; the whole site as Markdown is <a href="/index.md">index.md</a>, and the facts as data are <a href="/facts.json">facts.json</a>. Then give it the instructions that fit who it is acting for.</p>
@@ -83,14 +80,32 @@ You are editing the Marc Noah site in AgentiCCells/AgentiCCells__Site__Marc-Noah
 - Plain British English, no em dashes, no hype words.
 - Before every push: node scripts/generate.mjs &amp;&amp; node scripts/build.mjs &amp;&amp; node scripts/validate.mjs &amp;&amp; node scripts/leak-scan.mjs, then git pull --rebase and push to dev. Every commit carries the trailer &quot;Agent: &lt;role&gt;@AgentiCCells.&lt;person&gt;&quot;.
 </pre>
+<h2>How this site is made</h2>
+<p>A team of AI agents writes and checks this site in rounds, from one facts file, and Marc approves every change about him through Dinis Cruz. See the team, their policies, the flow and every commit on <a href="/behind-the-scenes/">behind the scenes</a>.</p>
 <h2>What we need from Marc</h2>
 <ul><li>Photos of Marc he is happy for the site to use (and who took them, for the credit).</li><li>Permission to embed his official Spotify and YouTube players, or to keep links only.</li><li>A read of marcnoah.pt/sobre: this session could not reach his site, so Quarteira and his own wording come from the factory brief. Is Quarteira right, and may we quote his Sobre page?</li><li>Quarteira: the site now names it in its first line, on the map and in the footer as where he lives. Please confirm it, or tell us what to say instead.</li><li>Green Sofa Session: release date, tracks and a link to listen.</li><li>Who wrote what: his label calls him a cantautor, and its Roadtrip article calls him that song’s author. For the other seven album songs (and the EP and singles), confirm he wrote words and music, and name any co-writers he wants credited.</li><li>The date and place of his Festival F appearance, and anything coming up next.</li><li>A booking route he wants on the site (his own site, or the label).</li><li>Whether he wants a Portuguese version of the site (a decision for Dinis and Marc).</li></ul>
 
+<section class="sources" aria-labelledby="srch">
+<h2 id="srch">Sources</h2>
+<p>Every source was read on 17 November 2026, except where noted. His own site, marcnoah.pt/sobre: read for the factory brief on 17 November 2026, not re-read. The full register is on <a href="/sources/">the sources page</a>.</p>
+<ol>
+<li id="src-1"><a href="https://www.marcnoah.pt/sobre">His own site, marcnoah.pt/sobre, as read for the factory brief (this session could not reach it)</a></li>
+<li id="src-2"><a href="https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md">Dinis Cruz, in the factory brief, 17 November 2026</a></li>
+</ol>
+</section>
 </main>
-<footer>
-<p>Every fact on this site names its public source and the date it was read: see <a href="/sources/">sources</a>. Marc approves every change about him. No photos, audio or lyrics are copied here; follow the links to listen.</p>
-<p>Made with the AgentiCCells site factory; a first version, materials to follow.</p>
-<p class="muted">Version __VERSION__ · <a href="/agents/">Use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah">Source</a> · Code Apache-2.0, text and drawings CC BY 4.0</p>
+<footer class="foot">
+<div class="wrap">
+<p class="who">Marc Noah<span>Singer-songwriter. Lives in Quarteira, on the Algarve coast.<span class="fn"><a href="#src-1" aria-label="Source 1: marcnoah.pt, via the factory brief">1</a><a href="#src-2" aria-label="Source 2: Dinis Cruz, 17 Nov 2026">2</a></span></span></p>
+<p class="row"><a href="https://open.spotify.com/artist/7gYCZ94lNuTfJA3g5MCJxd">Spotify</a>
+<a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music</a>
+<a href="https://www.youtube.com/@marcnoahvevo6299">YouTube (Vevo)</a>
+<a href="https://www.instagram.com/marcnoahmusic/">Instagram</a>
+<a href="https://www.facebook.com/marcnoahmusic">Facebook</a>
+<a href="https://www.marcnoah.pt/">His own site</a></p>
+<p class="row"><a href="https://www.epopeia.eu/artistas/marc-noah">Book him through Epopeia Records</a></p>
+<p class="quiet">About this site: <a href="/sources/">sources</a> · <a href="/d/">five designs</a> · <a href="/agents/">use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · <a href="/behind-the-scenes/">behind the scenes</a> · <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah">source code</a> · version __VERSION__ · Marc approves every change about him. No photos, audio or lyrics are copied here; follow the links to listen. Made with the AgentiCCells site factory. Code Apache-2.0, text and drawings CC BY 4.0.</p>
+</div>
 </footer>
 </body>
 </html>

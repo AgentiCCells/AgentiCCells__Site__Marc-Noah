@@ -1,18 +1,19 @@
 // The five designs of the home page. Same facts, five layouts. Code Apache-2.0.
 import * as F from '../data/facts.mjs';
-import { esc, fmtDate, monShort, cite, head, algarveMap, DESIGNS } from './lib.mjs';
+import { esc, fmtDate, monShort, cite, head, algarveMap, DESIGNS, citer, siteNav, siteFoot, PLAY, ptWord, formatChips, stageList, mapFigure } from './lib.mjs';
 
-const { PERSON, STORY, QUOTES, ALBUM, TRACKS, TRACKS_SRC, OTHER_RELEASES, LISTEN, FORMATS, FORMATS_SRC, PLACES, BEYOND, GIGS, GIGS_NOTE, GIGS_NOTE_SRC, BOOKING } = F;
+const { PERSON, STORY, QUOTES, ALBUM, TRACKS, TRACKS_SRC, OTHER_RELEASES, LISTEN, FORMATS, FORMATS_SRC, PLACES, BEYOND, GIGS, GIGS_NOTE, GIGS_NOTE_SRC, BOOKING,
+  HERO, FEATURE, COMPOSER, ALBUM_LINE, SONGS_PAGE, LIVE } = F;
 const concerts = GIGS.filter(g => g.kind === 'concert');
 const algarveTowns = PLACES.filter(p => p.algarve);
 
 const switcher = id => `<nav class="dsw" aria-label="Designs"><span>Design:</span> ${DESIGNS.map(d => d.id === id ? `<b aria-current="page">${esc(d.name)}</b>` : `<a href="/d/${d.id}/">${esc(d.name)}</a>`).join(' · ')} · <a href="/d/">choose</a> · <a href="/">main site</a></nav>`;
 const dfoot = id => `<footer class="dfoot">
 <p>Every fact names its public source and the date it was read: see <a href="/sources/">sources</a>. No photos, audio or lyrics are copied here. Marc approves every change about him.</p>
-<p>Pages: <a href="/songs/">songs</a> · <a href="/algarve/">the Algarve</a> · <a href="/live/">live</a> · <a href="/about/">about</a> · <a href="/listen/">listen and book</a> · <a href="/agents/">use with AI</a> · <a href="/index.md">index.md</a></p>
+<p>Pages: <a href="/songs/">songs</a> · <a href="/algarve/">the Algarve</a> · <a href="/live/">live</a> · <a href="/about/">about</a> · <a href="/listen/">listen and book</a> · <a href="/agents/">use with AI</a> · <a href="/index.md">index.md</a> · <a href="/behind-the-scenes/">behind the scenes</a></p>
 <p>Made with the AgentiCCells site factory; a first version, materials to follow. Version __VERSION__ · design ${esc(DESIGNS.find(d => d.id === id).name)} · code Apache-2.0, text and drawings CC BY 4.0</p>
 </footer>`;
-const shell = (id, opts, css, body) => `${head({ title: `Marc Noah, singer-songwriter, Algarve (${DESIGNS.find(d => d.id === id).name})`, description: opts.description, path: `/d/${id}/`, image: opts.image, css: null, extra: `<style>${css}\n.dsw{font:14px/1.5 system-ui,sans-serif;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem .4rem;align-items:baseline}.dsw a{color:inherit}.dfoot{font:14px/1.6 system-ui,sans-serif;padding:1.5rem 1rem 3rem;max-width:60rem;margin:0 auto}.dfoot a{color:inherit}.cite{display:block;font:12px/1.4 system-ui,sans-serif;opacity:.75;margin-top:.25rem}.cite a{color:inherit}*{box-sizing:border-box}body{margin:0}img,svg{max-width:100%}</style>\n` })}
+const shell = (id, opts, css, body) => `${head({ title: `Marc Noah, singer-songwriter, Algarve (${DESIGNS.find(d => d.id === id).name})`, description: opts.description, path: `/d/${id}/`, image: opts.image, css: null, extra: `<style>${css}\n.dsw{font:14px/1.5 system-ui,sans-serif;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem .4rem;align-items:baseline}.dsw a{color:inherit;display:inline-flex;align-items:center;min-height:44px}.dfoot{font:14px/1.6 system-ui,sans-serif;padding:1.5rem 1rem 3rem;max-width:60rem;margin:0 auto}.dfoot a{color:inherit}.cite{display:block;font:12px/1.4 system-ui,sans-serif;opacity:.75;margin-top:.25rem}.cite a{color:inherit}*{box-sizing:border-box}body{margin:0}img,svg{max-width:100%}</style>\n` })}
 <body class="d-${id}">
 ${switcher(id)}
 <main id="main">
@@ -29,64 +30,73 @@ const channels = (sep = ' · ') => LISTEN.map(l => `<a href="${l.url}">${esc(l.n
 const bookBlock = (tag = 'h2') => `<${tag}>Book Marc</${tag}><p>${esc(BOOKING.text)}</p><p>${FORMATS.map(f => `<b>${f.name}</b> ${f.mins} min, ${f.on.toLowerCase()}`).join(' · ')}</p>${cite([BOOKING.src])}<p><a href="${BOOKING.url}">Book through Epopeia Records</a> · <a href="https://www.marcnoah.pt/">marcnoah.pt</a></p>`;
 const gigLine = g => `<time datetime="${g.date}">${fmtDate(g.date)}</time> · <b>${esc(g.place)}</b> · ${esc(g.venue)}${g.kind !== 'concert' ? ` (${g.kind})` : ''}`;
 
-// ---------------- The Coast ----------------
+// ---------------- The Coast (the home page; round 1 design) ----------------
+// Same coast() for / and /d/coast/: the home gets the main menu and footer, /d/coast/ keeps
+// its design switcher, dfoot('coast') and the "four other designs" line (review condition 1.6).
 function coast(opts) {
+  const C = citer(), c = C.c;
+  const q = COMPOSER.quoteShort;
+  const enQuote = esc(q.en).replace(/&quot;([^&]+)&quot;/, '<i>$1</i>'); // the title in italics, not in quotes (condition 3.2)
   const body = `
-<section class="c-hero">
-<svg class="c-sun" viewBox="0 0 400 220" aria-hidden="true"><circle cx="300" cy="100" r="70" fill="#f3b45d"/><g fill="none" stroke="#11607a" stroke-width="5" stroke-linecap="round" opacity=".8"><path d="M0 170c40-14 80-14 120 0s80 14 120 0 80-14 120 0 80 14 120 0"/><path d="M0 198c40-14 80-14 120 0s80 14 120 0 80-14 120 0 80 14 120 0" opacity=".5"/></g></svg>
-<p class="c-tag">${esc(PERSON.tagline)}</p>
-<h1>Marc Noah</h1>
-<p class="c-lead">He lives in the Algarve. He is the composer. <b>These are his songs.</b></p>
-<p class="c-actions"><a class="btn" href="${ALBUM.listen[0].url}">Listen to Giant Little Victories</a> <a class="btn alt" href="/listen/#book">Book Marc</a></p>
+<section class="hero">
+<div>
+<p class="kick">${esc(HERO.kicker)}${c(HERO.kickerSrc)}</p>
+<h1>${esc(PERSON.name)}</h1>
+<p class="lead">${esc(HERO.line)}${c(HERO.src)}</p>
+<article class="song" aria-labelledby="feat">
+<p class="over">${esc(FEATURE.head)}</p>
+<h2 id="feat">${esc(FEATURE.title)}</h2>
+<p>${FEATURE.lines.map(l => `${esc(l.text)}${c(l.src)}`).join(' ')}</p>
+<blockquote>“${esc(FEATURE.quoteShort.en)}”</blockquote>
+<p class="cap">${esc(FEATURE.quoteShort.caption)}${c(FEATURE.quoteShort.src)}</p>
+<p class="btns"><a class="btn" href="${esc(FEATURE.url)}">${PLAY}${esc(FEATURE.button)}</a><a class="btn alt" href="${esc(ALBUM.listen[0].url)}">Album on ${esc(ALBUM.listen[0].name)}</a><a class="btn alt" href="${esc(ALBUM.listen[1].url)}">${esc(ALBUM.listen[1].name)}</a></p>
+</article>
+</div>
+${mapFigure(c, opts.home ? 'hm' : 'cm')}
 </section>
-<section class="c-story">
-${STORY.map((s, i) => `<article><span class="c-num">${i + 1}</span><h2>${esc(s.head)}</h2><p>${esc(s.text)}</p>${cite(s.src)}</article>`).join('\n')}
+<section class="block" aria-labelledby="w">
+<h2 class="h" id="w">${esc(COMPOSER.head)}</h2>
+<div class="words">
+<figure class="pull">
+<blockquote>${enQuote}</blockquote>
+<p class="pt" lang="pt-PT">${esc(q.pt)}</p>
+<figcaption>${esc(q.caption)}${c(q.src)}</figcaption>
+</figure>
+<p>${ptWord(COMPOSER.labelLine.text, COMPOSER.labelLine.ptWord)}${c(COMPOSER.labelLine.src)} <a class="more" href="${esc(COMPOSER.more.href)}">${esc(COMPOSER.more.text)}</a></p>
+</div>
 </section>
-<section class="c-map">
-<h2>His coast</h2>
-<p>Home in Quarteira; concerts from Sagres to Pechão. ${cite(['brief', 'epopeia', 'postal', 'maisalgarve', 'epo-ribeira'])}</p>
-${algarveMap({ id: 'cm' })}
-<p><a href="/algarve/">Every place, with its source</a></p>
-</section>
-<section class="c-album">
-<p class="c-tag">${ALBUM.kind} · ${ALBUM.released} · ${ALBUM.label}</p>
-<h2>${ALBUM.title}</h2>
-${quote0('c-q')}
-<ol class="c-tracks">
-${TRACKS.map(t => `<li><b>${esc(t.title)}</b> <span>${t.len}</span> <small>first out ${fmtDate(t.first)}${t.video ? ` · ${vid(t)}` : ''}</small></li>`).join('\n')}
+<section class="block" aria-labelledby="s">
+<div class="albumhead"><h2 class="h" id="s">His songs: ${esc(ALBUM.title)}</h2>
+<p>${esc(ALBUM_LINE.text)}${c(ALBUM_LINE.src)}</p></div>
+<ol class="tracks">
+${TRACKS.map(t => `<li><span class="n">${t.n}</span><span><b>${esc(t.title)}</b>${t.tag ? `<span class="tag">${esc(t.tag.text)}${c(t.tag.src)}</span>` : ''}</span>${t.video ? `<a class="go" href="${esc(t.video.url)}" aria-label="Watch ${esc(t.title)} on YouTube">${PLAY}Watch</a>` : `<span class="len">${esc(t.len)}</span>`}</li>`).join('\n')}
 </ol>
-${cite(TRACKS_SRC)}
-<p class="c-actions">${ALBUM.listen.map(l => `<a class="btn" href="${l.url}">${esc(l.name)}</a>`).join(' ')}</p>
-<p>Before the album: ${OTHER_RELEASES.map(r => `<b>${esc(r.title)}</b> (${r.kind.toLowerCase()})`).join(', ')}. <a href="/songs/">All the songs</a></p>
+<p class="btns">${ALBUM.listen.map((l, i) => `<a class="btn${i ? ' alt' : ''}" href="${esc(l.url)}">${i ? '' : PLAY}${esc(l.name)}</a>`).join('')}</p>
+<p class="small-note">Track order from Apple Music; videos from his YouTube channel.${c(TRACKS_SRC)} <a class="more" href="/songs/">${esc(SONGS_PAGE.allLink)}</a></p>
 </section>
-<section class="c-live">
-<h2>On stage</h2>
-<p>${concerts.length} concerts listed from March 2023 to October 2026. The latest:</p>
-<ul>${GIGS.filter(g => g.kind === 'concert').slice(0, 6).map(g => `<li>${gigLine(g)} ${cite(g.src)}</li>`).join('')}</ul>
-<p><a href="/live/">Every date, with its source</a></p>
+<section class="block cols" aria-labelledby="l">
+<div><h2 class="h" id="l">On stage</h2>
+<p>${esc(LIVE.count.text)}${c(LIVE.count.src)} Some of the stages:</p>
+${stageList(c)}
+<p><a class="more" href="/live/">Every date, with its source</a></p>
+</div>
+<div><h2 class="h" id="book">Book him</h2>
+<p>His label, Epopeia Records, takes bookings for concerts and festivals. He plays in three formats:${c(BOOKING.src, FORMATS_SRC)}</p>
+${formatChips()}
+<p class="btns"><a class="btn" href="${esc(LIVE.url)}">${esc(LIVE.button)}</a></p>
+<p><a class="more" href="/live/">How he plays, and every date</a></p>
+</div>
 </section>
-<section class="c-book">
-${bookBlock()}
-<h2>Follow</h2><p>${channels()}</p>
-<h2 id="photos">Photos and videos</h2><p>More is coming, when Marc supplies photos. His official videos are on <a href="/songs/">the songs page</a>.</p>
-</section>
-<p class="c-designs">This page in four other designs: ${DESIGNS.filter(d => d.id !== 'coast').map(d => `<a href="/d/${d.id}/">${esc(d.name)}</a>`).join(' · ')}.</p>`;
-  const css = `.c-hero{position:relative;padding:2.5rem 0 1.5rem;border-bottom:1px solid var(--line);overflow:hidden}.c-sun{position:absolute;right:-2rem;top:0;width:min(26rem,70%);z-index:0;opacity:.9}.c-hero>*:not(.c-sun){position:relative;z-index:1}
-.c-hero h1{font-size:clamp(3rem,13vw,6.5rem);margin:.25rem 0;letter-spacing:-.02em}.c-tag{text-transform:uppercase;letter-spacing:.14em;color:var(--sea);font-weight:600;margin:0;font-size:.9rem}
-.c-lead{font-size:clamp(1.2rem,4vw,1.6rem);max-width:34rem;line-height:1.35}.c-actions{display:flex;flex-wrap:wrap;gap:.6rem}
-.c-story{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin:2rem 0}.c-story article{background:var(--paper);border:1px solid var(--line);border-radius:1rem;padding:1.1rem}.c-story h2{margin:.25rem 0 .5rem;font-size:1.25rem}
-.c-num{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--sun);color:#fff;font-weight:700}
-.c-album{background:var(--paper);border:1px solid var(--line);border-radius:1rem;padding:1.25rem;margin:2rem 0}.c-album h2{font-size:clamp(1.8rem,6vw,2.6rem);margin:.25rem 0}
-.c-q blockquote{margin:0;font-style:italic;border-left:4px solid var(--sun);padding-left:1rem;background:none}.c-q figcaption{margin:.5rem 0 0 1.25rem;color:var(--muted)}.c-q{margin:1rem 0}
-.c-tracks{padding-left:1.6rem;columns:2 18rem;column-gap:2rem}.c-tracks li{break-inside:avoid;margin:.35rem 0}.c-tracks span{color:var(--muted);font-variant-numeric:tabular-nums}.c-tracks small{display:block;color:var(--muted)}
-.c-live ul{padding-left:1.1rem}.c-designs{margin-top:2.5rem;font-size:.95rem}`;
-  return `${head({ title: 'Marc Noah, singer-songwriter, Algarve', description: opts.description, path: opts.home ? '/' : '/d/coast/', image: opts.image, canonical: '/', extra: `<style>${css}</style>\n` })}
+${opts.home ? '' : `<p class="c-designs">This page in four other designs: ${DESIGNS.filter(d => d.id !== 'coast').map(d => `<a class="more" href="/d/${d.id}/">${esc(d.name)}</a>`).join(' · ')}.</p>`}`;
+  const foot = opts.home ? siteFoot(c) : dfoot('coast');
+  return `${head({ title: 'Marc Noah, singer-songwriter, Algarve', description: opts.description, path: opts.home ? '/' : '/d/coast/', image: opts.image, canonical: '/', extra: opts.home ? '' : `<style>.dsw{font:14px/1.5 system-ui,sans-serif;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem .4rem;align-items:center}.dsw a{color:inherit;display:inline-flex;align-items:center;min-height:44px}.dfoot{font:14px/1.6 system-ui,sans-serif;padding:1.5rem 1rem 3rem;max-width:60rem;margin:0 auto}.dfoot a{color:inherit}</style>\n` })}
 <body>
-${opts.home ? opts.nav('/') : switcher('coast')}
-<main id="main">
+${opts.home ? siteNav('/') : switcher('coast')}
+<main id="main" class="wrap">
 ${body}
+${C.list()}
 </main>
-${opts.home ? opts.foot : dfoot('coast')}
+${foot}
 </body>
 </html>
 `;

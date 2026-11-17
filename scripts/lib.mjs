@@ -1,18 +1,13 @@
 // Shared helpers for scripts/generate.mjs. Code Apache-2.0.
-import { SITE, SOURCES, PLACES } from '../data/facts.mjs';
+import { SITE, SOURCES, PLACES, SOURCES_NOTE, READ, PERSON, FOOTER, LISTEN, FORMATS, STAGES, FEATURE } from '../data/facts.mjs';
 
 export const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 export const fmtDate = d => { const [y, m, dd] = d.split('-').map(Number); return `${dd} ${MONTHS[m - 1]} ${y}`; };
 export const monShort = d => MONTHS[Number(d.split('-')[1]) - 1].slice(0, 3);
 
-export const SHORT = {
-  epopeia: 'Epopeia artist page', 'epo-roadtrip': 'Epopeia Jornal, 28 Feb 2025', 'epo-top-mar': 'Epopeia Jornal, 1 Apr 2025',
-  'epo-top-apr': 'Epopeia Jornal, 2 May 2025', 'epo-ribeira': 'Epopeia Jornal, 3 Jun 2025', 'epo-glv': 'Epopeia agenda, album release',
-  'epo-castelo': 'Epopeia agenda, 7 Aug 2026', 'epo-emersivo': 'Epopeia agenda, 10 Oct 2026', avoz: 'A Voz do Algarve, 5 Aug 2026',
-  maisalgarve: 'Mais Algarve, 22 Mar 2023', postal: 'Postal do Algarve, 28 Jun 2024', apple: 'Apple Music', spotify: 'Spotify',
-  youtube: 'YouTube (marcnoahVEVO)', dinis: 'Dinis Cruz, 17 Nov 2026', brief: 'marcnoah.pt, via the factory brief',
-};
+// Short labels for markers and source lists come from the facts file (SOURCES[id].short).
+export const SHORT = Object.fromEntries(Object.entries(SOURCES).map(([id, s]) => [id, s.short || s.title]));
 // A compact source line: every fact on the site carries one.
 export const cite = (ids, cls = 'cite') => {
   const list = [].concat(ids).filter(Boolean);
@@ -20,6 +15,76 @@ export const cite = (ids, cls = 'cite') => {
   return `<small class="${cls}">Source${list.length > 1 ? 's' : ''}: ${list.map(id => `<a href="${esc(SOURCES[id].url)}">${esc(SHORT[id])}</a>`).join(', ')}; read ${SOURCES[list[0]].read.slice(0, 10)}.</small>`;
 };
 export const citeMd = ids => `(Source${[].concat(ids).length > 1 ? 's' : ''}: ${[].concat(ids).map(id => `[${SHORT[id]}](${SOURCES[id].url})`).join(', ')})`;
+
+// Numbered source markers and one source list per page (round 1, change 5).
+// c(...ids) returns small numbered links, each with an accessible name ("Source 4: Epopeia Jornal,
+// 28 Feb 2025"); list() returns the page's source list, numbered in order of first use, with the
+// read date once and each exception written plainly.
+export function citer() {
+  const order = [];
+  const num = id => {
+    if (!SOURCES[id]) throw new Error(`unknown source ${id}`);
+    let i = order.indexOf(id);
+    if (i < 0) { order.push(id); i = order.length - 1; }
+    return i + 1;
+  };
+  const c = (...ids) => {
+    const list = [...new Set(ids.flat(2).filter(Boolean))];
+    if (!list.length) return '';
+    return `<span class="fn">${list.map(id => { const n = num(id); return `<a href="#src-${n}" aria-label="Source ${n}: ${esc(SHORT[id])}">${n}</a>`; }).join('')}</span>`;
+  };
+  const list = () => {
+    if (!order.length) return '';
+    const exceptions = order.filter(id => SOURCES[id].read !== READ)
+      .map(id => (SOURCES_NOTE.exceptions && SOURCES_NOTE.exceptions[id]) || `${SOURCES[id].title}: read ${SOURCES[id].read}.`);
+    return `<section class="sources" aria-labelledby="srch">
+<h2 id="srch">Sources</h2>
+<p>${esc(SOURCES_NOTE.readOnce)}${exceptions.map(e => ` ${esc(e)}`).join('')} The full register is on <a href="/sources/">the sources page</a>.</p>
+<ol>
+${order.map((id, i) => `<li id="src-${i + 1}"><a href="${esc(SOURCES[id].url)}">${esc(SOURCES[id].title)}</a></li>`).join('\n')}
+</ol>
+</section>`;
+  };
+  return { c, list, used: () => [...order] };
+}
+
+// The main menu and footer, shared by generate.mjs and behind.mjs (change 6).
+// Each label is whole words in one text node; the short label shows under 600 px.
+export const REPO = 'https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah';
+export const NAV = [['/songs/', 'Songs'], ['/algarve/', 'The Algarve', 'Algarve'], ['/live/', 'Live'], ['/about/', 'About'], ['/listen/', 'Listen and book', 'Book']];
+export const siteNav = path => `<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+<a class="brand" href="/"${path === '/' ? ' aria-current="page"' : ''}>Marc Noah</a>
+<nav aria-label="Main">
+${NAV.map(([h, t, s]) => `<a href="${h}"${h === path ? ' aria-current="page"' : ''}>${s ? `<span class="lg">${esc(t)}</span><span class="sm">${esc(s)}</span>` : esc(t)}</a>`).join('\n')}
+</nav>
+</header>`;
+export const siteFoot = c => `<footer class="foot">
+<div class="wrap">
+<p class="who">${esc(FOOTER.name)}<span>${esc(FOOTER.line)}${c(FOOTER.src)}</span></p>
+<p class="row">${LISTEN.filter(l => !/^Epopeia/.test(l.name)).map(l => `<a href="${esc(l.url)}">${esc(l.name)}</a>`).join('\n')}</p>
+<p class="row"><a href="${esc(FOOTER.bookUrl)}">${esc(FOOTER.book)}</a></p>
+<p class="quiet">About this site: <a href="/sources/">sources</a> · <a href="/d/">five designs</a> · <a href="/agents/">use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · <a href="/behind-the-scenes/">behind the scenes</a> · <a href="${REPO}">source code</a> · version __VERSION__ · ${esc(FOOTER.approve)} ${esc(FOOTER.noCopies)} ${esc(FOOTER.factory)} Code Apache-2.0, text and drawings CC BY 4.0.</p>
+</div>
+</footer>`;
+// One main page: menu, main (body, then the page's source list), footer.
+// body is a string or a function of c (the page's marker function).
+export function sitePage({ path, title, description, image = PERSON.share, body, css = '' }) {
+  const C = citer();
+  const main = typeof body === 'function' ? body(C.c) : body;
+  const foot = siteFoot(C.c);
+  return `${head({ title, description, path, image, extra: css ? `<style>${css}</style>\n` : '' })}
+<body>
+${siteNav(path)}
+<main id="main" class="wrap">
+${main}
+${C.list()}
+</main>
+${foot}
+</body>
+</html>
+`;
+}
 
 export function head({ title, description, path, image, extra = '', css = '/style.css', canonical }) {
   const url = `${SITE}${path}`;
@@ -75,6 +140,45 @@ ${pins}
 </g>
 </svg>`;
 }
+
+// The close map of the central Algarve (round 1, change 2): Quarteira largest and alone in
+// sea-blue, Loulé marked, a dashed line joining the given places in the given order (the order
+// is ours; the caption says so). Labels at 21 units render at about 17 px at 390 px.
+const RLABEL = { quarteira: [-18, 34, 'end'], salir: [14, 7, 'start'], loule: [13, 7, 'start'], faro: [-8, -32, 'middle'], olhao: [-2, -16, 'middle'] };
+export function routeMap({ id = 'rm', route, home, homeLabel, title, desc, marked = ['loule'] }) {
+  const P = Object.fromEntries(PLACES.map(p => [p.id, p]));
+  for (const r of [...route, home, ...marked]) if (!P[r]) throw new Error(`routeMap: unknown place ${r}`);
+  const pts = COAST.map(([a, b]) => `${X(a)},${Y(b)}`).join(' ');
+  const line = route.map(r => `${X(P[r].lon)},${Y(P[r].lat)}`).join(' ');
+  const pin = (r, kind) => {
+    const p = P[r], x = X(p.lon), y = Y(p.lat), [dx, dy, an] = RLABEL[r] || [12, 7, 'start'];
+    const isHome = kind === 'home';
+    const fill = isHome ? '#11607a' : kind === 'route' ? '#a8541a' : '#5d5a55';
+    const label = isHome ? homeLabel : p.name.replace(/ \(.*\)$/, '');
+    return `<circle cx="${x}" cy="${y}" r="${isHome ? 13 : kind === 'route' ? 8 : 7}" fill="${fill}" stroke="#fff" stroke-width="3"/><text x="${x + dx}" y="${y + dy}" text-anchor="${an}" font-weight="${isHome ? 700 : 600}"${isHome ? ' fill="#11607a" font-size="23"' : ''}>${esc(label)}</text>`;
+  };
+  return `<svg class="rmap" viewBox="360 34 430 250" role="img" aria-labelledby="${id}t ${id}d">
+<title id="${id}t">${esc(title)}</title>
+<desc id="${id}d">${esc(desc)}</desc>
+<rect x="0" y="0" width="1000" height="340" fill="#cfe6ee"/>
+<polygon points="0,0 ${pts} 1000,0" fill="#efe3cc" stroke="#c9b48f" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="${line}" fill="none" stroke="#a8541a" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-size="21" fill="#1f2328" font-family="system-ui,sans-serif">
+${marked.filter(m => m !== home && !route.includes(m)).map(m => pin(m, 'marked')).join('\n')}
+${route.filter(r => r !== home).map(r => pin(r, 'route')).join('\n')}
+${pin(home, 'home')}
+<text x="420" y="270" font-size="20" font-style="italic" fill="#4f4c47">Atlantic Ocean</text>
+</g>
+</svg>`;
+}
+
+// Fragments shared by the main pages and the Coast design (round 1).
+export const PLAY = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>';
+// pt words set in italics with lang="pt", the rest escaped.
+export const ptWord = (text, word) => word ? esc(text).replace(word, `<i lang="pt">${esc(word)}</i>`) : esc(text);
+export const formatChips = () => `<ul class="formats">${FORMATS.map(f => `<li><b>${esc(f.name)}</b> ${f.mins} min, ${esc(f.on.toLowerCase())}${f.name === 'Band' ? `, ${esc(f.people)}` : ''}</li>`).join('')}</ul>`;
+export const stageList = c => `<ul class="stages">${STAGES.map(g => `<li><time datetime="${g.date}">${fmtDate(g.date)}</time><b>${esc(g.venue)}</b>, ${esc(g.place)}${c(g.src)}</li>`).join('')}</ul>`;
+export const mapFigure = (c, id) => `<figure class="fig">${routeMap({ id, ...FEATURE.map })}<figcaption>${esc(FEATURE.map.caption)} ${esc(FEATURE.map.scale)}${c(FEATURE.map.src)} <a class="more" href="/algarve/">Every place he has played</a></figcaption></figure>`;
 
 export const DESIGNS = [
   { id: 'coast', name: 'The Coast', idea: 'Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.', default: true },

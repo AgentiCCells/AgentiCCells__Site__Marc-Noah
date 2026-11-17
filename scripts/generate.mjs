@@ -4,156 +4,159 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import * as F from '../data/facts.mjs';
-import { esc, fmtDate, cite, citeMd, head, algarveMap, DESIGNS, SHORT } from './lib.mjs';
+import { esc, fmtDate, citeMd, algarveMap, DESIGNS, sitePage, PLAY, ptWord, formatChips, stageList, mapFigure } from './lib.mjs';
 import { renderDesign } from './designs.mjs';
 
-const { SITE, SOURCES, PERSON, STORY, BIO_PT, BIO_NOTE, QUOTES, ALBUM, TRACKS, TRACKS_SRC, OTHER_RELEASES, LISTEN, FORMATS, FORMATS_SRC, PLACES, BEYOND, GIGS, GIGS_NOTE, GIGS_NOTE_SRC, BOOKING, NEEDS } = F;
+const { SITE, SOURCES, PERSON, STORY, BIO_PT, BIO_NOTE, QUOTES, ALBUM, TRACKS, TRACKS_SRC, OTHER_RELEASES, LISTEN, FORMATS, FORMATS_SRC, PLACES, BEYOND, GIGS, GIGS_NOTE, GIGS_NOTE_SRC, BOOKING, NEEDS,
+  COUNTS, FEATURE, ALBUM_LINE, SONGS_PAGE, LIVE, STAGES } = F;
 const out = (p, s) => { const f = `src/${p}`; mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, s); };
 const card = id => `${SITE}/assets/share/${id}-1200x630.jpg`;
 const MAIN_CARD = card('marc-noah');
+const page = opts => sitePage({ image: MAIN_CARD, ...opts });
 
-const NAV = [['/', 'Home'], ['/songs/', 'Songs'], ['/algarve/', 'The Algarve'], ['/live/', 'Live'], ['/about/', 'About'], ['/listen/', 'Listen and book'], ['/d/', 'Five designs'], ['/agents/', 'Use with AI']];
-const nav = path => `<a class="skip" href="#main">Skip to content</a>
-<header class="top">
-<a class="brand" href="/">Marc Noah <span>singer-songwriter, Algarve</span></a>
-<nav aria-label="Main">
-${NAV.map(([h, t]) => `<a href="${h}"${h === path ? ' aria-current="page"' : ''}>${t}</a>`).join('\n')}
-</nav>
-</header>`;
-const foot = `<footer>
-<p>Every fact on this site names its public source and the date it was read: see <a href="/sources/">sources</a>. Marc approves every change about him. No photos, audio or lyrics are copied here; follow the links to listen.</p>
-<p>Made with the AgentiCCells site factory; a first version, materials to follow.</p>
-<p class="muted">Version __VERSION__ · <a href="/agents/">Use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah">Source</a> · Code Apache-2.0, text and drawings CC BY 4.0</p>
-</footer>`;
-const page = ({ path, title, description, body, image = MAIN_CARD }) => `${head({ title, description, path, image })}
-<body>
-${nav(path)}
-<main id="main">
-${body}
-</main>
-${foot}
-</body>
-</html>
-`;
-
-// ---------- fragments shared by the main pages ----------
-const trackRow = t => `<li class="track">
-<span class="n">${t.n}</span>
-<div><h3>${esc(t.title)}</h3>
-<p class="meta">${t.len} · first released ${fmtDate(t.first)}${t.single ? ' as a single' : ''}</p>
-${t.note ? `<p>${esc(t.note)} ${cite(t.src)}</p>` : ''}
-${t.video ? `<p class="links"><a href="${t.video.url}">${t.video.kind}</a> (${fmtDate(t.video.date)})${t.video2 ? ` · <a href="${t.video2.url}">${t.video2.kind}</a> (${fmtDate(t.video2.date)})` : ''}</p>` : ''}
-</div>
-</li>`;
-const listenBtns = (links) => links.map(l => `<a class="btn" href="${l.url}">${esc(l.name)}</a>`).join('\n');
-const gigRow = g => `<li><time datetime="${g.date}">${fmtDate(g.date)}</time> <b>${esc(g.place)}</b>, ${esc(g.venue)}${g.time ? `, ${esc(g.time)}` : ''}${g.kind !== 'concert' ? ` <span class="kind">${g.kind}</span>` : ''}${g.note ? ` <span class="gnote">${esc(g.note)}</span>` : ''} ${cite(g.src)}</li>`;
-const ptQuote = q => `<figure class="pt"><blockquote lang="pt-PT">${esc(q.pt)}</blockquote><figcaption><span class="en">${esc(q.en)}</span> (our translation) ${cite(q.src || 'epopeia')}</figcaption></figure>`;
+// ---------- fragments shared by the main pages (exported for designs.mjs) ----------
+const listenBtns = (links, first = 'btn') => links.map((l, i) => `<a class="btn${i || first !== 'btn' ? ' alt' : ''}" href="${esc(l.url)}">${i === 0 && first === 'btn' ? PLAY : ''}${esc(l.name)}</a>`).join('\n');
+// pt words set in italics with lang="pt", the rest escaped.
+const ptQuote = (q, c) => `<figure class="pt"><blockquote lang="pt-PT">${esc(q.pt)}</blockquote><figcaption><span class="en">${esc(q.en)}</span> (our translation)${c(q.src || 'epopeia')}</figcaption></figure>`;
+const venueText = g => g.venue === g.place ? `<span class="nv">${esc(LIVE.noVenue)}</span>` : esc(g.venue);
+const gigRow = (g, c) => `<li><time datetime="${g.date}">${fmtDate(g.date)}</time> <b>${esc(g.place)}</b>${c(g.placeSrc)}, ${venueText(g)}${g.time ? `, ${esc(g.time)}` : ''}${g.kind !== 'concert' ? ` <span class="kind">${g.kind}</span>` : ''}${g.note ? ` <span class="gnote">${esc(g.note)}</span>` : ''}${c(g.src)}</li>`;
 
 // ---------- pages ----------
-const homeDesc = 'Marc Noah lives in the Algarve and writes the songs he sings. His first album, Giant Little Victories (2024), its eight songs, where he plays and how to listen and book him.';
-out('index.html', renderDesign('coast', { home: true, nav, foot, image: MAIN_CARD, description: homeDesc }));
+const homeDesc = 'Marc Noah lives on the Algarve coast and writes the songs he sings. Start with Roadtrip, then the eight songs of his first album, Giant Little Victories (2024), where he plays and how to book him.';
+out('index.html', renderDesign('coast', { home: true, image: MAIN_CARD, description: homeDesc }));
 
-out('songs/index.html', page({ path: '/songs/', title: 'The songs of Marc Noah', description: 'The eight songs of Giant Little Victories, his first album (2024), with the singles, the EP Green Sofa Session and the official videos, all written by Marc Noah.', body: `
-<h1>The songs</h1>
-<p class="lead">Marc Noah is a <i lang="pt">cantautor</i>: he writes the songs he sings. These are his. ${cite(['epopeia', 'dinis'])}</p>
-<section class="album">
-<p class="kind">${ALBUM.kind} · ${ALBUM.released} · ${ALBUM.label}</p>
-<h2>${ALBUM.title}</h2>
-<p>${esc(ALBUM.note)} ${cite(ALBUM.src)}</p>
-${ptQuote(QUOTES[0])}
-<p class="actions">${listenBtns(ALBUM.listen)}</p>
+const rt = TRACKS.find(t => t.n === FEATURE.n);
+const songRow = (t, c) => {
+  const bits = [t.len];
+  if (t.video) bits.push(`${esc(t.video.kind.toLowerCase())}, ${fmtDate(t.video.date)}`);
+  if (t.video2) bits.push(`<a class="more" href="${esc(t.video2.url)}">${esc(t.video2.kind.toLowerCase())}</a>, ${fmtDate(t.video2.date)}`);
+  const tag = t.tag ? ` · ${esc(t.tag.text)}${c(t.tag.src)}` : '';
+  return `<li><span class="n">${t.n}</span><span><b>${esc(t.title)}</b><span class="tag">${bits.join(' · ')}${tag}</span></span>${t.video ? `<a class="go" href="${esc(t.video.url)}" aria-label="Watch ${esc(t.title)} on YouTube">${PLAY}Watch</a>` : '<span></span>'}</li>`;
+};
+out('songs/index.html', page({ path: '/songs/', title: 'The songs of Marc Noah', description: `${SONGS_PAGE.head}: the eight songs of Giant Little Victories, his first album (November 2024), starting with Roadtrip, then the singles and the EP Green Sofa Session, with links to listen and watch.`, body: c => `
+<section class="hero" style="grid-template-columns:none">
+<div>
+<p class="kick">The songs of Marc Noah</p>
+<h1 style="font-size:clamp(2.4rem,10vw,4rem)">${esc(SONGS_PAGE.head)}</h1>
+<p class="lead">${ptWord(SONGS_PAGE.lead.text, SONGS_PAGE.lead.ptWord)}${c(SONGS_PAGE.lead.src)} ${esc(ALBUM_LINE.text)}${c(ALBUM_LINE.src)}</p>
+<p class="btns">${listenBtns(ALBUM.listen.map((l, i) => i === 0 ? { ...l, name: 'Album on Spotify' } : l))}</p>
+</div>
+</section>
+<section class="block cols" aria-labelledby="rt">
+<div>
+<p class="kick rust">Featured song · track ${rt.n}</p>
+<h2 class="h" id="rt" style="font-size:clamp(2rem,7vw,2.8rem)">${esc(FEATURE.title)}</h2>
+<p>${FEATURE.songsLines.map(l => `${esc(l.text)}${c(l.src)}`).join(' ')}</p>
+<figure class="pull small" style="margin:1rem 0"><blockquote>${esc(QUOTES[FEATURE.quoteFull].en)}</blockquote>
+<p class="pt" lang="pt-PT">${esc(QUOTES[FEATURE.quoteFull].pt)}</p>
+<figcaption>Marc Noah, on ${esc(QUOTES[FEATURE.quoteFull].about)} (our translation)${c(QUOTES[FEATURE.quoteFull].src)}</figcaption></figure>
+<p class="btns"><a class="btn" href="${esc(FEATURE.url)}">${PLAY}${esc(FEATURE.button)}</a></p>
+</div>
+${mapFigure(c, 'sm')}
+</section>
+<section class="block" aria-labelledby="all">
+<h2 class="h" id="all">The eight songs</h2>
 <ol class="tracks">
-${TRACKS.map(trackRow).join('\n')}
+${TRACKS.map(t => songRow(t, c)).join('\n')}
 </ol>
-${cite(TRACKS_SRC)}
+<p class="small-note">Track order, lengths and video dates from Apple Music and his YouTube channel.${c(TRACKS_SRC)} ${esc(ALBUM.note)}${c(ALBUM.src)} ${esc(SONGS_PAGE.credits)}</p>
 </section>
 <h2>Before the album</h2>
 <ul class="cards">
-${OTHER_RELEASES.map(r => `<li class="card"><p class="kind">${r.kind}</p><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>${r.url ? `<p><a href="${r.url}">Listen on Apple Music</a></p>` : ''}${cite(r.src)}</li>`).join('\n')}
+${OTHER_RELEASES.map(r => `<li class="card"><p class="kind">${esc(r.kind)}</p><h3>${esc(r.title)}</h3><p>${esc(r.text)}${c(r.src)}</p>${r.url ? `<p><a class="more" href="${esc(r.url)}">Listen on Apple Music</a></p>` : ''}</li>`).join('\n')}
 </ul>
-<h2>Roadtrip, in his words</h2>
-${ptQuote(QUOTES[1])}
-<p class="note">No lyrics, audio or cover art is copied here. The links go to his official pages on Spotify, Apple Music and YouTube.</p>
 ` }));
 
-out('algarve/index.html', page({ path: '/algarve/', title: 'Marc Noah in the Algarve', description: 'Where Marc Noah lives and plays: a drawn map of the Algarve, from Sagres to Pechão, with every town named in his label’s list and the press.', body: `
+out('algarve/index.html', page({ path: '/algarve/', title: 'Marc Noah in the Algarve', description: 'Where Marc Noah lives and plays: a drawn map of the Algarve, from Sagres to Pechão, with every town named in his label’s list and the press.', body: c => `
 <h1>The Algarve</h1>
-<p class="lead">Marc lives on the Algarve coast, in Quarteira, and most of his concerts are in the towns around it. ${cite(['brief', 'dinis', 'epopeia'])}</p>
+<p class="lead">Marc lives on the Algarve coast, in Quarteira, and most of his concerts are in the towns around it.${c(['brief', 'dinis', 'epopeia'])}</p>
 ${algarveMap()}
 <h2>Places</h2>
 <ul class="cards">
-${PLACES.map(p => `<li class="card${p.home ? ' home' : ''}" id="${p.id}"><p class="kind">${p.home ? 'Home' : 'Played'}</p><h3>${esc(p.name)}</h3><p>${esc(p.text)}</p>${cite(p.src)}</li>`).join('\n')}
+${PLACES.map(p => `<li class="card${p.home ? ' home' : ''}" id="${p.id}"><p class="kind">${p.home ? 'Home' : 'Played'}</p><h3>${esc(p.name)}</h3><p>${esc(p.text)}${c(p.src)}</p></li>`).join('\n')}
 </ul>
 <h2>Beyond the Algarve</h2>
 <ul class="cards">
-${BEYOND.map(p => `<li class="card"><h3>${esc(p.name)}</h3><p>${esc(p.text)}</p>${cite(p.src)}</li>`).join('\n')}
+${BEYOND.map(p => `<li class="card"><h3>${esc(p.name)}</h3><p>${esc(p.text)}${c(p.src, p.placeSrc)}</p></li>`).join('\n')}
 </ul>
 <p class="note">Quarteira comes from his own site as read for the factory brief; this session could not reach marcnoah.pt to read it again. See <a href="/sources/">sources</a>.</p>
 ` }));
 
-const years = [...new Set(GIGS.map(g => g.date.slice(0, 4)))];
-out('live/index.html', page({ path: '/live/', title: 'Marc Noah live', description: `Every dated appearance of Marc Noah in his label’s list and the Algarve press: ${GIGS.filter(g => g.kind === 'concert').length} concerts from 2023 to 2026, in the Algarve, the Azores and across Portugal.`, body: `
+const concerts = GIGS.filter(g => g.kind === 'concert');
+const others = GIGS.filter(g => LIVE.otherKinds.includes(g.kind));
+const years = [...new Set(concerts.map(g => g.date.slice(0, 4)))];
+out('live/index.html', page({ path: '/live/', title: 'Marc Noah live', description: `How Marc Noah plays and how to book him, and every dated concert in his label’s list and the Algarve press: ${COUNTS.concerts} from ${COUNTS.first.slice(0, 4)} to ${COUNTS.last.slice(0, 4)} (our count), in the Algarve, the Azores and across Portugal.`, body: c => `
 <h1>Live</h1>
-<p class="lead">${GIGS.filter(g => g.kind === 'concert').length} concerts from March 2023 to October 2026, most of them in the Algarve, as listed by his label and the press. ${cite(['epopeia'])}</p>
+<section class="booker" aria-labelledby="prog">
+<h2 id="prog">${esc(LIVE.head)}</h2>
+<p>His label, Epopeia Records, takes bookings for concerts and festivals.${c(BOOKING.src)}</p>
+<h3>${esc(LIVE.formatsHead)}</h3>
+${formatChips()}<p class="small-note">Formats as his label lists them.${c(FORMATS_SRC)}</p>
+<p class="btns"><a class="btn" href="${esc(LIVE.url)}">${esc(LIVE.button)}</a></p>
+<h3>${esc(LIVE.stagesHead)}</h3>
+${stageList(c)}
+</section>
 <h2>Coming up</h2>
-<p class="note">No future dates are listed by his label as of ${F.READ}. Check <a href="https://www.epopeia.eu/artistas/marc-noah">his artist page</a> and his own channels.</p>
-<h2>How he plays</h2>
-<ul class="cards">
-${FORMATS.map(f => `<li class="card"><h3>${f.name}</h3><p>${f.mins} minutes · ${f.on} · ${f.people}</p></li>`).join('\n')}
+<p class="note">No future dates are listed by his label as of 17 November 2026. Check <a href="${esc(BOOKING.url)}">his artist page</a> and his own channels.</p>
+<h2>Concerts</h2>
+<p>${esc(LIVE.count.text)}${c(LIVE.count.src)}</p>
+${years.map(y => `<h3>${y}</h3>\n<ul class="gigs">\n${concerts.filter(g => g.date.startsWith(y)).map(g => gigRow(g, c)).join('\n')}\n</ul>`).join('\n')}
+<h2>${esc(LIVE.otherHead)}</h2>
+<ul class="gigs">
+${others.map(g => gigRow(g, c)).join('\n')}
 </ul>
-${cite(FORMATS_SRC)}
-${years.map(y => `<h2>${y}</h2>\n<ul class="gigs">\n${GIGS.filter(g => g.date.startsWith(y)).map(gigRow).join('\n')}\n</ul>`).join('\n')}
-<p class="note">${esc(GIGS_NOTE)} ${cite(GIGS_NOTE_SRC)}</p>
+<p class="note">${esc(GIGS_NOTE)}${c(GIGS_NOTE_SRC)}</p>
 ` }));
 
-out('about/index.html', page({ path: '/about/', title: 'About Marc Noah', description: 'Marc Noah, Portuguese-Australian singer and composer living in the Algarve: his story as his label tells it, in Portuguese with a translation.', body: `
+out('about/index.html', page({ path: '/about/', title: 'About Marc Noah', description: 'Marc Noah, Portuguese-Australian singer and composer living in the Algarve: his story as his label tells it, in Portuguese with a translation, and his own words on his first album.', body: c => `
 <h1>About Marc</h1>
-<p class="lead">${esc(PERSON.oneLine)} ${cite(['epopeia', 'dinis'])}</p>
-${STORY.map(s => `<h2>${esc(s.head)}</h2><p>${esc(s.text)} ${cite(s.src)}</p>`).join('\n')}
-<h2>His story, as his label tells it</h2>
-<p>From his artist page at Epopeia Records, in Portuguese as published, with our translation under each paragraph.</p>
-${BIO_PT.map(b => `<figure class="pt"><blockquote lang="pt-PT">${esc(b.pt)}</blockquote><figcaption class="en">${esc(b.en)}</figcaption></figure>`).join('\n')}
-<p class="muted">${esc(BIO_NOTE)} ${cite('epopeia')}</p>
+<p class="lead">${esc(PERSON.oneLine)}${c(['epopeia', 'dinis'])}</p>
+${STORY.map(s => `<h2>${esc(s.head)}</h2><p>${esc(s.text)}${c(s.src)}</p>`).join('\n')}
 <h2>In his own words</h2>
-${QUOTES.map(q => `<h3>On ${esc(q.about)}</h3>${ptQuote(q)}`).join('\n')}
+${QUOTES.map(q => `<h3>On ${esc(q.about)}</h3>${ptQuote(q, c)}`).join('\n')}
+<h2>His story, as his label tells it</h2>
+<p>From his artist page at Epopeia Records, in Portuguese as published, with our translation under each paragraph.${c('epopeia')}</p>
+${BIO_PT.map(b => `<figure class="pt"><blockquote lang="pt-PT">${esc(b.pt)}</blockquote><figcaption class="en">${esc(b.en)}</figcaption></figure>`).join('\n')}
+<p class="muted">${esc(BIO_NOTE)}</p>
 <h2>His sound and his voice</h2>
-<p>His label puts it as a gentle mix of pop, indie and rock. The Algarve press writes of an intimate sound and a husky voice (<i lang="pt">voz rouca</i>) that has become one of his marks. ${cite(['epopeia', 'avoz'])}</p>
+<p>His label puts it as a gentle mix of pop, indie and rock. The Algarve press writes of an intimate sound and a husky voice (<i lang="pt">voz rouca</i>) that has become one of his marks.${c(['epopeia', 'avoz'])}</p>
 <h2 id="photos">Photos and videos</h2>
-<p>More is coming. Photos will be added when Marc supplies them or confirms which may be used. His official videos are listed on <a href="/songs/">the songs page</a>.</p>
+<p>More is coming. Photos will be added when Marc supplies them or confirms which may be used. His videos are listed on <a href="/songs/">the songs page</a>.</p>
 ` }));
 
-out('listen/index.html', page({ path: '/listen/', title: 'Listen to Marc Noah, and book him', description: 'Where to listen to Marc Noah (Spotify, Apple Music, YouTube) and how to book him for a concert or festival.', body: `
+out('listen/index.html', page({ path: '/listen/', title: 'Listen to Marc Noah, and book him', description: 'Where to listen to Marc Noah (Spotify, Apple Music, YouTube) and how to book him for a concert or festival.', body: c => `
 <h1>Listen and book</h1>
 <h2>Listen</h2>
 <ul class="cards">
-${LISTEN.map(l => `<li class="card"><h3><a href="${l.url}">${esc(l.name)}</a></h3>${cite(l.src)}</li>`).join('\n')}
+${LISTEN.map(l => `<li class="card"><h3><a href="${esc(l.url)}">${esc(l.name)}</a>${c(l.src)}</h3></li>`).join('\n')}
 </ul>
 <h2>Start with the album</h2>
 <p class="actions">${listenBtns(ALBUM.listen)}</p>
 <h2 id="book">Book Marc</h2>
-<p>${esc(BOOKING.text)} ${cite(BOOKING.src)}</p>
-<p class="actions"><a class="btn" href="${BOOKING.url}">His artist page at Epopeia Records</a> <a class="btn alt" href="https://www.marcnoah.pt/">marcnoah.pt</a></p>
-<ul class="cards">
-${FORMATS.map(f => `<li class="card"><h3>${f.name}</h3><p>${f.mins} minutes · ${f.on} · ${f.people}</p></li>`).join('\n')}
-</ul>
-${cite(FORMATS_SRC)}
+<p>${esc(BOOKING.text)}${c(BOOKING.src)}</p>
+<p class="actions"><a class="btn" href="${esc(BOOKING.url)}">His artist page at Epopeia Records</a> <a class="btn alt" href="https://www.marcnoah.pt/">marcnoah.pt</a></p>
+${formatChips()}<p class="small-note">Formats as his label lists them.${c(FORMATS_SRC)}</p>
 <p class="note">No email or phone number is copied here: this site gives contact details only as his own site publishes them.</p>
 ` }));
 
 out('sources/index.html', page({ path: '/sources/', title: 'Sources for the Marc Noah site', description: 'Every public source behind the Marc Noah site, with the date each was read, and what could not be read.', body: `
 <h1>Sources</h1>
-<p class="lead">Every fact on this site comes from one of these, each read on the date shown.</p>
+<p class="lead">Every fact on this site comes from one of these, each read on the date shown. On each page, small numbers after a fact link to that page’s own source list.</p>
 <ul class="cards">
-${Object.entries(SOURCES).map(([id, s]) => `<li class="card" id="${id}"><h3><a href="${s.url}">${esc(s.title)}</a></h3><p class="meta">Read ${esc(s.read)}</p></li>`).join('\n')}
+${Object.entries(SOURCES).map(([id, s]) => `<li class="card" id="${id}"><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="meta">Read ${esc(s.read)}</p></li>`).join('\n')}
 </ul>
 <h2>Not read</h2>
 <ul>
-<li><a href="https://www.marcnoah.pt/sobre">marcnoah.pt/sobre</a>, his own site: this session could not reach it on ${F.READ}. Quarteira, and the words <i lang="pt">luso-australiano</i> and <i lang="pt">cantautor</i>, are as the factory brief read it; the last two also appear on his label page.</li>
-<li><a href="https://regiao-sul.pt/cultura-e-eventos/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/778016">Região Sul, Sons no Castelo</a>: blocked by the publisher’s bot protection. Linked, not used.</li>
+<li><a class="more" href="https://www.marcnoah.pt/sobre">marcnoah.pt/sobre</a>, his own site: this session could not reach it on ${F.READ}. Quarteira, and the words <i lang="pt">luso-australiano</i> and <i lang="pt">cantautor</i>, are as the factory brief read it; the last two also appear on his label page.</li>
+<li><a class="more" href="https://regiao-sul.pt/cultura-e-eventos/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/778016">Região Sul, Sons no Castelo</a>: blocked by the publisher’s bot protection. Linked, not used.</li>
 <li>Instagram and Facebook: linked, not read.</li>
 </ul>
 <h2>Where sources differ</h2>
 <p>Postal do Algarve (28 June 2024) says he had recently released his debut album; his label’s agenda and Apple Music date the release to November 2024. This site uses November 2024.</p>
+<h2>Our own counts</h2>
+<p>${esc(COUNTS.how)} Today: ${COUNTS.concerts} concerts, ${COUNTS.concertsAlgarve} of them in the Algarve, and ${COUNTS.appearances} dated appearances in all.</p>
+<h2>What is not copied</h2>
+<p>${esc(F.FOOTER.noCopies)}</p>
 <h2>What we need from Marc</h2>
 <ul>${NEEDS.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
 ` }));
@@ -210,6 +213,8 @@ out('agents/index.html', page({ path: '/agents/', title: 'Use Marc Noah’s site
 <h2>For an editor of this site</h2>
 <p><a href="/agents/editor.md">editor.md</a></p>
 <pre>${esc(editorMd)}</pre>
+<h2>How this site is made</h2>
+<p>A team of AI agents writes and checks this site in rounds, from one facts file, and Marc approves every change about him through Dinis Cruz. See the team, their policies, the flow and every commit on <a href="/behind-the-scenes/">behind the scenes</a>.</p>
 <h2>What we need from Marc</h2>
 <ul>${NEEDS.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
 ` }));
@@ -322,6 +327,7 @@ If you cannot tell which, use the visitor's instructions: they change nothing.
 - [The facts as data](${SITE}/facts.json).
 - The home page in five designs with the same facts (picker: [/d/](${SITE}/d/), list: [designs.json](${SITE}/designs.json)): ${DESIGNS.map(d => `[${d.name}](${SITE}/d/${d.id}/)`).join(', ')}.
 - [Songs](${SITE}/songs/), [The Algarve](${SITE}/algarve/), [Live](${SITE}/live/), [About](${SITE}/about/), [Listen and book](${SITE}/listen/), [Sources](${SITE}/sources/), [Use with AI](${SITE}/agents/).
+- [Behind the scenes](${SITE}/behind-the-scenes/): the agent team that makes this site, its policies, the flow of a round, every commit and the round reports, generated from the repository at build time.
 - [Version](${SITE}/version.json).
 
 ## His sources

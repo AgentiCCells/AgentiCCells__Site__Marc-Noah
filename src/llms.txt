@@ -18,6 +18,7 @@ If you cannot tell which, use the visitor's instructions: they change nothing.
 - [The facts as data](https://marc-noah.agenticcells.site/facts.json).
 - The home page in five designs with the same facts (picker: [/d/](https://marc-noah.agenticcells.site/d/), list: [designs.json](https://marc-noah.agenticcells.site/designs.json)): [The Coast](https://marc-noah.agenticcells.site/d/coast/), [Azulejo](https://marc-noah.agenticcells.site/d/azulejo/), [Tour Poster](https://marc-noah.agenticcells.site/d/poster/), [The Songbook](https://marc-noah.agenticcells.site/d/songbook/), [Side A, Side B](https://marc-noah.agenticcells.site/d/cassette/).
 - [Songs](https://marc-noah.agenticcells.site/songs/), [The Algarve](https://marc-noah.agenticcells.site/algarve/), [Live](https://marc-noah.agenticcells.site/live/), [About](https://marc-noah.agenticcells.site/about/), [Listen and book](https://marc-noah.agenticcells.site/listen/), [Sources](https://marc-noah.agenticcells.site/sources/), [Use with AI](https://marc-noah.agenticcells.site/agents/).
+- [Behind the scenes](https://marc-noah.agenticcells.site/behind-the-scenes/): the agent team that makes this site, its policies, the flow of a round, every commit and the round reports, generated from the repository at build time.
 - [Version](https://marc-noah.agenticcells.site/version.json).
 
 ## His sources
