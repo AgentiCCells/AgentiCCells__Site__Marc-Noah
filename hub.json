@@ -1,7 +1,7 @@
 {
   "schema": "hub.json (draft)",
   "name": "Marc Noah",
-  "what_it_does": "Marc Noah, Australian-Portuguese singer-songwriter living in the Algarve: the composer and his songs.",
+  "what_it_does": "Personal website of Marc Noah, an Australian-Portuguese singer-songwriter living in the Algarve, with his songs, the places he plays and instructions for AI agents.",
   "owner": "AgentiCCells",
   "team": "factory@AgentiCCells.dinis, instructed by Dinis Cruz",
   "licence": { "code": "Apache-2.0", "text": "CC BY 4.0" },
