@@ -154,7 +154,8 @@ export const PHOTOS = [
     "kind": "portrait",
     "credit": "Epopeia Records",
     "from": "https://www.epopeia.eu/artistas/marc-noah",
-    "original": "Epopeia Records%E2%84%A2 _ MarcNoah Entrevista bts _ %C2%A9Mafalda Castro%2C 2024-10-Final.jpg",
+    "original": "Epopeia Records _ MarcNoah Entrevista bts _ (photographer named in the file; ask Marc how to credit) 2024-10-Final.jpg",
+    "credit_question": "The original file names a photographer. Ask Marc whether to credit them by name.",
     "read": "2026-11-17"
   },
   {
