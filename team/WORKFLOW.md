@@ -16,6 +16,8 @@ Dinis, 2026-11-17, about 23:05 UTC, in this session: "the designs, the multiple 
 
 Dinis, 2026-11-17, about 23:10 UTC, in this session: "Yes, you could also quote lyric lines because he actually has some great lyrics." Short lines only, as his own site publishes them, each attributed to its song.
 
+Dinis, 2026-11-17, about 23:25 UTC, in this session: "if you now have videos, you should be able to go to town with them, because you should be able to take screenshots from them ... Show Mark playing with the band, because that's so powerful. Show him playing by himself. Show the whole type of services that you can have, so you can really, I think, use it as the centerpiece of your design, right? And really make it powerful to find them, to play with them, to see them, and then, again, the photos and the video should really allow this site to come to life". Stills come from each video's YouTube poster frame, self-hosted; the videos play in the page on click.
+
 ## The team
 
 | Agent | Role | Writes |
