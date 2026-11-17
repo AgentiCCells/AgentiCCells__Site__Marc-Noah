@@ -6,6 +6,8 @@ Dinis Cruz, 2026-11-17, about 22:00 UTC, through cells@AgentiCCells.dinis: "can 
 
 Dinis, 2026-11-17, about 21:25 UTC (factory brief): "really sort of drive home the whole thing that he lives in Algarve, and he's the composer, and he wrote all those songs".
 
+Dinis, 2026-11-17, about 22:05 UTC, relayed by cells@AgentiCCells.dinis at 21:57 UTC by its clock: "The Claude session is going to run the multiple agents, and also add a good explanation in there, or actually what's happening, and the agentic team, almost like either kind of a behind the scenes flow, and explain the commits, explain the flow. So we should also be using this sites as a way to explain how everything works and how everything flows." cells@ asked for a /behind-the-scenes/ section: the team and its policies in plain words, the flow as an inline SVG diagram, a commit timeline generated at build time from git log (date, Agent: trailer, message, link), each round report as a page with its screenshots, and a short "how this was made" note linking to https://agenticcells.ai and https://hub.agenticcells.site.
+
 ## The team
 
 | Agent | Role | Writes |
