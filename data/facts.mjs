@@ -42,6 +42,7 @@ export const SOURCES = {
   'yt-alvor': { title: 'YouTube, Alvor FM channel: his live performances, titles via oEmbed', url: 'https://www.youtube.com/@alvorfm901', read: READ, short: 'YouTube (Alvor FM)' },
   'yt-choque': { title: 'YouTube, Alvor FM: "Marc Noah no Choque Frontal ao Vivo" (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão', url: 'https://www.youtube.com/watch?v=S85R1WgyKJ0', read: READ, short: 'Alvor FM video, Choque Frontal' },
   'yt-acustico': { title: 'YouTube, Alvor FM: "Marc Noah" (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023', url: 'https://www.youtube.com/watch?v=OyvGbs1fg7g', read: READ, short: 'Alvor FM video, 9.º Festival Acústico' },
+  'yt-frames': { title: 'YouTube: each video\'s own poster frame (i.ytimg.com/vi/<id>/maxresdefault.jpg), viewed for what it shows', url: 'https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg', read: READ, short: 'YouTube poster frames' },
 };
 // Each source's "short" is the label for a marker or a source list (the same text as SHORT in
 // scripts/lib.mjs, which has no entry for epo-santa-barbara yet). Source list wording, round 1:
@@ -286,36 +287,48 @@ export const NEEDS = [
 ];
 
 // Videos to embed (round 2). Every ID, title and channel is from YouTube's public oEmbed, read
-// 2026-11-17; "published" dates from the channel feeds (yt-own, youtube) or the video page; "recorded"
-// dates from the video description. Titles are exactly as YouTube gives them. A date of null was not read.
+// 2026-11-17; "published" dates from the channel feeds (yt-own, youtube) or the video page. Titles are
+// exactly as YouTube gives them. A value of null was not read.
 // kind: official (his label's Vevo channel), live (a live performance filmed by a radio station or by him), session.
+// format (round 2, for the Watch block): how the film shows him, so a programmer sees the booking it proves:
+//   'band', 'solo', 'session' (Green Sofa Sessions, him alone with a guitar), 'official' (music and lyric videos).
+//   No video shows the duo, so no entry has a duo format.
+// formatSrc, eventSrc, placeSrc, dateSrc name what each rests on; 'yt-frames' is the video's own poster frame.
+// date: the performance date (distinct from published); null where no source gives it.
+// basis: 'inferred' marks a field we reasoned to rather than read; the note says from what.
+// caption: our own words, under 12, describing what the film shows.
+const ALVOR_SONG = (id, title, song) => ({ id, title, song, kind: 'live', format: 'band', formatSrc: ['yt-frames', 'yt-choque'], formatBasis: 'inferred', formatNote: 'The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).', channel: 'Alvor FM', published: null, event: 'Choque Frontal ao Vivo', eventSrc: ['yt-frames'], place: 'TEMPO, Teatro Municipal de Portimão', placeSrc: ['yt-choque', 'own-choque'], date: null, dateNote: 'Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.', caption: `${song}, live at Choque Frontal ao Vivo, Portimão`, src: ['yt-alvor', 'yt-frames'] });
 export const VIDEOS = [
-  { id: 'adbD0f2FYLA', title: 'Marc Noah - Roadtrip', song: 'Roadtrip', kind: 'official', channel: 'marcnoahVEVO', published: '2025-03-12', src: ['youtube'] },
-  { id: 'll9tQ_BhrCA', title: 'Marc Noah - To The Bone (Official Lyric Video)', song: 'To The Bone', kind: 'official', channel: 'marcnoahVEVO', published: '2024-06-12', src: ['youtube'] },
-  { id: 'K8795UoBqTg', title: 'Marc Noah - Towers & Bridges', song: 'Towers and Bridges', kind: 'official', channel: 'marcnoahVEVO', published: '2023-11-04', src: ['youtube'] },
-  { id: 'JMd-r6okn80', title: 'Marc Noah - Mother - Official Lyric Video', song: 'Mother', kind: 'official', channel: 'marcnoahVEVO', published: '2023-08-27', src: ['youtube'] },
-  { id: 'SaiC6jdsCy8', title: 'Marc Noah - Sunshine - Official Lyric Video', song: 'Sunshine', kind: 'official', channel: 'marcnoahVEVO', published: '2023-05-05', src: ['youtube'] },
-  { id: 'oyE1KP8hUFU', title: 'Marc Noah - Lie to Me - Official Music Video', song: 'Lie to Me', kind: 'official', channel: 'marcnoahVEVO', published: '2023-03-04', src: ['youtube'] },
-  { id: 'wvsYVb5d1xQ', title: 'Marc Noah - Lie to Me - Official Lyric Video', song: 'Lie to Me', kind: 'official', channel: 'marcnoahVEVO', published: '2023-02-23', src: ['youtube'] },
-  // Live: Alvor FM. The full shows have recorded dates from their descriptions; the single songs below were
-  // found by searching YouTube for "Marc Noah Alvor FM"; YouTube refused further page reads, so only the
-  // Lie To Me video's event was read. The others' event and date are not read.
-  { id: 'S85R1WgyKJ0', title: 'Marc Noah no Choque Frontal ao Vivo', kind: 'live', channel: 'Alvor FM', published: '2024-01-04', recorded: '2023-12-13', event: 'Choque Frontal ao Vivo, TEMPO, Teatro Municipal de Portimão', src: ['yt-choque'] },
-  { id: 'OyvGbs1fg7g', title: 'Marc Noah', kind: 'live', channel: 'Alvor FM', published: '2024-01-14', recorded: '2023-10-04', event: '9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão', src: ['yt-acustico'] },
-  { id: 'QyZMI8sPgow', title: 'Marc Noah - Lie To Me', song: 'Lie to Me', kind: 'live', channel: 'Alvor FM', published: '2024-01-04', recorded: '2023-12-13', event: 'Choque Frontal ao Vivo, TEMPO, Teatro Municipal de Portimão', src: ['yt-alvor'] },
-  { id: 'f__TLj6ccQI', title: 'Marc Noah - No More Dreaming', song: 'No More Dreaming', kind: 'live', channel: 'Alvor FM', published: null, src: ['yt-alvor'] },
-  { id: 'GdY-l97_vCU', title: 'Marc Noah - To The Bone', song: 'To The Bone', kind: 'live', channel: 'Alvor FM', published: null, src: ['yt-alvor'] },
-  { id: 'RgJHbdZNpLM', title: 'Marc Noah - Sunshine', song: 'Sunshine', kind: 'live', channel: 'Alvor FM', published: null, src: ['yt-alvor'] },
-  { id: '0u0iQvyGcCg', title: 'Marc Noah - Mother', song: 'Mother', kind: 'live', channel: 'Alvor FM', published: null, src: ['yt-alvor'] },
-  { id: 'ANPCpT8ufMA', title: 'Marc Noah - Towers & Bridges', song: 'Towers and Bridges', kind: 'live', channel: 'Alvor FM', published: null, src: ['yt-alvor'] },
-  { id: 'JB0jvIitE9I', title: 'Marc Noah - Slowtalk', song: 'Slowtalk', kind: 'live', channel: 'Alvor FM', published: null, src: ['yt-alvor'] },
+  { id: 'adbD0f2FYLA', title: 'Marc Noah - Roadtrip', song: 'Roadtrip', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2025-03-12', date: null, caption: 'Official video for Roadtrip', src: ['youtube'] },
+  { id: 'll9tQ_BhrCA', title: 'Marc Noah - To The Bone (Official Lyric Video)', song: 'To The Bone', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2024-06-12', date: null, caption: 'Official lyric video for To The Bone', src: ['youtube'] },
+  { id: 'K8795UoBqTg', title: 'Marc Noah - Towers & Bridges', song: 'Towers and Bridges', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2023-11-04', date: null, caption: 'Official video for Towers & Bridges', src: ['youtube'] },
+  { id: 'JMd-r6okn80', title: 'Marc Noah - Mother - Official Lyric Video', song: 'Mother', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2023-08-27', date: null, caption: 'Official lyric video for Mother', src: ['youtube'] },
+  { id: 'SaiC6jdsCy8', title: 'Marc Noah - Sunshine - Official Lyric Video', song: 'Sunshine', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2023-05-05', date: null, caption: 'Official lyric video for Sunshine', src: ['youtube'] },
+  { id: 'oyE1KP8hUFU', title: 'Marc Noah - Lie to Me - Official Music Video', song: 'Lie to Me', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2023-03-04', date: null, caption: 'Official music video for Lie to Me', src: ['youtube'] },
+  { id: 'wvsYVb5d1xQ', title: 'Marc Noah - Lie to Me - Official Lyric Video', song: 'Lie to Me', kind: 'official', format: 'official', formatSrc: ['youtube'], channel: 'marcnoahVEVO', published: '2023-02-23', date: null, caption: 'Official lyric video for Lie to Me', src: ['youtube'] },
+  // Live: Alvor FM. The two full sets have their event and date from their descriptions.
+  { id: 'S85R1WgyKJ0', title: 'Marc Noah no Choque Frontal ao Vivo', kind: 'live', format: 'band', formatSrc: ['yt-frames', 'own-agenda'], formatNote: 'The poster frame shows him with guitarists and a drummer.', channel: 'Alvor FM', published: '2024-01-04', event: 'Choque Frontal ao Vivo', eventSrc: ['yt-choque'], place: 'TEMPO, Teatro Municipal de Portimão', placeSrc: ['yt-choque'], date: '2023-12-13', dateSrc: ['yt-choque', 'own-choque'], caption: 'His set with his band at TEMPO, Portimão', src: ['yt-choque'] },
+  { id: 'OyvGbs1fg7g', title: 'Marc Noah', kind: 'live', format: 'solo', formatSrc: ['yt-frames'], formatNote: 'The poster frame shows him alone on stage with an acoustic guitar.', channel: 'Alvor FM', published: '2024-01-14', event: '9.º Festival Acústico, Alvor FM and Freguesia de Portimão', eventSrc: ['yt-acustico'], place: 'TEMPO, Teatro Municipal de Portimão', placeSrc: ['yt-acustico'], date: '2023-10-04', dateSrc: ['yt-acustico'], caption: 'Alone with his guitar at the 9.º Festival Acústico, Portimão', src: ['yt-acustico'] },
+  // Alvor FM single songs: found by searching YouTube for "Marc Noah Alvor FM". Each poster frame carries the
+  // Choque Frontal ao Vivo mark. Only Lie To Me's description was read (13 December 2023); on a second try
+  // (2026-11-17) YouTube again refused the video pages, so the other six stay undated.
+  { ...ALVOR_SONG('QyZMI8sPgow', 'Marc Noah - Lie To Me', 'Lie To Me'), song: 'Lie to Me', published: '2024-01-04', eventSrc: ['yt-alvor', 'yt-frames'], date: '2023-12-13', dateSrc: ['yt-alvor'], dateNote: undefined },
+  ALVOR_SONG('f__TLj6ccQI', 'Marc Noah - No More Dreaming', 'No More Dreaming'),
+  ALVOR_SONG('GdY-l97_vCU', 'Marc Noah - To The Bone', 'To The Bone'),
+  ALVOR_SONG('RgJHbdZNpLM', 'Marc Noah - Sunshine', 'Sunshine'),
+  ALVOR_SONG('0u0iQvyGcCg', 'Marc Noah - Mother', 'Mother'),
+  { ...ALVOR_SONG('ANPCpT8ufMA', 'Marc Noah - Towers & Bridges', 'Towers & Bridges'), song: 'Towers and Bridges' },
+  ALVOR_SONG('JB0jvIitE9I', 'Marc Noah - Slowtalk', 'Slowtalk'),
   // Green Sofa Sessions: embedded on his own site's Green Sofa Session page (own-gss); titles via oEmbed.
-  { id: 'ZBwgJ7Lg7-o', title: 'Green Sofa Session #1 Lie To Me', song: 'Lie to Me', kind: 'session', channel: 'Marc Noah (@marcnoahmusic)', published: null, src: ['own-gss', 'yt-own'] },
-  { id: '5H8PBg1tQHc', title: 'Green Sofa Session #2 Sunshine', song: 'Sunshine', kind: 'session', channel: 'Marc Noah (@marcnoahmusic)', published: null, src: ['own-gss', 'yt-own'] },
-  { id: 'RRTVycYkcOo', title: '"Mother" Green Sofa Sessions', song: 'Mother', kind: 'session', channel: 'Marc Noah (@marcnoahmusic)', published: null, src: ['own-gss', 'yt-own'] },
-  { id: '6yUpmlZzrk0', title: 'Sofa Sessions #4   Towers And Bridges', song: 'Towers and Bridges', kind: 'session', channel: 'Marc Noah (@marcnoahmusic)', published: null, src: ['own-gss', 'yt-own'] },
-  // His own channel, recent live footage (dates from the channel feed).
-  { id: 'q2P-ScNIL7w', title: 'Concerto Marc Noah - Sons Do Castelo Agosto 26', kind: 'live', channel: 'Marc Noah (@marcnoahmusic)', published: '2026-08-28', event: 'Sons no Castelo, Loulé, August 2026', src: ['yt-own'] },
+  // His site says the sofa lives in a corner of his living room (own-gss); the settings of the outdoor
+  // sessions are as the poster frames show them, with no place named, since no source names one.
+  { id: 'ZBwgJ7Lg7-o', title: 'Green Sofa Session #1 Lie To Me', song: 'Lie to Me', kind: 'session', format: 'session', formatSrc: ['own-gss', 'yt-frames'], channel: 'Marc Noah (@marcnoahmusic)', published: null, date: null, setting: 'at home, on the green sofa in his living room, a dog at his feet', settingSrc: ['own-gss', 'yt-frames'], caption: 'Lie To Me, at home on the green sofa', src: ['own-gss', 'yt-own'] },
+  { id: '5H8PBg1tQHc', title: 'Green Sofa Session #2 Sunshine', song: 'Sunshine', kind: 'session', format: 'session', formatSrc: ['own-gss', 'yt-frames'], channel: 'Marc Noah (@marcnoahmusic)', published: null, date: null, setting: 'outdoors, on the green sofa on dry ground among trees', settingSrc: ['yt-frames'], caption: 'Sunshine, on the green sofa among trees', src: ['own-gss', 'yt-own'] },
+  { id: 'RRTVycYkcOo', title: '"Mother" Green Sofa Sessions', song: 'Mother', kind: 'session', format: 'session', formatSrc: ['own-gss', 'yt-frames'], channel: 'Marc Noah (@marcnoahmusic)', published: null, date: null, setting: 'outdoors, on the sofa on a seafront promenade, a beach behind him', settingSrc: ['yt-frames'], caption: 'Mother, on the sofa on a seafront promenade', src: ['own-gss', 'yt-own'] },
+  { id: '6yUpmlZzrk0', title: 'Sofa Sessions #4   Towers And Bridges', song: 'Towers and Bridges', kind: 'session', format: 'session', formatSrc: ['own-gss', 'yt-frames'], channel: 'Marc Noah (@marcnoahmusic)', published: null, date: null, setting: 'outdoors, on the green sofa on a jetty, by a red and white lighthouse', settingSrc: ['yt-frames'], caption: 'Towers and Bridges, by a lighthouse on a jetty', src: ['own-gss', 'yt-own'] },
+  // His own channel, recent live footage (published date from the channel feed; the stage screen in the
+  // frame reads "Dia 7 Marc Noah", matching the 7 August 2026 date his label and the press give).
+  { id: 'q2P-ScNIL7w', title: 'Concerto Marc Noah - Sons Do Castelo Agosto 26', kind: 'live', format: 'band', formatSrc: ['yt-frames'], formatNote: 'The poster frame shows a band on stage: guitars and a drum kit.', channel: 'Marc Noah (@marcnoahmusic)', published: '2026-08-28', event: 'Sons no Castelo', eventSrc: ['yt-own', 'epo-castelo', 'avoz'], place: 'Alcaidaria do Castelo de Loulé', placeSrc: ['epo-castelo'], date: '2026-08-07', dateSrc: ['epo-castelo', 'avoz', 'yt-frames'], caption: 'With his band at Sons no Castelo, Loulé', src: ['yt-own'] },
 ];
 export const VIDEOS_NOTE = 'Videos play from YouTube (youtube-nocookie.com) only when a visitor presses play. Official videos are on his label\'s Vevo channel; live videos are by Alvor FM, a radio station in Portimão, and on his own channel.';
 export const VIDEOS_SRC = ['youtube', 'yt-alvor', 'yt-own', 'own-gss'];

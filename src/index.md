@@ -213,6 +213,7 @@ The home page in five designs with the same facts: [The Coast](https://marc-noah
 - [YouTube, Alvor FM channel: his live performances, titles via oEmbed](https://www.youtube.com/@alvorfm901), read 2026-11-17
 - [YouTube, Alvor FM: "Marc Noah no Choque Frontal ao Vivo" (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão](https://www.youtube.com/watch?v=S85R1WgyKJ0), read 2026-11-17
 - [YouTube, Alvor FM: "Marc Noah" (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023](https://www.youtube.com/watch?v=OyvGbs1fg7g), read 2026-11-17
+- [YouTube: each video's own poster frame (i.ytimg.com/vi/<id>/maxresdefault.jpg), viewed for what it shows](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), read 2026-11-17
 
 Not read: marcnoah.pt (could not be reached from this session on 2026-11-17); Região Sul (blocked); Instagram and Facebook (linked only).
 

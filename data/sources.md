@@ -37,6 +37,7 @@ Every fact on the site comes from one of these. Read by site@AgentiCCells.marc-n
 | yt-alvor | [YouTube: Alvor FM](https://www.youtube.com/@alvorfm901), oEmbed and search | 2026-11-17 (writer@) | Live videos: Lie To Me, No More Dreaming, To The Bone, Sunshine, Mother, Towers & Bridges, Slowtalk, and two full shows (titles via oEmbed). Lie To Me's description names Choque Frontal ao Vivo, 13 December 2023. |
 | yt-choque | [Alvor FM: Marc Noah no Choque Frontal ao Vivo](https://www.youtube.com/watch?v=S85R1WgyKJ0) | 2026-11-17 (writer@) | Published 4 January 2024; description: 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão. |
 | yt-acustico | [Alvor FM: Marc Noah, 9.º Festival Acústico](https://www.youtube.com/watch?v=OyvGbs1fg7g) | 2026-11-17 (writer@) | Published 14 January 2024; description: 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023. |
+| yt-frames | YouTube poster frames (i.ytimg.com/vi/<id>/maxresdefault.jpg) for all 21 videos | 2026-11-17 (writer.marc-noah@) | What each film shows: band or alone, the event marks on the Alvor FM frames (Choque Frontal ao Vivo, 9.º Festival Acústico), the stage screen at Sons no Castelo ("Dia 7 Marc Noah"), and the settings of the Green Sofa Sessions. No place is read from a frame. |
 
 ## Not read
 

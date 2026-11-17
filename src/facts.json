@@ -1113,6 +1113,12 @@
       "url": "https://www.youtube.com/watch?v=OyvGbs1fg7g",
       "read": "2026-11-17",
       "short": "Alvor FM video, 9.º Festival Acústico"
+    },
+    "yt-frames": {
+      "title": "YouTube: each video's own poster frame (i.ytimg.com/vi/<id>/maxresdefault.jpg), viewed for what it shows",
+      "url": "https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg",
+      "read": "2026-11-17",
+      "short": "YouTube poster frames"
     }
   },
   "needs": [

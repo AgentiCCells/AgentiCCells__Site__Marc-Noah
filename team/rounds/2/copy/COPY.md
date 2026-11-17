@@ -71,3 +71,22 @@ Notes for the developer:
 ## Not done
 
 - No Spotify track IDs were added. EMBEDS already covers the album and the artist.
+
+## Video formats, events and captions (change 1)
+
+writer.marc-noah@AgentiCCells.dinis, 17 November 2026. Each `VIDEOS` entry now has `format`, `caption`, and where known `event`, `place` and `date` (the performance date; `recorded` is renamed `date`), each with a `*Src` list. New source `yt-frames`: the videos' own poster frames, viewed for what they show.
+
+| Format | Videos | Rests on |
+|---|---|---|
+| band (9) | S85R1WgyKJ0 (Choque Frontal, 13 Dec 2023), q2P-ScNIL7w (Sons no Castelo, Loulé, 7 Aug 2026), and the seven Alvor FM single songs | frames; for Sons no Castelo the stage screen reads "Dia 7 Marc Noah" (epo-castelo, avoz) |
+| solo (1) | OyvGbs1fg7g (9.º Festival Acústico, 4 Oct 2023) | frame: him alone on stage |
+| session (4) | the Green Sofa Sessions | own-gss; settings as seen: at home (his living room, own-gss), among trees, a seafront promenade, a jetty by a lighthouse. No place named. |
+| official (7) | the Vevo videos | youtube |
+
+No video shows the duo, so nothing is filed as duo.
+
+**A correction to the brief.** The seven Alvor FM single-song frames each carry the "Choque Frontal ao Vivo" mark, and show the same stage and shirt as the band set. They are clips of his band show, filmed close on him, not a solo set. I filed them `band`, marked `formatBasis: 'inferred'` with a note. The design's "On his own" rail of seven Alvor FM songs should hold only OyvGbs1fg7g unless Marc says otherwise (new question for Marc).
+
+**Dates.** A second gentle try at the six undated single-song pages was refused again by YouTube (a "sorry" page); oEmbed gives no date. They stay `date: null`, with a note that the frame matches the 13 December 2023 show. Lie To Me keeps its read date.
+
+**Captions** are our own, under 12 words, e.g. "His set with his band at TEMPO, Portimão"; "Alone with his guitar at the 9.º Festival Acústico, Portimão"; "Towers and Bridges, by a lighthouse on a jetty".
