@@ -17,6 +17,9 @@ for (const width of [390, 1366]) {
   const page = await browser.newPage({ viewport: { width, height: width === 390 ? 844 : 768 }, deviceScaleFactor: 1 });
   for (const p of paths) {
     await page.goto(base.replace(/\/$/, '') + p, { waitUntil: 'networkidle' });
+    // Scroll through the page so lazy images load before the full-page shot (round 2: photo-led pages).
+    await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); } window.scrollTo(0, 0); });
+    await page.waitForLoadState('networkidle');
     const name = p.replace(/^\/|\/$/g, '').replace(/\//g, '_') || 'home';
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     const height = await page.evaluate(() => document.documentElement.scrollHeight);

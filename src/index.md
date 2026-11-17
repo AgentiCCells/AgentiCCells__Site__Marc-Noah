@@ -18,6 +18,65 @@ His label calls him a singer and composer (cantor e compositor) and a cantautor:
 
 Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records, a label with an office in Faro. Before it came the EP Green Sofa Session and a run of singles and videos, starting with Lie to Me in February 2023. (Sources: [Epopeia agenda, album release](https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024), [Apple Music](https://music.apple.com/pt/artist/marc-noah/1846838057), [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
 
+## Watch him play
+
+Videos play from YouTube (youtube-nocookie.com) only when a visitor presses play. Official videos are on his label's Vevo channel; live videos are by Alvor FM, a radio station in Portimão, and on his own channel. (Sources: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299), [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube (@marcnoahmusic)](https://www.youtube.com/@marcnoahmusic), [marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session))
+
+### With the band
+
+- [His set with his band at TEMPO, Portimão](https://www.youtube.com/watch?v=S85R1WgyKJ0), 13 December 2023, Alvor FM (Sources: [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [marcnoah.pt agenda (archived 7 Feb 2024)](https://arquivo.pt/noFrame/replay/20240207172607/https://www.marcnoah.pt/agenda))
+- [Lie To Me, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=QyZMI8sPgow), 13 December 2023, Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [No More Dreaming, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=f__TLj6ccQI), Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [To The Bone, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=GdY-l97_vCU), Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [Sunshine, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=RgJHbdZNpLM), Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [Mother, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=0u0iQvyGcCg), Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [Towers & Bridges, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=ANPCpT8ufMA), Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [Slowtalk, live at Choque Frontal ao Vivo, Portimão](https://www.youtube.com/watch?v=JB0jvIitE9I), Alvor FM (Sources: [YouTube (Alvor FM)](https://www.youtube.com/@alvorfm901), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), [Alvor FM video, Choque Frontal](https://www.youtube.com/watch?v=S85R1WgyKJ0), [marcnoah.pt press, 13 Dec 2023](https://arquivo.pt/noFrame/replay/20250311191043/https://www.marcnoah.pt/press/to-the-bone-e-o-novo-single-de-marc-noah-jkbe8))
+- [With his band at Sons no Castelo, Loulé](https://www.youtube.com/watch?v=q2P-ScNIL7w), 7 August 2026, Marc Noah (@marcnoahmusic) (Sources: [YouTube (@marcnoahmusic)](https://www.youtube.com/@marcnoahmusic), [Epopeia agenda, 7 Aug 2026](https://www.epopeia.eu/agenda/marcnoah-loule-castelo), [A Voz do Algarve, 5 Aug 2026](https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
+
+### On his own
+
+- [Alone with his guitar at the 9.º Festival Acústico, Portimão](https://www.youtube.com/watch?v=OyvGbs1fg7g), 4 October 2023, Alvor FM (Sources: [Alvor FM video, 9.º Festival Acústico](https://www.youtube.com/watch?v=OyvGbs1fg7g), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
+
+### Green Sofa Sessions
+
+- [Lie To Me, at home on the green sofa](https://www.youtube.com/watch?v=ZBwgJ7Lg7-o), Marc Noah (@marcnoahmusic) (Sources: [marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session), [YouTube (@marcnoahmusic)](https://www.youtube.com/@marcnoahmusic), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
+- [Sunshine, on the green sofa among trees](https://www.youtube.com/watch?v=5H8PBg1tQHc), Marc Noah (@marcnoahmusic) (Sources: [marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session), [YouTube (@marcnoahmusic)](https://www.youtube.com/@marcnoahmusic), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
+- [Mother, on the sofa on a seafront promenade](https://www.youtube.com/watch?v=RRTVycYkcOo), Marc Noah (@marcnoahmusic) (Sources: [marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session), [YouTube (@marcnoahmusic)](https://www.youtube.com/@marcnoahmusic), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
+- [Towers and Bridges, by a lighthouse on a jetty](https://www.youtube.com/watch?v=6yUpmlZzrk0), Marc Noah (@marcnoahmusic) (Sources: [marcnoah.pt, Green Sofa Session (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022918/https://www.marcnoah.pt/singles/green-sofa-session), [YouTube (@marcnoahmusic)](https://www.youtube.com/@marcnoahmusic), [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
+
+### His videos
+
+- [Official video for Roadtrip](https://www.youtube.com/watch?v=adbD0f2FYLA), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+- [Official lyric video for To The Bone](https://www.youtube.com/watch?v=ll9tQ_BhrCA), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+- [Official video for Towers & Bridges](https://www.youtube.com/watch?v=K8795UoBqTg), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+- [Official lyric video for Mother](https://www.youtube.com/watch?v=JMd-r6okn80), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+- [Official lyric video for Sunshine](https://www.youtube.com/watch?v=SaiC6jdsCy8), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+- [Official music video for Lie to Me](https://www.youtube.com/watch?v=oyE1KP8hUFU), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+- [Official lyric video for Lie to Me](https://www.youtube.com/watch?v=wvsYVb5d1xQ), marcnoahVEVO (Source: [YouTube (marcnoahVEVO)](https://www.youtube.com/@marcnoahvevo6299))
+
+The duo format is real, but we have not found a film of him as a duo yet.
+
+## Lines he wrote
+
+Short lines from his songs, exactly as his own site shows them:
+
+> Sweat & tears made you a Queen, time to live the dream
+
+From Mother (Source: [marcnoah.pt (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre))
+
+> Ahead the horizon, its calls your name, over the mountain there’s no pain
+
+From Towers & Bridges (Source: [marcnoah.pt (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre))
+
+> Lie to me, i don't really care at all,  just don't leave, if you do my life is gone
+
+From Lie To Me (Source: [marcnoah.pt (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre))
+
+> Take me, set me free, take me to a place where we can only be
+
+From Roadtrip (Source: [marcnoah.pt (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022621/https://www.marcnoah.pt/sobre))
+
 ## His songs
 
 **Giant Little Victories**, album, his first, November 2024, Epopeia Records. Out on digital platforms from 20 November 2024. His label calls the album highly autobiographical. (Sources: [Epopeia agenda, album release](https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024), [Apple Music](https://music.apple.com/pt/artist/marc-noah/1846838057), [Spotify](https://open.spotify.com/album/623T8dPibUnW606HPL3dDj), [Epopeia Jornal, 28 Feb 2025](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo))
@@ -173,11 +232,15 @@ His label lists the October and November 2024 dates as his autumn tour; the Alga
 - [His own site](https://www.marcnoah.pt/)
 - [Epopeia Records](https://www.epopeia.eu/artistas/marc-noah)
 
-For concerts and festivals, his label, Epopeia Records, takes bookings: write to geral@epopeia-records.pt, the address his own site gives, or use the Booking button on his artist page, which also links his production dossier. (Source: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah))
+For concerts and festivals, his label, Epopeia Records, takes bookings: write to geral@epopeia-records.pt, the address his own site gives, or use the Booking button on his artist page, which also links his production dossier. (Sources: [Epopeia artist page](https://www.epopeia.eu/artistas/marc-noah), [marcnoah.pt contacts (archived 15 Dec 2025)](https://arquivo.pt/noFrame/replay/20251215022645/https://www.marcnoah.pt/contactos))
+
+## Photographs and video stills
+
+Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence. (Source: [Epopeia photos](https://www.epopeia.eu/artistas/marc-noah)) Video stills: each video’s own YouTube frame, from its channel. Not covered by this site’s licence. (Source: [YouTube poster frames](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg))
 
 ## Designs
 
-The home page in five designs with the same facts: [The Coast](https://marc-noah.agenticcells.site/d/coast/) (Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.); [Azulejo](https://marc-noah.agenticcells.site/d/azulejo/) (Portuguese blue and white tiles: each of his eight songs is a tile.); [Tour Poster](https://marc-noah.agenticcells.site/d/poster/) (A screen-printed gig poster: the dates and the towns lead, loud and close.); [The Songbook](https://marc-noah.agenticcells.site/d/songbook/) (A songwriter’s ruled notebook: one entry per song, in the order he released them.); [Side A, Side B](https://marc-noah.agenticcells.site/d/cassette/) (A cassette inlay card for the 1980s and 1990s music that shaped his sound: the album as Side A and Side B.).
+The home page in six designs with the same facts (Editorial is the home): [Editorial](https://marc-noah.agenticcells.site/d/editorial/) (Dark and photo-led: his label’s photographs lead, and his videos and album play in the page.); [The Coast](https://marc-noah.agenticcells.site/d/coast/) (Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.); [Azulejo](https://marc-noah.agenticcells.site/d/azulejo/) (Portuguese blue and white tiles: each of his eight songs is a tile.); [Tour Poster](https://marc-noah.agenticcells.site/d/poster/) (A screen-printed gig poster: the dates and the towns lead, loud and close.); [The Songbook](https://marc-noah.agenticcells.site/d/songbook/) (A songwriter’s ruled notebook: one entry per song, in the order he released them.); [Side A, Side B](https://marc-noah.agenticcells.site/d/cassette/) (A cassette inlay card for the 1980s and 1990s music that shaped his sound: the album as Side A and Side B.).
 
 ## Sources
 
@@ -214,8 +277,9 @@ The home page in five designs with the same facts: [The Coast](https://marc-noah
 - [YouTube, Alvor FM: "Marc Noah no Choque Frontal ao Vivo" (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão](https://www.youtube.com/watch?v=S85R1WgyKJ0), read 2026-11-17
 - [YouTube, Alvor FM: "Marc Noah" (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023](https://www.youtube.com/watch?v=OyvGbs1fg7g), read 2026-11-17
 - [YouTube: each video's own poster frame (i.ytimg.com/vi/<id>/maxresdefault.jpg), viewed for what it shows](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), read 2026-11-17
+- [Epopeia Records, artist page (photographs)](https://www.epopeia.eu/artistas/marc-noah), read 2026-11-17
 
-Not read: marcnoah.pt (could not be reached from this session on 2026-11-17); Região Sul (blocked); Instagram and Facebook (linked only).
+His own site, marcnoah.pt, could not be reached live on 17 November 2026. The pages marked "archived" were read that day from copies kept by Arquivo.pt, the Portuguese web archive; each shows the date of its copy. Not read: marcnoah.pt live (could not be reached on 2026-11-17); Região Sul (blocked); Instagram and Facebook (linked only).
 
 ## What we need from Marc
 
@@ -233,4 +297,4 @@ Not read: marcnoah.pt (could not be reached from this session on 2026-11-17); Re
 
 ---
 
-Made with the AgentiCCells site factory; a first version, materials to follow. Text CC BY 4.0.
+Made with the AgentiCCells site factory. Text CC BY 4.0; the photographs and video stills are not covered.

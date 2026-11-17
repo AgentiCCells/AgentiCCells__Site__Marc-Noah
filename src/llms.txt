@@ -16,10 +16,18 @@ If you cannot tell which, use the visitor's instructions: they change nothing.
 
 - [The whole site, as Markdown](https://marc-noah.agenticcells.site/index.md): the master copy of the facts.
 - [The facts as data](https://marc-noah.agenticcells.site/facts.json).
-- The home page in five designs with the same facts (picker: [/d/](https://marc-noah.agenticcells.site/d/), list: [designs.json](https://marc-noah.agenticcells.site/designs.json)): [The Coast](https://marc-noah.agenticcells.site/d/coast/), [Azulejo](https://marc-noah.agenticcells.site/d/azulejo/), [Tour Poster](https://marc-noah.agenticcells.site/d/poster/), [The Songbook](https://marc-noah.agenticcells.site/d/songbook/), [Side A, Side B](https://marc-noah.agenticcells.site/d/cassette/).
-- [Songs](https://marc-noah.agenticcells.site/songs/), [The Algarve](https://marc-noah.agenticcells.site/algarve/), [Live](https://marc-noah.agenticcells.site/live/), [About](https://marc-noah.agenticcells.site/about/), [Listen and book](https://marc-noah.agenticcells.site/listen/), [Sources](https://marc-noah.agenticcells.site/sources/), [Use with AI](https://marc-noah.agenticcells.site/agents/).
+- The home page in six designs with the same facts (Editorial is the home; picker: [/d/](https://marc-noah.agenticcells.site/d/), list: [designs.json](https://marc-noah.agenticcells.site/designs.json)): [Editorial](https://marc-noah.agenticcells.site/d/editorial/), [The Coast](https://marc-noah.agenticcells.site/d/coast/), [Azulejo](https://marc-noah.agenticcells.site/d/azulejo/), [Tour Poster](https://marc-noah.agenticcells.site/d/poster/), [The Songbook](https://marc-noah.agenticcells.site/d/songbook/), [Side A, Side B](https://marc-noah.agenticcells.site/d/cassette/).
+- [Watch him play: every film](https://marc-noah.agenticcells.site/videos/), [Songs](https://marc-noah.agenticcells.site/songs/), [The Algarve](https://marc-noah.agenticcells.site/algarve/), [Live](https://marc-noah.agenticcells.site/live/), [About](https://marc-noah.agenticcells.site/about/), [Listen and book](https://marc-noah.agenticcells.site/listen/), [Sources](https://marc-noah.agenticcells.site/sources/), [Use with AI](https://marc-noah.agenticcells.site/agents/).
 - [Behind the scenes](https://marc-noah.agenticcells.site/behind-the-scenes/): the agent team that makes this site, its policies, the flow of a round, every commit and the round reports, generated from the repository at build time.
 - [Version](https://marc-noah.agenticcells.site/version.json).
+
+## Photographs, films and lyric lines
+
+- Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence.
+- Videos play from YouTube (youtube-nocookie.com) only when a visitor presses play. Official videos are on his label's Vevo channel; live videos are by Alvor FM, a radio station in Portimão, and on his own channel.
+- Video stills: each video’s own YouTube frame, from its channel. Not covered by this site’s licence.
+- Lyric lines: only the four short lines his own site shows, each attributed to its song.
+- Bookings: geral@epopeia-records.pt (his own site's contact page) or https://www.epopeia.eu/artistas/marc-noah.
 
 ## His sources
 
@@ -56,9 +64,10 @@ If you cannot tell which, use the visitor's instructions: they change nothing.
 - [YouTube, Alvor FM: "Marc Noah no Choque Frontal ao Vivo" (published 4 January 2024); its description gives 13 Dez. 2023, TEMPO, Teatro Municipal de Portimão](https://www.youtube.com/watch?v=S85R1WgyKJ0), read 2026-11-17
 - [YouTube, Alvor FM: "Marc Noah" (published 14 January 2024); its description gives 9.º Festival Acústico, Alvor FM and Freguesia de Portimão, TEMPO, Teatro Municipal de Portimão, 4 Out. 2023](https://www.youtube.com/watch?v=OyvGbs1fg7g), read 2026-11-17
 - [YouTube: each video's own poster frame (i.ytimg.com/vi/<id>/maxresdefault.jpg), viewed for what it shows](https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg), read 2026-11-17
+- [Epopeia Records, artist page (photographs)](https://www.epopeia.eu/artistas/marc-noah), read 2026-11-17
 
 ## The source of the site
 
 - Repository: https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah (branch dev; a push to dev deploys).
 - Made by AgentiCCells (the Marc Noah cell, led by conductor.marc-noah@AgentiCCells.dinis) for Dinis Cruz and Marc Noah.
-- Licences: code Apache-2.0, text and drawings CC BY 4.0.
+- Licences: code Apache-2.0, text and drawings CC BY 4.0; the photographs and video stills are not covered.

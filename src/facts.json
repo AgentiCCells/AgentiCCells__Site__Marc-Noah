@@ -910,6 +910,769 @@
     "email": "geral@epopeia-records.pt",
     "emailSrc": "own-contact"
   },
+  "contact": {
+    "email": "geral@epopeia-records.pt",
+    "text": "For concerts and questions about Marc, his own site gives one address, at his label, Epopeia Records.",
+    "pt": "Entre em contato connosco para esclarecer questões sobre o artista e agendamento de concertos",
+    "en": "Get in touch with us to clear up questions about the artist and to book concerts",
+    "src": "own-contact"
+  },
+  "videos": [
+    {
+      "id": "adbD0f2FYLA",
+      "title": "Marc Noah - Roadtrip",
+      "song": "Roadtrip",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2025-03-12",
+      "date": null,
+      "caption": "Official video for Roadtrip",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "ll9tQ_BhrCA",
+      "title": "Marc Noah - To The Bone (Official Lyric Video)",
+      "song": "To The Bone",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2024-06-12",
+      "date": null,
+      "caption": "Official lyric video for To The Bone",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "K8795UoBqTg",
+      "title": "Marc Noah - Towers & Bridges",
+      "song": "Towers and Bridges",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2023-11-04",
+      "date": null,
+      "caption": "Official video for Towers & Bridges",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "JMd-r6okn80",
+      "title": "Marc Noah - Mother - Official Lyric Video",
+      "song": "Mother",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2023-08-27",
+      "date": null,
+      "caption": "Official lyric video for Mother",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "SaiC6jdsCy8",
+      "title": "Marc Noah - Sunshine - Official Lyric Video",
+      "song": "Sunshine",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2023-05-05",
+      "date": null,
+      "caption": "Official lyric video for Sunshine",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "oyE1KP8hUFU",
+      "title": "Marc Noah - Lie to Me - Official Music Video",
+      "song": "Lie to Me",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2023-03-04",
+      "date": null,
+      "caption": "Official music video for Lie to Me",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "wvsYVb5d1xQ",
+      "title": "Marc Noah - Lie to Me - Official Lyric Video",
+      "song": "Lie to Me",
+      "kind": "official",
+      "format": "official",
+      "formatSrc": [
+        "youtube"
+      ],
+      "channel": "marcnoahVEVO",
+      "published": "2023-02-23",
+      "date": null,
+      "caption": "Official lyric video for Lie to Me",
+      "src": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "S85R1WgyKJ0",
+      "title": "Marc Noah no Choque Frontal ao Vivo",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "own-agenda"
+      ],
+      "formatNote": "The poster frame shows him with guitarists and a drummer.",
+      "channel": "Alvor FM",
+      "published": "2024-01-04",
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-choque"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque"
+      ],
+      "date": "2023-12-13",
+      "dateSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "caption": "His set with his band at TEMPO, Portimão",
+      "src": [
+        "yt-choque"
+      ]
+    },
+    {
+      "id": "OyvGbs1fg7g",
+      "title": "Marc Noah",
+      "kind": "live",
+      "format": "solo",
+      "formatSrc": [
+        "yt-frames"
+      ],
+      "formatNote": "The poster frame shows him alone on stage with an acoustic guitar.",
+      "channel": "Alvor FM",
+      "published": "2024-01-14",
+      "event": "9.º Festival Acústico, Alvor FM and Freguesia de Portimão",
+      "eventSrc": [
+        "yt-acustico"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-acustico"
+      ],
+      "date": "2023-10-04",
+      "dateSrc": [
+        "yt-acustico"
+      ],
+      "caption": "Alone with his guitar at the 9.º Festival Acústico, Portimão",
+      "src": [
+        "yt-acustico"
+      ]
+    },
+    {
+      "id": "QyZMI8sPgow",
+      "title": "Marc Noah - Lie To Me",
+      "song": "Lie to Me",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": "2024-01-04",
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-alvor",
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": "2023-12-13",
+      "caption": "Lie To Me, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ],
+      "dateSrc": [
+        "yt-alvor"
+      ]
+    },
+    {
+      "id": "f__TLj6ccQI",
+      "title": "Marc Noah - No More Dreaming",
+      "song": "No More Dreaming",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": null,
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": null,
+      "dateNote": "Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.",
+      "caption": "No More Dreaming, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ]
+    },
+    {
+      "id": "GdY-l97_vCU",
+      "title": "Marc Noah - To The Bone",
+      "song": "To The Bone",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": null,
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": null,
+      "dateNote": "Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.",
+      "caption": "To The Bone, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ]
+    },
+    {
+      "id": "RgJHbdZNpLM",
+      "title": "Marc Noah - Sunshine",
+      "song": "Sunshine",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": null,
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": null,
+      "dateNote": "Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.",
+      "caption": "Sunshine, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ]
+    },
+    {
+      "id": "0u0iQvyGcCg",
+      "title": "Marc Noah - Mother",
+      "song": "Mother",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": null,
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": null,
+      "dateNote": "Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.",
+      "caption": "Mother, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ]
+    },
+    {
+      "id": "ANPCpT8ufMA",
+      "title": "Marc Noah - Towers & Bridges",
+      "song": "Towers and Bridges",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": null,
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": null,
+      "dateNote": "Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.",
+      "caption": "Towers & Bridges, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ]
+    },
+    {
+      "id": "JB0jvIitE9I",
+      "title": "Marc Noah - Slowtalk",
+      "song": "Slowtalk",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames",
+        "yt-choque"
+      ],
+      "formatBasis": "inferred",
+      "formatNote": "The poster frame shows only him, in close-up; it carries the Choque Frontal ao Vivo mark, and that show was with his band (the S85R1WgyKJ0 frame shows the band).",
+      "channel": "Alvor FM",
+      "published": null,
+      "event": "Choque Frontal ao Vivo",
+      "eventSrc": [
+        "yt-frames"
+      ],
+      "place": "TEMPO, Teatro Municipal de Portimão",
+      "placeSrc": [
+        "yt-choque",
+        "own-choque"
+      ],
+      "date": null,
+      "dateNote": "Not read: YouTube refused the video page on 2026-11-17. The frame matches the 13 December 2023 show (same mark, stage and shirt), but no source dates this video.",
+      "caption": "Slowtalk, live at Choque Frontal ao Vivo, Portimão",
+      "src": [
+        "yt-alvor",
+        "yt-frames"
+      ]
+    },
+    {
+      "id": "ZBwgJ7Lg7-o",
+      "title": "Green Sofa Session #1 Lie To Me",
+      "song": "Lie to Me",
+      "kind": "session",
+      "format": "session",
+      "formatSrc": [
+        "own-gss",
+        "yt-frames"
+      ],
+      "channel": "Marc Noah (@marcnoahmusic)",
+      "published": null,
+      "date": null,
+      "setting": "at home, on the green sofa in his living room, a dog at his feet",
+      "settingSrc": [
+        "own-gss",
+        "yt-frames"
+      ],
+      "caption": "Lie To Me, at home on the green sofa",
+      "src": [
+        "own-gss",
+        "yt-own"
+      ]
+    },
+    {
+      "id": "5H8PBg1tQHc",
+      "title": "Green Sofa Session #2 Sunshine",
+      "song": "Sunshine",
+      "kind": "session",
+      "format": "session",
+      "formatSrc": [
+        "own-gss",
+        "yt-frames"
+      ],
+      "channel": "Marc Noah (@marcnoahmusic)",
+      "published": null,
+      "date": null,
+      "setting": "outdoors, on the green sofa on dry ground among trees",
+      "settingSrc": [
+        "yt-frames"
+      ],
+      "caption": "Sunshine, on the green sofa among trees",
+      "src": [
+        "own-gss",
+        "yt-own"
+      ]
+    },
+    {
+      "id": "RRTVycYkcOo",
+      "title": "\"Mother\" Green Sofa Sessions",
+      "song": "Mother",
+      "kind": "session",
+      "format": "session",
+      "formatSrc": [
+        "own-gss",
+        "yt-frames"
+      ],
+      "channel": "Marc Noah (@marcnoahmusic)",
+      "published": null,
+      "date": null,
+      "setting": "outdoors, on the sofa on a seafront promenade, a beach behind him",
+      "settingSrc": [
+        "yt-frames"
+      ],
+      "caption": "Mother, on the sofa on a seafront promenade",
+      "src": [
+        "own-gss",
+        "yt-own"
+      ]
+    },
+    {
+      "id": "6yUpmlZzrk0",
+      "title": "Sofa Sessions #4   Towers And Bridges",
+      "song": "Towers and Bridges",
+      "kind": "session",
+      "format": "session",
+      "formatSrc": [
+        "own-gss",
+        "yt-frames"
+      ],
+      "channel": "Marc Noah (@marcnoahmusic)",
+      "published": null,
+      "date": null,
+      "setting": "outdoors, on the green sofa on a jetty, by a red and white lighthouse",
+      "settingSrc": [
+        "yt-frames"
+      ],
+      "caption": "Towers and Bridges, by a lighthouse on a jetty",
+      "src": [
+        "own-gss",
+        "yt-own"
+      ]
+    },
+    {
+      "id": "q2P-ScNIL7w",
+      "title": "Concerto Marc Noah - Sons Do Castelo Agosto 26",
+      "kind": "live",
+      "format": "band",
+      "formatSrc": [
+        "yt-frames"
+      ],
+      "formatNote": "The poster frame shows a band on stage: guitars and a drum kit.",
+      "channel": "Marc Noah (@marcnoahmusic)",
+      "published": "2026-08-28",
+      "event": "Sons no Castelo",
+      "eventSrc": [
+        "yt-own",
+        "epo-castelo",
+        "avoz"
+      ],
+      "place": "Alcaidaria do Castelo de Loulé",
+      "placeSrc": [
+        "epo-castelo"
+      ],
+      "date": "2026-08-07",
+      "dateSrc": [
+        "epo-castelo",
+        "avoz",
+        "yt-frames"
+      ],
+      "caption": "With his band at Sons no Castelo, Loulé",
+      "src": [
+        "yt-own"
+      ]
+    }
+  ],
+  "lyric_lines": [
+    {
+      "song": "Mother",
+      "text": "Sweat & tears made you a Queen, time to live the dream",
+      "src": "own-site",
+      "captured": "2025-12-15"
+    },
+    {
+      "song": "Towers & Bridges",
+      "text": "Ahead the horizon, its calls your name, over the mountain there’s no pain",
+      "src": "own-site",
+      "captured": "2025-12-15"
+    },
+    {
+      "song": "Lie To Me",
+      "text": "Lie to me, i don't really care at all,  just don't leave, if you do my life is gone",
+      "src": "own-site",
+      "captured": "2025-12-15"
+    },
+    {
+      "song": "Roadtrip",
+      "text": "Take me, set me free, take me to a place where we can only be",
+      "src": "own-site",
+      "captured": "2025-12-15"
+    }
+  ],
+  "photos": {
+    "credit": "Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence.",
+    "source": {
+      "title": "Epopeia Records, artist page (photographs)",
+      "url": "https://www.epopeia.eu/artistas/marc-noah",
+      "read": "2026-11-17",
+      "short": "Epopeia photos"
+    },
+    "list": [
+      {
+        "id": "portrait-grey",
+        "file": "/assets/photos/portrait-grey.jpg",
+        "small": "/assets/photos/portrait-grey-800.jpg",
+        "size": [
+          1500,
+          997
+        ],
+        "alt": "Marc Noah, black and white studio portrait, looking up and to the left",
+        "kind": "portrait",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Marc Noah.jpeg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "green-sofa-session",
+        "file": "/assets/photos/green-sofa-session.jpg",
+        "small": "/assets/photos/green-sofa-session-800.jpg",
+        "size": [
+          1500,
+          1500
+        ],
+        "alt": "Marc Noah playing acoustic guitar on a green sofa at home, a dog at his feet",
+        "kind": "session",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Green-Sofa-Sessions.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "autumn-leaves-tour",
+        "file": "/assets/photos/autumn-leaves-tour.jpg",
+        "small": "/assets/photos/autumn-leaves-tour-800.jpg",
+        "size": [
+          1500,
+          1500
+        ],
+        "alt": "Poster art for the Autumn Leaves acoustic tour 2024: Marc Noah in silhouette, seated",
+        "kind": "artwork",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Marc Noah - Autumn leaves tour 1x1.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "giant-little-victories-cover",
+        "file": "/assets/photos/giant-little-victories-cover.jpg",
+        "small": "/assets/photos/giant-little-victories-cover-800.jpg",
+        "size": [
+          1500,
+          1500
+        ],
+        "alt": "Cover of the album Giant Little Victories: a childhood photograph under the title",
+        "kind": "cover",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Marc Noah - Giant Little victories.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "live-acoustic",
+        "file": "/assets/photos/live-acoustic.jpg",
+        "small": "/assets/photos/live-acoustic-800.jpg",
+        "size": [
+          1500,
+          1500
+        ],
+        "alt": "Marc Noah singing and playing acoustic guitar on an outdoor stage at dusk",
+        "kind": "live",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "IMG_9953.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "roadtrip-road",
+        "file": "/assets/photos/roadtrip-road.jpg",
+        "small": "/assets/photos/roadtrip-road-800.jpg",
+        "size": [
+          1500,
+          844
+        ],
+        "alt": "A road seen through the windscreen of a vintage car, from the Roadtrip video",
+        "kind": "video",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Roadtrip - Marc Noah2.jpeg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "roadtrip-car",
+        "file": "/assets/photos/roadtrip-car.jpg",
+        "small": "/assets/photos/roadtrip-car-800.jpg",
+        "size": [
+          1080,
+          1080
+        ],
+        "alt": "Marc Noah at the wheel of a vintage car, in sunglasses",
+        "kind": "video",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "2.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "portrait-bw",
+        "file": "/assets/photos/portrait-bw.jpg",
+        "small": "/assets/photos/portrait-bw-800.jpg",
+        "size": [
+          1063,
+          1063
+        ],
+        "alt": "Marc Noah, black and white portrait in a collarless shirt",
+        "kind": "portrait",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Marc Noah.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "sofa-session-quarteira",
+        "file": "/assets/photos/sofa-session-quarteira.jpg",
+        "small": "/assets/photos/sofa-session-quarteira-800.jpg",
+        "size": [
+          1200,
+          1235
+        ],
+        "alt": "Marc Noah with an acoustic guitar on a green chair on the seafront promenade",
+        "kind": "session",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Marc-Noah-Sofa-Session-Quarteira.webp",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "chair-dark",
+        "file": "/assets/photos/chair-dark.jpg",
+        "small": "/assets/photos/chair-dark-800.jpg",
+        "size": [
+          1500,
+          1200
+        ],
+        "alt": "Marc Noah sitting in an armchair against a dark background, head lowered",
+        "kind": "portrait",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "Epopeia Records _ MarcNoah Entrevista bts _ 2024-10-Final.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "towers-bridges-piano",
+        "file": "/assets/photos/towers-bridges-piano.jpg",
+        "small": "/assets/photos/towers-bridges-piano-800.jpg",
+        "size": [
+          1500,
+          841
+        ],
+        "alt": "Marc Noah at a piano, in black and white, behind the scenes of Towers and Bridges (2023)",
+        "kind": "video",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "BTS Towers And Bridges_2023_EpopeiaRcords_04.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "towers-bridges-clouds",
+        "file": "/assets/photos/towers-bridges-clouds.jpg",
+        "small": "/assets/photos/towers-bridges-clouds-800.jpg",
+        "size": [
+          1500,
+          841
+        ],
+        "alt": "Marc Noah, arms folded, above a sea of cloud, behind the scenes of Towers and Bridges (2023)",
+        "kind": "video",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "BTS Towers And Bridges_2023_EpopeiaRcords_013.jpg",
+        "read": "2026-11-17"
+      },
+      {
+        "id": "green-sofa-session-ep",
+        "file": "/assets/photos/green-sofa-session-ep.jpg",
+        "small": "/assets/photos/green-sofa-session-ep-800.jpg",
+        "size": [
+          1500,
+          999
+        ],
+        "alt": "The Green Sofa Session EP sleeve, laid out on a table",
+        "kind": "cover",
+        "credit": "Epopeia Records",
+        "from": "https://www.epopeia.eu/artistas/marc-noah",
+        "original": "marc noah ep1.jpeg",
+        "read": "2026-11-17"
+      }
+    ]
+  },
   "sources": {
     "epopeia": {
       "title": "Epopeia Records, artist page",
@@ -1119,6 +1882,12 @@
       "url": "https://i.ytimg.com/vi/S85R1WgyKJ0/maxresdefault.jpg",
       "read": "2026-11-17",
       "short": "YouTube poster frames"
+    },
+    "photos": {
+      "title": "Epopeia Records, artist page (photographs)",
+      "url": "https://www.epopeia.eu/artistas/marc-noah",
+      "read": "2026-11-17",
+      "short": "Epopeia photos"
     }
   },
   "needs": [

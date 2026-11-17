@@ -1,6 +1,13 @@
-// Render the 1200x630 share cards (typographic, no photos) into src/assets/share/.
-// Needs Playwright with Chromium. Run: node scripts/cards.mjs   Code Apache-2.0.
-import { mkdirSync, statSync } from 'node:fs';
+// Make the site's rendered images. Needs Playwright with Chromium. Code Apache-2.0.
+//   node scripts/cards.mjs                      the 1200x630 share cards into src/assets/share/ (each under 300 KB);
+//                                               the home card (marc-noah) uses his label's photograph chair-dark
+//   node scripts/cards.mjs --designs <base-url> the Designs dialog previews (480x300, under 60 KB each) into
+//                                               src/assets/designs/, rendered from the built site served at <base-url>
+//   node scripts/cards.mjs --posters <dir>      the video posters into src/assets/video/ (<id>.jpg 1280 px and
+//                                               <id>-640.jpg, JPEG q75), from each video's own YouTube poster frame
+//                                               saved as <dir>/<id>.jpg (needs ImageMagick's convert)
+import { mkdirSync, statSync, readFileSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
@@ -19,6 +26,45 @@ const CARDS = {
   cassette: base('#23202b', '#f1ece2', '#ffd166', `<div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:linear-gradient(90deg,#ef476f 0 25%,#ffd166 0 50%,#06d6a0 0 75%,#118ab2 0)"></div>`, '"Courier New",monospace', 'Marc Noah', 'Side A, Side B'),
 };
 CARDS.coast = CARDS['marc-noah'];
+// Round 2: the home card carries his label's photograph (Epopeia Records, credited on the card).
+const CHAIR = `data:image/jpeg;base64,${readFileSync('src/assets/photos/chair-dark.jpg').toString('base64')}`;
+CARDS['marc-noah'] = `<html><body style="margin:0;width:1200px;height:630px;overflow:hidden;background:#06090c;color:#f2ede6;font-family:system-ui,sans-serif;position:relative">
+<img src="${CHAIR}" style="position:absolute;right:0;top:0;width:640px;height:630px;object-fit:cover;object-position:60% 30%">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,#06090c 0,#06090c 46%,rgba(6,9,12,.85) 52%,rgba(6,9,12,0) 68%)"></div>
+<div style="position:absolute;left:70px;top:110px;width:560px"><div style="font-size:26px;letter-spacing:.22em;text-transform:uppercase;color:#e2a878;font-weight:600">Singer-songwriter, Algarve</div>
+<div style="font-size:132px;font-weight:800;line-height:.88;margin-top:22px;letter-spacing:-5px">Marc<br>Noah</div>
+<div style="font-size:32px;margin-top:30px;line-height:1.3">He lives in the Algarve. He is the composer. These are his songs.</div></div>
+<div style="position:absolute;left:70px;bottom:36px;font-size:17px;color:#a7b0ba">Photograph: Epopeia Records</div></body></html>`;
+const args = process.argv.slice(2);
+if (args[0] === '--posters') {
+  const dir = args[1]; if (!dir) throw new Error('usage: node scripts/cards.mjs --posters <dir>');
+  const { VIDEOS } = await import('../data/facts.mjs');
+  mkdirSync('src/assets/video', { recursive: true });
+  for (const v of VIDEOS) {
+    const f = `${dir}/${v.id}.jpg`; if (!existsSync(f)) throw new Error(`no poster frame ${f}`);
+    execFileSync('convert', [f, '-strip', '-resize', '1280x', '-quality', '75', '-interlace', 'JPEG', `src/assets/video/${v.id}.jpg`]);
+    execFileSync('convert', [f, '-strip', '-resize', '640x', '-quality', '75', '-interlace', 'JPEG', `src/assets/video/${v.id}-640.jpg`]);
+    console.log(`src/assets/video/${v.id}.jpg`, Math.round(statSync(`src/assets/video/${v.id}.jpg`).size / 1024), 'KB');
+  }
+  process.exit(0);
+}
+if (args[0] === '--designs') {
+  const base = (args[1] || '').replace(/\/$/, ''); if (!base) throw new Error('usage: node scripts/cards.mjs --designs <base-url>');
+  const { DESIGNS } = await import('./lib.mjs');
+  mkdirSync('src/assets/designs', { recursive: true });
+  const browser = await chromium.launch();
+  const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 0.375 });
+  for (const d of DESIGNS) {
+    await page.goto(`${base}${d.default ? '/' : `/d/${d.id}/`}`, { waitUntil: 'networkidle' });
+    await page.evaluate(() => document.fonts && document.fonts.ready);
+    const f = `src/assets/designs/${d.id}.jpg`;
+    await page.screenshot({ path: f, type: 'jpeg', quality: 72 });
+    const kb = Math.round(statSync(f).size / 1024); if (kb >= 60) throw new Error(`${f} is ${kb} KB`);
+    console.log(f, `${kb} KB`);
+  }
+  await browser.close();
+  process.exit(0);
+}
 mkdirSync('src/assets/share', { recursive: true });
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });

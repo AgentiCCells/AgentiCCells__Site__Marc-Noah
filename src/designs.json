@@ -1,12 +1,23 @@
 {
-  "about": "The same facts about Marc Noah, laid out five ways. The master copy is /index.md.",
+  "about": "The same facts about Marc Noah, laid out six ways. Editorial is the home page. The master copy is /index.md.",
   "designs": [
+    {
+      "id": "editorial",
+      "name": "Editorial",
+      "idea": "Dark and photo-led: his label’s photographs lead, and his videos and album play in the page.",
+      "url": "https://marc-noah.agenticcells.site/d/editorial/",
+      "home": "https://marc-noah.agenticcells.site/",
+      "default": true,
+      "preview": "https://marc-noah.agenticcells.site/assets/designs/editorial.jpg",
+      "share_card": "https://marc-noah.agenticcells.site/assets/share/marc-noah-1200x630.jpg"
+    },
     {
       "id": "coast",
       "name": "The Coast",
       "idea": "Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.",
       "url": "https://marc-noah.agenticcells.site/d/coast/",
-      "default": true,
+      "default": false,
+      "preview": "https://marc-noah.agenticcells.site/assets/designs/coast.jpg",
       "share_card": "https://marc-noah.agenticcells.site/assets/share/coast-1200x630.jpg"
     },
     {
@@ -15,6 +26,7 @@
       "idea": "Portuguese blue and white tiles: each of his eight songs is a tile.",
       "url": "https://marc-noah.agenticcells.site/d/azulejo/",
       "default": false,
+      "preview": "https://marc-noah.agenticcells.site/assets/designs/azulejo.jpg",
       "share_card": "https://marc-noah.agenticcells.site/assets/share/azulejo-1200x630.jpg"
     },
     {
@@ -23,6 +35,7 @@
       "idea": "A screen-printed gig poster: the dates and the towns lead, loud and close.",
       "url": "https://marc-noah.agenticcells.site/d/poster/",
       "default": false,
+      "preview": "https://marc-noah.agenticcells.site/assets/designs/poster.jpg",
       "share_card": "https://marc-noah.agenticcells.site/assets/share/poster-1200x630.jpg"
     },
     {
@@ -31,6 +44,7 @@
       "idea": "A songwriter’s ruled notebook: one entry per song, in the order he released them.",
       "url": "https://marc-noah.agenticcells.site/d/songbook/",
       "default": false,
+      "preview": "https://marc-noah.agenticcells.site/assets/designs/songbook.jpg",
       "share_card": "https://marc-noah.agenticcells.site/assets/share/songbook-1200x630.jpg"
     },
     {
@@ -39,6 +53,7 @@
       "idea": "A cassette inlay card for the 1980s and 1990s music that shaped his sound: the album as Side A and Side B.",
       "url": "https://marc-noah.agenticcells.site/d/cassette/",
       "default": false,
+      "preview": "https://marc-noah.agenticcells.site/assets/designs/cassette.jpg",
       "share_card": "https://marc-noah.agenticcells.site/assets/share/cassette-1200x630.jpg"
     }
   ]
