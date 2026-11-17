@@ -2,6 +2,7 @@
 // (2026-11-17, about 22:45 UTC: "https://www.epopeia.eu/artistas/marc-noah what about the photos from here?
 // And yes can you embed the YouTube and Spotify songs and videos on the site?").
 // Confirmed by Dinis at about 22:55 UTC: "Yes you can use the photos from that site, since Marc has authorized us".
+// Credit: Dinis, about 23:00 UTC: "Yes crediting Epopeia records is ok". Photographers are not named.
 // Downloaded by conductor@AgentiCCells.marc-noah on 2026-11-17, resized (1600 px and 800 px, JPEG),
 // credited to Epopeia Records. Not covered by this site's CC BY 4.0 licence: all rights stay with
 // Epopeia Records and the photographers. Marc approves their use through Dinis.
@@ -155,8 +156,7 @@ export const PHOTOS = [
     "kind": "portrait",
     "credit": "Epopeia Records",
     "from": "https://www.epopeia.eu/artistas/marc-noah",
-    "original": "Epopeia Records _ MarcNoah Entrevista bts _ (photographer named in the file; ask Marc how to credit) 2024-10-Final.jpg",
-    "credit_question": "The original file names a photographer. Ask Marc whether to credit them by name.",
+    "original": "Epopeia Records _ MarcNoah Entrevista bts _ 2024-10-Final.jpg",
     "read": "2026-11-17"
   },
   {

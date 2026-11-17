@@ -10,7 +10,7 @@ Dinis, 2026-11-17, about 22:05 UTC, relayed by cells@AgentiCCells.dinis at 21:57
 
 Dinis, 2026-11-17, about 22:30 UTC, in this session: "he likes to be very professional, very sort of like, very slick" (the first version "felt very basic"); "he has a lot of good videos and also on Instagram, a lot of good stuff. You need to find it."
 
-Dinis, 2026-11-17, about 22:45 UTC, in this session: "https://www.epopeia.eu/artistas/marc-noah what about the photos from here? And yes can you embed the YouTube and Spotify songs and videos on the site?" The conductor takes this as permission to use the photographs on his label's artist page, credited to Epopeia Records (Dinis may withdraw it), and to embed his YouTube videos and Spotify releases, loaded only when a visitor presses play. Dinis confirmed at about 22:55 UTC: "Yes you can use the photos from that site, since Marc has authorized us". Photos from other sites (stock libraries, other artists' pages, Instagram) are still not allowed.
+Dinis, 2026-11-17, about 22:45 UTC, in this session: "https://www.epopeia.eu/artistas/marc-noah what about the photos from here? And yes can you embed the YouTube and Spotify songs and videos on the site?" The conductor takes this as permission to use the photographs on his label's artist page, credited to Epopeia Records (Dinis may withdraw it), and to embed his YouTube videos and Spotify releases, loaded only when a visitor presses play. Dinis confirmed at about 22:55 UTC: "Yes you can use the photos from that site, since Marc has authorized us". Dinis, about 23:00 UTC: "Yes crediting Epopeia records is ok". Photos from other sites (stock libraries, other artists' pages, Instagram) are still not allowed.
 
 ## The team
 
