@@ -1,6 +1,7 @@
 // Photographs of Marc Noah, from his label's artist page, used at Dinis Cruz's word
 // (2026-11-17, about 22:45 UTC: "https://www.epopeia.eu/artistas/marc-noah what about the photos from here?
 // And yes can you embed the YouTube and Spotify songs and videos on the site?").
+// Confirmed by Dinis at about 22:55 UTC: "Yes you can use the photos from that site, since Marc has authorized us".
 // Downloaded by conductor@AgentiCCells.marc-noah on 2026-11-17, resized (1600 px and 800 px, JPEG),
 // credited to Epopeia Records. Not covered by this site's CC BY 4.0 licence: all rights stay with
 // Epopeia Records and the photographers. Marc approves their use through Dinis.
