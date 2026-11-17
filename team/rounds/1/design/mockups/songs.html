@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The songs of Marc Noah (mock-up)</title><style>
+:root{--sand:#f7efe2;--paper:#fffaf2;--ink:#1f2328;--muted:#5a5650;--sea:#11607a;--rust:#a8541a;--sun:#f3b45d;--line:#e3d6c1;--wrap:68rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#14181b;--paper:#1d2327;--ink:#ece6dc;--muted:#b3ada4;--sea:#7cc8de;--rust:#f0a56b;--line:#2f383d}}
+:root[data-theme="dark"]{--sand:#14181b;--paper:#1d2327;--ink:#ece6dc;--muted:#b3ada4;--sea:#7cc8de;--rust:#f0a56b;--line:#2f383d}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-wrap:anywhere}
+a{color:var(--sea)}
+.mock{background:var(--ink);color:var(--sand);font-size:13px;text-align:center;padding:.3rem 1rem}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 1.5rem;padding-top:.5rem}
+.brand{font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.top nav{display:flex;flex-wrap:wrap;margin:0 -.6rem}
+.top nav a{min-height:44px;display:flex;align-items:center;padding:0 .6rem;text-decoration:none;color:var(--ink);font-size:.98rem}
+.sm{display:none}@media (max-width:599px){.lg{display:none}.sm{display:inline}.top nav a{padding:0 .5rem}}
+.top nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--rust);font-weight:600}
+.hero{display:grid;gap:1rem 3rem;padding:1rem 0 2rem;border-bottom:1px solid var(--line)}
+.kick{margin:0;color:var(--sea);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
+h1{font-size:clamp(2.8rem,12vw,5.2rem);line-height:1;margin:.2rem 0 .5rem;letter-spacing:-.02em}
+.lead{font-size:clamp(1.2rem,4.6vw,1.5rem);line-height:1.35;margin:0 0 1.1rem;max-width:30rem}
+.song{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--rust);border-radius:.75rem;padding:.9rem 1rem 1rem}
+.song .over{margin:0;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.song h2{margin:.1rem 0 .3rem;font-size:1.7rem;line-height:1.15}
+.song p{margin:.25rem 0}
+.song blockquote{margin:.6rem 0 .2rem;font-style:italic}
+.btns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;min-height:48px;padding:0 1.1rem;border-radius:2rem;background:var(--sea);color:#fff;font-weight:600;text-decoration:none}
+.btn .ic{width:22px;height:22px}
+.btn.alt{background:transparent;color:var(--sea);border:2px solid var(--sea);min-height:44px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.alt){color:#0e1416}}
+.fig{margin:0}.rmap{display:block;width:100%;height:auto;border-radius:.75rem;border:1px solid var(--line)}
+.fig figcaption{font-size:.9rem;color:var(--muted);margin-top:.4rem}
+.fn{font-size:.72em;vertical-align:.45em;line-height:0;white-space:nowrap}
+.fn a{display:inline-block;min-width:1.4em;padding:.2em .15em;text-align:center;color:var(--muted);text-decoration:none;border-radius:.3em}
+.fn a:hover,.fn a:focus{color:var(--sea);background:var(--paper);text-decoration:underline}
+section.block{padding:2.2rem 0;border-bottom:1px solid var(--line)}
+h2.h{font-size:clamp(1.5rem,5vw,2rem);margin:0 0 .8rem;line-height:1.2}
+.words{display:grid;gap:1rem 3rem}
+.pull{margin:0}.pull blockquote{margin:0;font-size:clamp(1.35rem,5vw,1.9rem);line-height:1.3;font-weight:500}
+.pull blockquote::before{content:"\201C";color:var(--rust)}.pull blockquote::after{content:"\201D";color:var(--rust)}
+.pull .pt{margin:.7rem 0 0;color:var(--muted);font-style:italic}
+.pull figcaption{margin-top:.5rem;font-size:.95rem}
+.tracks{list-style:none;margin:0 0 1rem;padding:0;border-top:1px solid var(--line)}
+.tracks li{display:grid;grid-template-columns:2rem 1fr auto;gap:.2rem .6rem;align-items:center;min-height:56px;padding:.4rem 0;border-bottom:1px solid var(--line)}
+.tracks .n{color:var(--rust);font-weight:700;font-variant-numeric:tabular-nums}
+.tracks b{font-size:1.08rem}.tracks .tag{display:block;font-size:.85rem;color:var(--muted)}
+.tracks .go{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:flex-end;gap:.3rem;font-size:.92rem;text-decoration:none;font-weight:600}
+.tracks .go .ic{width:22px;height:22px}.tracks .len{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.92rem}
+.albumhead p{margin:.1rem 0 .9rem;color:var(--muted)}
+.stages{list-style:none;padding:0;margin:0 0 1rem;display:grid;gap:.1rem}
+.stages li{padding:.45rem 0;border-bottom:1px dotted var(--line)}
+.stages time{display:block;font-size:.85rem;color:var(--muted)}
+.formats{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;list-style:none;margin:.5rem 0 1rem}
+.formats li{background:var(--paper);border:1px solid var(--line);border-radius:.5rem;padding:.4rem .7rem;font-size:.92rem}
+.more{display:inline-flex;align-items:center;min-height:44px}
+.sources{padding:2rem 0 1rem;font-size:.88rem;color:var(--muted)}
+.sources h2{font-size:1rem;margin:0 0 .3rem;color:var(--ink)}.sources ol{padding-left:1.6rem;margin:.5rem 0}.sources li{margin:.15rem 0}
+.sources li:target{background:var(--paper);outline:2px solid var(--sea)}
+footer.foot{background:var(--paper);border-top:1px solid var(--line);margin-top:1rem;padding:1.8rem 0 2.5rem}
+.foot .who{font-weight:700;font-size:1.1rem;margin:0}.foot .who span{display:block;font-weight:400;font-size:.95rem;color:var(--muted)}
+.foot .row{display:flex;flex-wrap:wrap;gap:0 1rem;margin:.6rem 0}.foot .row a{min-height:44px;display:inline-flex;align-items:center}
+.foot .quiet{font-size:.8rem;color:var(--muted);margin-top:1rem}.foot .quiet a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+@media (min-width:900px){
+ .hero{grid-template-columns:1fr 1.05fr;align-items:center;padding:2.5rem 0 3rem}
+ .words{grid-template-columns:1.4fr 1fr;align-items:end}
+ .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+}</style></head>
+<body>
+<p class="mock">Mock-up for round 1 by designer@AgentiCCells.marc-noah: a proposal, not the live site. Real facts from data/facts.mjs.</p>
+<div class="wrap">
+<header class="top"><a class="brand" href="#">Marc Noah</a>
+<nav aria-label="Main"><a href="#" aria-current="page">Songs</a><a href="#"><span class="lg">The </span>Algarve</a><a href="#">Live</a><a href="#">About</a><a href="#"><span class="lg">Listen and b</span><span class="sm">B</span>ook</a></nav></header>
+<main id="main">
+
+<section class="hero" style="grid-template-columns:none">
+<div>
+<p class="kick">The songs of Marc Noah</p>
+<h1 style="font-size:clamp(2.4rem,10vw,4rem)">He writes the songs he sings</h1>
+<p class="lead">Eight of them make up his first album, Giant Little Victories, released in November 2024 on Epopeia Records.<span class="fn"><a href="#src-1" aria-label="Source 1: Epopeia artist page">1</a><a href="#src-2" aria-label="Source 2: Dinis Cruz, 17 Nov 2026">2</a><a href="#src-3" aria-label="Source 3: Epopeia agenda, album release">3</a></span></p>
+<div class="btns"><a class="btn" href="https://open.spotify.com/album/623T8dPibUnW606HPL3dDj"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Album on Spotify</a><a class="btn alt" href="https://music.apple.com/pt/album/giant-little-victories/1847519743">Apple Music</a><a class="btn alt" href="https://www.youtube.com/watch?v=6sXuvZaI7lM">YouTube</a></div>
+</div>
+</section>
+<section class="block cols" aria-labelledby="rt">
+<div><p class="kick" style="color:var(--rust)">Featured song · track 6</p>
+<h2 class="h" id="rt" style="font-size:clamp(2rem,7vw,2.8rem)">Roadtrip</h2>
+<p>His label says the video was filmed in places that marked his path: Sydney, Salir, Quarteira, Faro and Olhão. In March 2025 it was the most played song in the label’s catalogue.<span class="fn"><a href="#src-4" aria-label="Source 4: Epopeia Jornal, 28 Feb 2025">4</a><a href="#src-5" aria-label="Source 5: Epopeia Jornal, 1 Apr 2025">5</a></span></p>
+<figure class="pull" style="margin:1rem 0"><blockquote style="font-size:1.3rem">It is facing life in a lighter, more positive way. It is the longing to be free of the ties of everyday routine.</blockquote>
+<p class="pt" lang="pt-PT">“É um encarar a vida de uma forma mais leve e positiva. É a ansia pela liberdade das amarras da vida rotineira do dia-a-dia.”</p>
+<figcaption>Marc Noah, on Roadtrip, which he calls a turning point (our translation).<span class="fn"><a href="#src-4" aria-label="Source 4: Epopeia Jornal, 28 Feb 2025">4</a></span></figcaption></figure>
+<div class="btns"><a class="btn" href="https://www.youtube.com/watch?v=adbD0f2FYLA"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch Roadtrip on YouTube</a></div>
+</div>
+<figure class="fig"><svg class="rmap" viewBox="360 34 430 250" role="img" aria-labelledby="st sd">
+<title id="st">Drawn map of the central Algarve coast</title>
+<desc id="sd">Quarteira, where Marc Noah lives, on the coast between Albufeira and Faro. A dashed line joins the Algarve places of the Roadtrip video: Salir in the hills, Quarteira, Faro and Olhão. Loulé, the town he has played most, is marked too. A sketch, not to scale.</desc>
+<rect x="0" y="0" width="1000" height="340" fill="#cfe6ee"/>
+<polygon points="0,0 136,-92 99,23 62,122 19,229 49,252 86,229 136,214 216,191 259,168 302,168 352,183 407,183 475,191 537,198 568,206 617,229 648,252 691,275 728,252 784,214 845,168 907,137 987,114 981,-92 1000,0" fill="#efe3cc" stroke="#c9b48f" stroke-width="3" stroke-linejoin="round"/>
+<path d="M592 69 C 552 119, 538 138, 568 198 S 633 247, 673 237 S 708 219, 728 229" fill="none" stroke="#a8541a" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round"/>
+<g font-size="21" fill="#1f2328" font-family="system-ui,sans-serif">
+<circle cx="617" cy="145" r="7" fill="#5d5a55" stroke="#fff" stroke-width="3"/><text x="630" y="152">Loulé</text>
+<circle cx="592" cy="69" r="8" fill="#a8541a" stroke="#fff" stroke-width="3"/><text x="606" y="76" font-weight="600">Salir</text>
+<circle cx="673" cy="237" r="8" fill="#a8541a" stroke="#fff" stroke-width="3"/><text x="667" y="269" text-anchor="middle" font-weight="600">Faro</text>
+<circle cx="728" cy="229" r="8" fill="#a8541a" stroke="#fff" stroke-width="3"/><text x="724" y="213" text-anchor="middle" font-weight="600">Olhão</text>
+<circle cx="568" cy="198" r="13" fill="#11607a" stroke="#fff" stroke-width="3"/><text x="550" y="232" text-anchor="end" font-weight="700" fill="#11607a">Quarteira, home</text>
+<text x="440" y="262" font-size="19" font-style="italic" fill="#11607a">Atlantic Ocean</text>
+<text x="372" y="62" font-size="16" fill="#5d5a55">a sketch, not to scale</text>
+</g></svg><figcaption>The Algarve places of the Roadtrip video. <a class="more" href="#">See them on the Algarve page</a></figcaption></figure>
+</section>
+<section class="block" aria-labelledby="all">
+<h2 class="h" id="all">The eight songs</h2>
+<ol class="tracks"><li><span class="n">1</span><span><b>To The Bone</b><span class="tag">3:29 · official lyric video, 12 June 2024</span></span><a class="go" href="https://www.youtube.com/watch?v=ll9tQ_BhrCA" aria-label="Watch To The Bone on YouTube"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch</a></li><li><span class="n">2</span><span><b>Lie to Me</b><span class="tag">3:43 · single, February 2023 · official music video, 4 March 2023</span></span><a class="go" href="https://www.youtube.com/watch?v=oyE1KP8hUFU" aria-label="Watch Lie to Me on YouTube"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch</a></li><li><span class="n">3</span><span><b>Towers and Bridges</b><span class="tag">3:11 · video, 4 November 2023</span></span><a class="go" href="https://www.youtube.com/watch?v=K8795UoBqTg" aria-label="Watch Towers and Bridges on YouTube"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch</a></li><li><span class="n">4</span><span><b>Mother</b><span class="tag">3:13 · official lyric video, 27 August 2023</span></span><a class="go" href="https://www.youtube.com/watch?v=JMd-r6okn80" aria-label="Watch Mother on YouTube"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch</a></li><li><span class="n">5</span><span><b>Sunshine</b><span class="tag">3:31 · single, May 2023 · official lyric video, 5 May 2023</span></span><a class="go" href="https://www.youtube.com/watch?v=SaiC6jdsCy8" aria-label="Watch Sunshine on YouTube"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch</a></li><li><span class="n">6</span><span><b>Roadtrip</b><span class="tag">3:37 · most played in his label’s catalogue, March 2025<span class="fn"><a href="#src-5" aria-label="Source 5: Epopeia Jornal, 1 Apr 2025">5</a></span> · video, 12 March 2025</span></span><a class="go" href="https://www.youtube.com/watch?v=adbD0f2FYLA" aria-label="Watch Roadtrip on YouTube"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".18"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>Watch</a></li><li><span class="n">7</span><span><b>Slowtalk</b><span class="tag">3:37</span></span><span></span></li><li><span class="n">8</span><span><b>No More Dreaming</b><span class="tag">3:25 · most played in his label’s catalogue, April 2025<span class="fn"><a href="#src-6" aria-label="Source 6: Epopeia Jornal, 2 May 2025">6</a></span></span></span><span></span></li></ol>
+<p style="font-size:.9rem;color:var(--muted)">Track order, lengths and first-release dates from Apple Music; videos from his YouTube channel.<span class="fn"><a href="#src-7" aria-label="Source 7: Apple Music">7</a><a href="#src-8" aria-label="Source 8: YouTube (marcnoahVEVO)">8</a></span> Who wrote what, track by track, waits for Marc’s word.</p>
+</section>
+<section class="sources" aria-labelledby="srch"><h2 id="srch">Sources</h2><p>Every source was read on 17 November 2026, except where noted.</p><ol><li id="src-1"><a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia Records, artist page</a></li><li id="src-2"><a href="https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md">Dinis Cruz, in the factory brief, 17 November 2026</a></li><li id="src-3"><a href="https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024">Epopeia agenda: Giant Little Victories release</a></li><li id="src-4"><a href="https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo">Epopeia Jornal, 28 February 2025: Roadtrip and a concert in Loulé</a></li><li id="src-5"><a href="https://www.epopeia.eu/jornal/marco-roadtrip-marc-noah-monthly-on-top">Epopeia Jornal, 1 April 2025: Roadtrip tops the Monthly on Top</a></li><li id="src-6"><a href="https://www.epopeia.eu/jornal/marc-noah-continua-a-liderar-o-monthly-on-top">Epopeia Jornal, 2 May 2025: No More Dreaming tops the Monthly on Top</a></li><li id="src-7"><a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music catalogue, Marc Noah</a></li><li id="src-8"><a href="https://www.youtube.com/@marcnoahvevo6299">YouTube, marcnoahVEVO channel</a></li></ol></section>
+</main></div>
+<footer class="foot"><div class="wrap">
+<p class="who">Marc Noah<span>Singer-songwriter. Lives in Quarteira, on the Algarve coast.</span></p>
+<p class="row" aria-label="Listen and follow"><a href="https://open.spotify.com/artist/7gYCZ94lNuTfJA3g5MCJxd">Spotify</a><a href="https://music.apple.com/pt/artist/marc-noah/1846838057">Apple Music</a><a href="https://www.youtube.com/@marcnoahvevo6299">YouTube (Vevo)</a><a href="https://www.instagram.com/marcnoahmusic/">Instagram</a><a href="https://www.facebook.com/marcnoahmusic">Facebook</a><a href="https://www.marcnoah.pt/">His own site</a></p>
+<p class="row"><a href="https://www.epopeia.eu/artistas/marc-noah">Book him through Epopeia Records</a></p>
+<p class="quiet">About this site: <a href="#">sources</a> · <a href="#">five designs</a> · <a href="#">use with AI</a> · version 0.1.5 · text CC BY 4.0, code Apache-2.0. Marc approves every change about him.</p>
+</div></footer>
+</body></html>
