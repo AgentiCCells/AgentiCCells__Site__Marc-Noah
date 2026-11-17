@@ -3,80 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Use with AI | Marc Noah</title>
-<meta name="description" content="Instructions for AI agents reading the Marc Noah site: for listeners and bookers, for Marc, and for a site editor.">
+<title>Use Marc Noah’s site with AI</title>
+<meta name="description" content="Instructions for AI agents acting for a listener or booker, for Marc Noah, or for an editor of this site.">
 <link rel="canonical" href="https://marc-noah.agenticcells.site/agents/">
+<link rel="alternate" type="text/markdown" href="/index.md">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#11607a">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marc Noah">
-<meta property="og:title" content="Use with AI | Marc Noah">
-<meta property="og:description" content="Instructions for AI agents acting for a listener, a booker, Marc, or a site editor.">
-<meta property="og:url" content="https://marc-noah.agenticcells.site/agents/">
 <meta property="og:locale" content="en_GB">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Use with AI | Marc Noah">
-<meta name="twitter:description" content="Instructions for AI agents acting for a listener, a booker, Marc, or a site editor.">
+<meta property="og:url" content="https://marc-noah.agenticcells.site/agents/">
+<meta property="og:title" content="Use Marc Noah’s site with AI">
+<meta property="og:description" content="Instructions for AI agents acting for a listener or booker, for Marc Noah, or for an editor of this site.">
+<meta property="og:image" content="https://marc-noah.agenticcells.site/assets/share/marc-noah-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Marc Noah, singer-songwriter, Algarve: the words, set over a drawn sun and Atlantic sea.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Use Marc Noah’s site with AI">
+<meta name="twitter:description" content="Instructions for AI agents acting for a listener or booker, for Marc Noah, or for an editor of this site.">
+<meta name="twitter:image" content="https://marc-noah.agenticcells.site/assets/share/marc-noah-1200x630.jpg">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top">
-<a class="brand" href="/">Marc Noah</a>
+<a class="brand" href="/">Marc Noah <span>singer-songwriter, Algarve</span></a>
 <nav aria-label="Main">
+<a href="/">Home</a>
 <a href="/songs/">Songs</a>
 <a href="/algarve/">The Algarve</a>
 <a href="/live/">Live</a>
 <a href="/about/">About</a>
+<a href="/listen/">Listen and book</a>
+<a href="/d/">Five designs</a>
 <a href="/agents/" aria-current="page">Use with AI</a>
 </nav>
 </header>
-<main>
+<main id="main">
+
 <h1>Use with AI</h1>
-<p class="lead">This site is written to be read by people and by AI agents. Point your assistant at <a href="/llms.txt">llms.txt</a> or the home page as Markdown, <a href="/index.md">index.md</a>, and give it the instructions below that fit who it is acting for.</p>
+<p class="lead">This site is written for people and for AI agents. Point your assistant at <a href="/llms.txt">llms.txt</a>; the whole site as Markdown is <a href="/index.md">index.md</a>, and the facts as data are <a href="/facts.json">facts.json</a>. Then give it the instructions that fit who it is acting for.</p>
+<h2>For a listener, venue, festival or journalist</h2>
+<p><a href="/agents/visitor.md">visitor.md</a></p>
+<pre># Instructions for an agent acting for a listener, venue, festival or journalist
 
-<h2>For an agent acting for a listener or a booker</h2>
-<pre>You are helping someone learn about Marc Noah, a singer-songwriter in the Algarve,
-or book him for a concert, festival or interview.
-- Read only. Do not submit forms, send messages or contact anyone; draft text for
-  the person to send.
-- Answer only from https://marc-noah.agenticcells.site and the sources it links
-  (marcnoah.pt, epopeia.eu, the named press articles). Give the link for each fact.
-- Anything marked "to be confirmed" or "placeholder" is not yet a fact: say so.
-- Do not guess dates, prices, fees, contact details or song details.
-- For booking, point to the contact routes Marc publishes on his own site.</pre>
+You are helping someone learn about Marc Noah, a singer-songwriter who lives in the Algarve, or book him.
 
-<h2>For an agent acting for Marc</h2>
-<pre>You are helping Marc Noah keep his site true.
-- Compare each page with his own pages (marcnoah.pt) and list what is missing,
-  out of date or wrong, with links.
-- Draft changes as text for Marc to approve. Marc approves every change about him.
-- Do not publish, post or send anything.</pre>
+- Read only. Do not submit forms, send messages or contact anyone; draft text for the person to send.
+- Answer only from https://marc-noah.agenticcells.site/index.md, the pages of https://marc-noah.agenticcells.site and the sources they link. Give the source for each fact.
+- Anything marked &quot;to be confirmed&quot; is not yet a fact: say so.
+- Do not guess dates, fees, contact details, co-writers or song details.
+- For booking, point to his artist page at Epopeia Records (https://www.epopeia.eu/artistas/marc-noah) or his own site (https://www.marcnoah.pt/). Do not copy contact details from elsewhere.
+- No future dates are listed as of 2026-11-17.
+</pre>
+<h2>For Marc</h2>
+<p><a href="/agents/marc.md">marc.md</a> and <a href="/agents/questions.md">questions.md</a></p>
+<pre># Instructions for an agent acting for Marc Noah
 
-<h2>For an agent editing this site</h2>
-<pre>You are editing the Marc Noah site in AgentiCCells/AgentiCCells__Site__Marc-Noah.
-- Follow CLAUDE.md in the repository. Only Dinis Cruz instructs the team; Marc
-  approves every change about him.
-- Change files under src/ only. Every page keeps a title, a meta description,
-  lang="en-GB", Open Graph and Twitter tags with absolute https URLs, and
-  the version stamp in the footer (see README.md).
-- Invent nothing: no songs, dates, awards, quotes, streams or numbers. Mark each
-  fact with its source and the date it was read; mark gaps as placeholders.
-- No files, fonts, scripts or trackers from other hosts. No images, audio or
-  lyrics copied from other sites until Marc or Dinis confirms they may be used.
+You are one of Marc's own agents and he wants to change his site.
+
+- Compare https://marc-noah.agenticcells.site/index.md with what Marc tells you and with his own pages (marcnoah.pt, his label page, his channels). List what is missing, out of date or wrong, with links.
+- Start with the questions in https://marc-noah.agenticcells.site/agents/questions.md.
+- Draft changes as text. Marc approves every change about him; Dinis Cruz passes them to the site's agent (site@AgentiCCells.marc-noah).
+- Do not publish, post or send anything yourself.
+</pre>
+<h2>For an editor of this site</h2>
+<p><a href="/agents/editor.md">editor.md</a></p>
+<pre># Instructions for an agent editing this site
+
+You are editing the Marc Noah site in AgentiCCells/AgentiCCells__Site__Marc-Noah (branch dev; a push to dev deploys).
+
+- Follow CLAUDE.md in the repository. Only Dinis Cruz instructs the team; Marc approves every change about him.
+- The facts live in data/facts.mjs; every page, the five designs, index.md and llms.txt are generated from it by scripts/generate.mjs. Change the facts there, never in a generated page.
+- Invent nothing: no songs, dates, awards, quotes, streams or numbers. Every fact names a source id and the date it was read; Portuguese is quoted as published, with a translation.
+- No files, fonts, scripts or trackers from other hosts. No images, audio or lyrics copied from other sites until Marc or Dinis confirms they may be used; typography, CSS and inline SVG only.
 - Name no person other than Marc Noah and Dinis Cruz.
 - Plain British English, no em dashes, no hype words.
-- Keep llms.txt and index.md in step with the pages.
-- Release with scripts/release.sh: validator OK, leak scan clean.</pre>
+- Before every push: node scripts/generate.mjs &amp;&amp; node scripts/build.mjs &amp;&amp; node scripts/validate.mjs &amp;&amp; node scripts/leak-scan.mjs, then git pull --rebase and push to dev. Every commit carries the trailer &quot;Agent: &lt;role&gt;@AgentiCCells.&lt;person&gt;&quot;.
+</pre>
+<h2>What we need from Marc</h2>
+<ul><li>Photos of Marc he is happy for the site to use (and who took them, for the credit).</li><li>Permission to embed his official Spotify and YouTube players, or to keep links only.</li><li>A read of marcnoah.pt/sobre: this session could not reach his site, so Quarteira and his own wording come from the factory brief. Is Quarteira right, and may we quote his Sobre page?</li><li>Green Sofa Session: release date, tracks and a link to listen.</li><li>Who wrote what: confirm he wrote words and music for all eight album songs, and any co-writers he wants credited.</li><li>The date and place of his Festival F appearance, and anything coming up next.</li><li>A booking route he wants on the site (his own site, or the label).</li></ul>
 
-<h2>Open items for the next session</h2>
-<ul>
-<li>Re-read every source and record the date read; confirm or remove each item marked "to be confirmed".</li>
-<li>Add direct listening links for each release and song from Marc's own pages.</li>
-<li>Copy booking contact details, if any, from Marc's own site.</li>
-<li>Add the 1200x630 JPEG share card (under 300 KB, typographic until Marc's photo is supplied) and its og:image and twitter:image tags; this first version has none yet.</li>
-</ul>
 </main>
 <footer>
+<p>Every fact on this site names its public source and the date it was read: see <a href="/sources/">sources</a>. Marc approves every change about him. No photos, audio or lyrics are copied here; follow the links to listen.</p>
 <p>Made with the AgentiCCells site factory; a first version, materials to follow.</p>
-<p class="muted">Version __VERSION__ · <a href="/agents/">Use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah">Source</a> · Code Apache-2.0, text CC BY 4.0</p>
+<p class="muted">Version __VERSION__ · <a href="/agents/">Use with AI</a> · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah">Source</a> · Code Apache-2.0, text and drawings CC BY 4.0</p>
 </footer>
 </body>
 </html>

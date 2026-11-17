@@ -1,0 +1,45 @@
+{
+  "about": "The same facts about Marc Noah, laid out five ways. The master copy is /index.md.",
+  "designs": [
+    {
+      "id": "coast",
+      "name": "The Coast",
+      "idea": "Sun, sand and Atlantic blue: the drawn map of the Algarve leads, and his songs follow.",
+      "url": "https://marc-noah.agenticcells.site/d/coast/",
+      "default": true,
+      "share_card": "https://marc-noah.agenticcells.site/assets/share/coast-1200x630.jpg"
+    },
+    {
+      "id": "azulejo",
+      "name": "Azulejo",
+      "idea": "Portuguese blue and white tiles: each of his eight songs is a tile.",
+      "url": "https://marc-noah.agenticcells.site/d/azulejo/",
+      "default": false,
+      "share_card": "https://marc-noah.agenticcells.site/assets/share/azulejo-1200x630.jpg"
+    },
+    {
+      "id": "poster",
+      "name": "Tour Poster",
+      "idea": "A screen-printed gig poster: the dates and the towns lead, loud and close.",
+      "url": "https://marc-noah.agenticcells.site/d/poster/",
+      "default": false,
+      "share_card": "https://marc-noah.agenticcells.site/assets/share/poster-1200x630.jpg"
+    },
+    {
+      "id": "songbook",
+      "name": "The Songbook",
+      "idea": "A songwriter’s ruled notebook: one entry per song, in the order he released them.",
+      "url": "https://marc-noah.agenticcells.site/d/songbook/",
+      "default": false,
+      "share_card": "https://marc-noah.agenticcells.site/assets/share/songbook-1200x630.jpg"
+    },
+    {
+      "id": "cassette",
+      "name": "Side A, Side B",
+      "idea": "A cassette inlay card for the 1980s and 1990s music that shaped his sound: the album as Side A and Side B.",
+      "url": "https://marc-noah.agenticcells.site/d/cassette/",
+      "default": false,
+      "share_card": "https://marc-noah.agenticcells.site/assets/share/cassette-1200x630.jpg"
+    }
+  ]
+}

@@ -41,3 +41,20 @@ footer p{margin:.25rem 0}
 .status{background:#4a2f12;color:#f8d9b4}.status.ok{background:#123a31;color:#bfe9dc}
 .btn{color:#0e1416}.btn.alt{color:var(--sea)}
 }
+/* Second pass (site@AgentiCCells.marc-noah, 2026-11-17) */
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:.5rem;background:var(--paper);padding:.25rem .5rem}
+.brand span{display:block;font-weight:400;font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+.cite{display:block;font-size:.78rem;color:var(--muted);margin-top:.3rem;line-height:1.4}.cite a{color:inherit}
+.kind{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.album{background:var(--paper);border:1px solid var(--line);border-radius:1rem;padding:1.25rem;margin:1.5rem 0}.album h2{font-size:clamp(1.8rem,6vw,2.5rem);margin:.2rem 0}
+.tracks{list-style:none;padding:0;margin:1rem 0}.track{display:grid;grid-template-columns:2.2rem 1fr;gap:.5rem;padding:.7rem 0;border-top:1px solid var(--line)}
+.track .n{font-weight:700;font-size:1.3rem;color:var(--sun)}.track h3{margin:0;font-size:1.15rem}.track p{margin:.15rem 0}.meta{color:var(--muted);font-size:.9rem}
+figure.pt{margin:1rem 0}figure.pt blockquote{margin:0;font-style:italic}figure.pt figcaption{margin:.4rem 0 0 1.2rem;color:var(--muted)}
+.gigs{list-style:none;padding:0}.gigs li{padding:.5rem 0;border-top:1px solid var(--line)}.gigs time{display:inline-block;min-width:9.5rem;font-variant-numeric:tabular-nums;color:var(--muted)}.gnote{color:var(--muted)}
+.card.home{border-color:var(--sea);box-shadow:0 0 0 2px var(--sea) inset}
+.designs{list-style:none;padding:0;display:grid;gap:.75rem}.designs a{display:grid;grid-template-columns:3.5rem 1fr;gap:.1rem 1rem;align-items:center;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:.75rem;padding:.8rem}
+.designs a:hover{border-color:var(--sun)}.designs .swatch{grid-row:span 2;width:3.5rem;height:3.5rem;border-radius:.5rem}.designs a>span:last-child{color:var(--muted);font-size:.95rem}
+.sw-coast{background:linear-gradient(#f3b45d 0 45%,#cfe6ee 45%)}.sw-azulejo{background:#1d4f91 radial-gradient(circle,#fbfaf6 0 30%,transparent 31%) 0 0/50% 50%}.sw-poster{background:#e2552b repeating-radial-gradient(circle at 80% 20%,#f2b134 0 5px,#e2552b 5px 9px)}
+.sw-songbook{background:#fdfbf4 linear-gradient(#fdfbf4 80%,#cfe0ee 80%) 0 0/100% 10px;border:1px solid #e0a3a3}.sw-cassette{background:linear-gradient(90deg,#ef476f 0 25%,#ffd166 0 50%,#06d6a0 0 75%,#118ab2 0)}
+.map text{paint-order:stroke;stroke:rgba(255,255,255,.75);stroke-width:5px}
+@media (prefers-color-scheme:dark){.map{filter:brightness(.92)}}

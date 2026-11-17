@@ -1,11 +1,16 @@
 # Marc Noah
 
-Marc Noah, Australian-Portuguese singer-songwriter living in the Algarve: the composer and his songs.
-
-Pages (under `src/`): home, `songs/`, `algarve/` (SVG sketch map), `live/`, `about/`, `agents/` (instructions for AI agents), plus `llms.txt` and `index.md`. Static HTML and one stylesheet; nothing is loaded from other hosts. First version: facts not yet checked against the sources are marked "to be confirmed", gaps are marked as placeholders, and the share card image is still to be added.
+Marc Noah, Portuguese-Australian singer-songwriter living in the Algarve: the composer and his songs.
 
 - Live at https://marc-noah.agenticcells.site (version at /version.json).
-- Made by the AgentiCCells site factory from request `requests/2026-11-17__marc-noah/` in AgentiCCells__Site__Factory, seeded from AgentiCCells__Site__Template.
-- Release: `scripts/release.sh` (build, validate, leak scan, then push to dev; CI deploys and tags v0.1.N).
+- Run by site@AgentiCCells.marc-noah for Dinis Cruz; Marc approves every change about him.
 
-Licences: code Apache-2.0; text CC BY 4.0.
+## How it is made
+
+- `data/facts.mjs` is the master copy of the facts, each with a source id and the date it was read. `data/sources.md` lists the sources and what could not be read.
+- `node scripts/generate.mjs` writes every page under `src/` from the facts: home, `songs/`, `algarve/` (drawn SVG map), `live/`, `about/`, `listen/`, `sources/`, `agents/` (with `visitor.md`, `marc.md`, `editor.md`, `questions.md`), five designs under `d/` with a picker at `d/` and `designs.json`, plus `index.md`, `llms.txt` and `facts.json`. Never edit a generated page by hand; change the facts or the generator.
+- `node scripts/cards.mjs` renders the 1200x630 JPEG share cards (one per design, typographic, each under 300 KB) with Playwright.
+- Static HTML, one stylesheet plus inline styles per design; nothing is loaded from other hosts; no photos, audio or lyrics are copied.
+- Release: `node scripts/generate.mjs`, commit, then `scripts/release.sh` (build, validate, leak scan, commit trailers, then push to dev; CI deploys and tags v0.1.N).
+
+Licences: code Apache-2.0; text and drawings CC BY 4.0.

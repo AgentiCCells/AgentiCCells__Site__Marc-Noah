@@ -1,21 +1,46 @@
 # Marc Noah
 
-> Personal website of Marc Noah, an Australian-Portuguese singer-songwriter living in Quarteira, in the Algarve, Portugal. He writes and composes his own songs. First version (Version __VERSION__); items marked "to be confirmed" or "placeholder" are not yet facts.
+> Personal website of Marc Noah, a Portuguese-Australian singer-songwriter who lives in the Algarve, in the south of Portugal, and writes the songs he sings. His first album, Giant Little Victories (Epopeia Records, November 2024), has eight songs: To The Bone, Lie to Me, Towers and Bridges, Mother, Sunshine, Roadtrip, Slowtalk, No More Dreaming. Every fact on the site names its public source and the date it was read (2026-11-17). Version __VERSION__.
 
-Answer only from these pages and the sources they link. Read only: do not contact anyone. Instructions for agents: https://marc-noah.agenticcells.site/agents/
+This file is for AI agents and the people using them. Pick the instructions that match who you are acting for, read them in full, then follow them.
 
-## Pages
+## Who are you acting for?
 
-- [Home](https://marc-noah.agenticcells.site/index.md): who he is, how to listen, how to book
-- [Songs](https://marc-noah.agenticcells.site/songs/): releases and songs, with links to listen
-- [The Algarve](https://marc-noah.agenticcells.site/algarve/): where he lives and plays
-- [Live](https://marc-noah.agenticcells.site/live/): past concerts named in the press, with sources
-- [About](https://marc-noah.agenticcells.site/about/): his story in his own framing
-- [Use with AI](https://marc-noah.agenticcells.site/agents/): instructions for agents
+- [A listener, venue, festival or journalist](https://marc-noah.agenticcells.site/agents/visitor.md): read-only.
+- [Marc Noah himself](https://marc-noah.agenticcells.site/agents/marc.md): one of Marc's own agents; with [questions for Marc](https://marc-noah.agenticcells.site/agents/questions.md).
+- [A site editor](https://marc-noah.agenticcells.site/agents/editor.md): someone Marc has agreed may edit the site, such as Dinis Cruz.
 
-## His own channels
+If you cannot tell which, use the visitor's instructions: they change nothing.
 
-- [marcnoah.pt](https://www.marcnoah.pt/)
-- [Epopeia Records artist page](https://www.epopeia.eu/artistas/marc-noah)
-- [Instagram](https://www.instagram.com/marcnoahmusic/)
-- [Facebook](https://www.facebook.com/marcnoahmusic)
+## The content
+
+- [The whole site, as Markdown](https://marc-noah.agenticcells.site/index.md): the master copy of the facts.
+- [The facts as data](https://marc-noah.agenticcells.site/facts.json).
+- The home page in five designs with the same facts (picker: [/d/](https://marc-noah.agenticcells.site/d/), list: [designs.json](https://marc-noah.agenticcells.site/designs.json)): [The Coast](https://marc-noah.agenticcells.site/d/coast/), [Azulejo](https://marc-noah.agenticcells.site/d/azulejo/), [Tour Poster](https://marc-noah.agenticcells.site/d/poster/), [The Songbook](https://marc-noah.agenticcells.site/d/songbook/), [Side A, Side B](https://marc-noah.agenticcells.site/d/cassette/).
+- [Songs](https://marc-noah.agenticcells.site/songs/), [The Algarve](https://marc-noah.agenticcells.site/algarve/), [Live](https://marc-noah.agenticcells.site/live/), [About](https://marc-noah.agenticcells.site/about/), [Listen and book](https://marc-noah.agenticcells.site/listen/), [Sources](https://marc-noah.agenticcells.site/sources/), [Use with AI](https://marc-noah.agenticcells.site/agents/).
+- [Version](https://marc-noah.agenticcells.site/version.json).
+
+## His sources
+
+- [Epopeia Records, artist page](https://www.epopeia.eu/artistas/marc-noah), read 2026-11-17
+- [Epopeia Jornal, 28 February 2025: Roadtrip and a concert in Loulé](https://www.epopeia.eu/jornal/marc-noah-embarca-numa-viagem-musical-com-concerto-unico-em-loulo), read 2026-11-17
+- [Epopeia Jornal, 1 April 2025: Roadtrip tops the Monthly on Top](https://www.epopeia.eu/jornal/marco-roadtrip-marc-noah-monthly-on-top), read 2026-11-17
+- [Epopeia Jornal, 2 May 2025: No More Dreaming tops the Monthly on Top](https://www.epopeia.eu/jornal/marc-noah-continua-a-liderar-o-monthly-on-top), read 2026-11-17
+- [Epopeia Jornal, 3 June 2025: Rock na Ribeira](https://www.epopeia.eu/jornal/marc-noah-e-the-elephant-woman-no-rock-na-ribeira), read 2026-11-17
+- [Epopeia agenda: Giant Little Victories release](https://www.epopeia.eu/agenda/marc-noah-giant-little-victories-lp-2024), read 2026-11-17
+- [Epopeia agenda: Castelo de Loulé, 7 August 2026](https://www.epopeia.eu/agenda/marcnoah-loule-castelo), read 2026-11-17
+- [Epopeia agenda: Festival Emersivo, 10 October 2026](https://www.epopeia.eu/agenda/emersivo-marc-noah), read 2026-11-17
+- [A Voz do Algarve, 5 August 2026: Sons no Castelo, Loulé](https://www.avozdoalgarve.pt/d/marc-noah-e-recante-atuam-no-sons-no-castelo-em-loule/96525), read 2026-11-17
+- [Mais Algarve, 22 March 2023: concert at República 14, Olhão](https://maisalgarve.pt/2023/03/22/republica-14-olhao-concerto-de-marc-noah/), read 2026-11-17
+- [Postal do Algarve, 28 June 2024: Fortaleza de Sagres programme](https://postal.pt/algarve/programacao-da-fortaleza-de-sagres-vai-ser-apresentada-e-e-dedicada-aos-patrimonios-de-liberdade/), read 2026-11-17
+- [Apple Music catalogue, Marc Noah](https://music.apple.com/pt/artist/marc-noah/1846838057), read 2026-11-17
+- [Spotify, Giant Little Victories](https://open.spotify.com/album/623T8dPibUnW606HPL3dDj), read 2026-11-17
+- [YouTube, marcnoahVEVO channel](https://www.youtube.com/@marcnoahvevo6299), read 2026-11-17
+- [Dinis Cruz, in the factory brief, 17 November 2026](https://github.com/AgentiCCells/AgentiCCells__Site__Factory/blob/dev/requests/2026-11-17__marc-noah/brief.md), read 2026-11-17
+- [His own site, marcnoah.pt/sobre, as read for the factory brief (this session could not reach it)](https://www.marcnoah.pt/sobre), read 2026-11-17 (by the factory, not re-read)
+
+## The source of the site
+
+- Repository: https://github.com/AgentiCCells/AgentiCCells__Site__Marc-Noah (branch dev; a push to dev deploys).
+- Made by AgentiCCells (site@AgentiCCells.marc-noah) for Dinis Cruz and Marc Noah.
+- Licences: code Apache-2.0, text and drawings CC BY 4.0.
