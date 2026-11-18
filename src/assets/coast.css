@@ -148,3 +148,27 @@ footer.foot{background:var(--paper);border-top:1px solid var(--line);margin-top:
  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .map,:root:not([data-theme="light"]) .rmap{filter:brightness(.94)}}
+
+/* Round 3, change 1: his label's photographs and two films. The postcard sits beside the line, never on the
+   map (review 1a); the treatment is CSS on our own copy; no text is set over a picture. */
+.c-card{margin:.2rem 0 1.4rem;background:#fff;padding:8px 8px 6px;border-radius:6px;box-shadow:0 1px 0 #e3d6c1,0 10px 24px rgba(17,96,122,.18);transform:rotate(-1.2deg);max-width:30rem}
+.c-card picture{display:block;position:relative;overflow:hidden;border-radius:3px}
+.c-card picture::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(243,180,93,.28),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
+.c-card img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:50% 62%;filter:saturate(1.06)}
+.c-card figcaption{font-size:.85rem;line-height:1.35;color:#5a5650;padding:.35rem .2rem .1rem}
+.c-here{font-size:.78rem;font-weight:500;margin-left:.4rem}
+.c-films{margin-top:1rem}.c-films ul{list-style:none;margin:.4rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.c-film{display:block;color:var(--ink);text-decoration:none;min-height:44px}
+.c-pic{position:relative;display:block;border-radius:.6rem;overflow:hidden;border:1px solid var(--line)}
+.c-pic img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.c-cap{display:block;font-size:.88rem;line-height:1.3;padding-top:.35rem}
+.c-film:hover .c-cap{text-decoration:underline}
+.c-film:hover .pb,.c-film:focus-visible .pb{background:var(--sea);border-color:var(--sea)}
+.c-live{margin:0 0 1rem}.c-live img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:50% 30%;border-radius:.75rem}
+@media (min-width:900px){
+ .c-intro{display:grid;grid-template-columns:minmax(0,1fr) 10rem;gap:1.25rem;align-items:start;margin-bottom:1.1rem}
+ .c-intro .lead{margin:0}
+ .c-card{margin:.3rem 0 0;transform:rotate(2deg)}.c-card figcaption{font-size:.75rem}
+ .c-pic img{aspect-ratio:16/10}
+}
+@media (min-width:1200px){.c-intro{grid-template-columns:minmax(0,1fr) 12.5rem}}

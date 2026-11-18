@@ -41,6 +41,20 @@
 .p-tracks{counter-reset:t;list-style:none;padding:0;columns:2 15rem}.p-tracks li{font:900 1.5rem/1.25 Impact,"Arial Black",sans-serif;text-transform:uppercase;break-inside:avoid}.p-tracks small{font:600 .8rem Arial,sans-serif;text-transform:none;display:block;margin-bottom:.4rem}
 .p-q{background:#1b1b1b;color:#f9f1e3;padding:1.25rem;margin:1.25rem 0}.p-q blockquote{margin:0;font-size:1.1rem;font-weight:700}.p-q a{color:#f2b134}
 .p-stamp{display:inline-block;border:4px solid #e2552b;color:#e2552b;padding:.4rem .8rem;transform:rotate(-4deg);font:900 1.2rem Impact,"Arial Black",sans-serif;text-transform:uppercase;text-decoration:none}
+.p-top .t,.p-top .l{color:#1b1b1b}
+.p-top>.p-sun{position:absolute;display:none}
+.p-art{margin-top:1.1rem}
+.p-photo{margin:0;position:relative;background:#e2552b;isolation:isolate;border:5px solid #1b1b1b;overflow:hidden}.p-photo picture{display:block}
+.p-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:50% 35%;filter:grayscale(1) contrast(1.45) brightness(1.08);mix-blend-mode:multiply}
+.p-photo::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,#1b1b1b .9px,transparent 1.3px);background-size:4px 4px;mix-blend-mode:multiply;opacity:.55}
+.p-show{display:inline-flex;flex-direction:column;margin:1.1rem 0 .3rem .3rem;background:#f9f1e3;color:#1b1b1b;border-color:#1b1b1b;min-height:44px;line-height:1.05;padding:.5rem .8rem;transform:rotate(-3deg)}
+.p-show small{font:700 .78rem/1.3 Arial,sans-serif;text-transform:none;letter-spacing:0;margin-top:.2rem;color:#1b1b1b}
+.p-show:hover,.p-show:focus-visible{background:#1b1b1b;color:#f9f1e3}.p-show:hover small,.p-show:focus-visible small{color:#f9f1e3}
+.p-film{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;font:900 .95rem Impact,"Arial Black",sans-serif;text-transform:uppercase;color:#a33a14;text-decoration:none}.p-film svg{width:16px;height:16px;flex:none}
+.p-film:hover{text-decoration:underline}
+.p-dates .v{display:block}
+.p-paste{width:min(62%,15rem);margin:0 0 1.4rem .4rem;transform:rotate(2deg);background:#fff;padding:6px;box-shadow:0 2px 0 #1b1b1b}.p-paste picture{display:block}.p-paste img{display:block;width:100%;height:auto}.p-paste figcaption{font-size:.8rem;line-height:1.3;padding-top:.3rem;color:#1b1b1b}
+@media (min-width:900px){.p-top>.p-sun{display:block}.p-top{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:2rem 2rem 2rem}.p-art{margin:0}}
 .dsw{font:14px/1.5 system-ui,sans-serif;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem .4rem;align-items:center}.dsw a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
 .dsw .dsw-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:0 1rem;margin-right:.4rem;border:1px solid currentColor;border-radius:999px;text-decoration:none;font-weight:600}.dsw-btn svg{width:14px;height:14px;fill:currentColor}
 .dlg{width:min(66rem,calc(100% - 24px));max-height:calc(100svh - 24px);padding:0;border:1px solid #2a3440;border-radius:10px;background:#131a22;color:#f2ede6;font:16px/1.5 system-ui,sans-serif}.dlg::backdrop{background:rgba(3,5,8,.78)}
@@ -52,7 +66,14 @@
 .dlg-foot{padding:0 1.3rem 1rem;margin:0}.dlg-foot a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
 @media (min-width:700px){.dgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}.dgrid a{grid-template-columns:1fr;grid-template-rows:auto}.dgrid img{grid-row:auto;margin-bottom:.5rem}}
 .dfoot{font:14px/1.6 system-ui,sans-serif;padding:1.5rem 1rem 3rem;max-width:60rem;margin:0 auto}.dfoot a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
-.cite{display:block;font:12px/1.4 system-ui,sans-serif;opacity:.85;margin-top:.25rem}.cite a{color:inherit;display:inline-block;min-height:24px;line-height:24px;padding:0 2px}*{box-sizing:border-box}body{margin:0}img,svg{max-width:100%}</style>
+.cite{display:block;font:12px/1.4 system-ui,sans-serif;opacity:.85;margin-top:.25rem}.cite a{color:inherit;display:inline-block;min-height:24px;line-height:24px;padding:0 2px}
+.player{width:min(70rem,calc(100% - 16px));max-height:calc(100svh - 16px);padding:0;border:1px solid #2a3440;border-radius:8px;background:#000;color:#f2ede6;font:16px/1.5 system-ui,sans-serif}.player::backdrop{background:rgba(3,5,8,.9)}
+.pl-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.4rem .4rem .4rem 1rem;background:#131a22}.pl-head h2{margin:0;font-weight:600;font-size:.95rem;color:#f2ede6}
+.pbox{aspect-ratio:16/9;max-height:calc(100svh - 140px);background:#000}.pbox iframe{width:100%;height:100%;border:0;display:block}
+.pl-note{margin:0;padding:0 1rem;font-size:.8rem;color:#a7b0ba;background:#131a22}.pl-note a{color:#f2ede6;display:inline-flex;min-height:44px;align-items:center}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pb{position:absolute;z-index:2;left:50%;top:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.62);color:#fff;border:2px solid #fff}.pb svg{width:20px;height:20px;margin-left:3px}
+.dfoot .dcredit{font-size:13px}*{box-sizing:border-box}body{margin:0}img,svg{max-width:100%}</style>
 </head>
 <body class="d-poster">
 <nav class="dsw" aria-label="Designs"><a class="dsw-btn" href="/d/" data-dialog="designs" aria-haspopup="dialog"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>Designs</a> <a href="/">Editorial</a> · <a href="/d/coast/">The Coast</a> · <a href="/d/azulejo/">Azulejo</a> · <b aria-current="page">Tour Poster</b> · <a href="/d/songbook/">The Songbook</a> · <a href="/d/cassette/">Side A, Side B</a> · <a href="/">main site</a></nav>
@@ -71,14 +92,17 @@
 </dialog>
 <main id="main">
 <div class="p-sheet">
-<section class="p-top"><span class="p-sun" aria-hidden="true"></span><p class="t">Singer-songwriter, Algarve · live</p><h1>Marc<br>Noah</h1><p class="l">Lives in the Algarve. Writes his own songs. Has played them in 25 places since 2023.</p></section>
+<section class="p-top"><span class="p-sun" aria-hidden="true"></span><div class="p-words"><p class="t">Singer-songwriter, Algarve · live</p><h1>Marc<br>Noah</h1><p class="l">Lives in the Algarve. Writes his own songs. Has played them in 25 places since 2023.</p></div>
+<div class="p-art"><figure class="p-photo"><picture><source media="(max-width:699px)" srcset="/assets/photos/live-acoustic-800.jpg"><img src="/assets/photos/live-acoustic.jpg" width="1500" height="1500" alt="Marc Noah singing and playing acoustic guitar on an outdoor stage at dusk" fetchpriority="high"></picture></figure>
+<a class="p-stamp p-show" href="https://www.youtube.com/watch?v=S85R1WgyKJ0" data-yt="https://www.youtube-nocookie.com/embed/S85R1WgyKJ0?autoplay=1&amp;rel=0" data-title="His set with his band at TEMPO, Portimão, Alvor FM, YouTube">See the show<small>With his band, TEMPO, Portimão, 13 December 2023</small></a></div></section>
 <div class="p-band" aria-hidden="true">Loulé ★ Portimão ★ Faro ★ Quarteira ★ Pechão ★ Leiria ★ Viseu ★ Paços de Ferreira ★ V. N. Famalicão ★ Torres Vedras ★ Almada ★ Vila Ruiva ★ Raposeira ★ Albufeira ★ Santa Bárbara, Ribeira Grande ★ Ribeira Grande ★ Azores ★ Ponta Delgada ★ Boliqueime ★ Sagres ★ Cachopo ★ Salir ★ Castro Verde ★ Lisbon ★ Olhão</div>
 <div class="p-body">
 <h2 class="p-h">Every date</h2>
+<figure class="p-paste"><picture><source media="(max-width:699px)" srcset="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1500 1500%27/%3E" data-srcset="/assets/photos/autumn-leaves-tour-800.jpg"><img class="lz" src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1500 1500%27/%3E" data-src="/assets/photos/autumn-leaves-tour.jpg" sizes="240px" width="1500" height="1500" alt="Poster art for the Autumn Leaves acoustic tour 2024: Marc Noah in silhouette, seated" loading="lazy" decoding="async"></picture><noscript><picture><source media="(max-width:699px)" srcset="/assets/photos/autumn-leaves-tour-800.jpg"><img src="/assets/photos/autumn-leaves-tour.jpg" width="1500" height="1500" alt="Poster art for the Autumn Leaves acoustic tour 2024: Marc Noah in silhouette, seated" loading="lazy" decoding="async"></picture></noscript><figcaption>His label’s poster for the autumn 2024 tour</figcaption></figure>
 <ul class="p-dates">
 <li><span class="d">10 Oct<small>2026 · 17:15</small></span><span><b>Loulé</b><span class="v">Festival Emersivo</span></span></li>
 <li><span class="d">22 Aug<small>2026</small></span><span><b>Portimão</b><span class="v">Food Trucks Festival</span></span></li>
-<li><span class="d">07 Aug<small>2026 · 21:30</small></span><span><b>Loulé</b><span class="v">Sons no Castelo, Alcaidaria do Castelo de Loulé</span></span></li>
+<li><span class="d">07 Aug<small>2026 · 21:30</small></span><span><b>Loulé</b><span class="v">Sons no Castelo, Alcaidaria do Castelo de Loulé</span><a class="p-film" href="https://www.youtube.com/watch?v=q2P-ScNIL7w" data-yt="https://www.youtube-nocookie.com/embed/q2P-ScNIL7w?autoplay=1&amp;rel=0" data-title="With his band at Sons no Castelo, Loulé, his own channel, YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Filmed: watch<span class="vh"> With his band at Sons no Castelo, Loulé</span></a></span></li>
 <li><span class="d">30 Aug<small>2025</small></span><span><b>Loulé</b><span class="v">Noite Branca</span></span></li>
 <li><span class="d">16 Aug<small>2025</small></span><span><b>Faro</b><span class="v">Festival Muralhas</span></span></li>
 <li><span class="d">25 Jul<small>2025</small></span><span><b>Loulé</b><span class="v">Loulé</span></span></li>
@@ -110,8 +134,8 @@
 <li><span class="d">08 Jun<small>2024 · 17:00</small></span><span><b>Cachopo</b><span class="v">Parque da Fonte Férrea, World Environment Day</span></span></li>
 <li><span class="d">10 May<small>2024 · 21:30</small></span><span><b>Salir</b><span class="v">Festa da Espiga</span></span></li>
 <li><span class="d">15 Dec<small>2023</small></span><span><b>Castro Verde</b><span class="v">7Arte Café</span></span></li>
-<li><span class="d">13 Dec<small>2023</small></span><span><b>Portimão</b><span class="v">Choque Frontal ao Vivo, TEMPO, Teatro Municipal de Portimão</span></span></li>
-<li><span class="d">04 Oct<small>2023</small></span><span><b>Portimão</b><span class="v">9.º Festival Acústico (Alvor FM), TEMPO, Teatro Municipal de Portimão</span></span></li>
+<li><span class="d">13 Dec<small>2023</small></span><span><b>Portimão</b><span class="v">Choque Frontal ao Vivo, TEMPO, Teatro Municipal de Portimão</span><a class="p-film" href="https://www.youtube.com/watch?v=S85R1WgyKJ0" data-yt="https://www.youtube-nocookie.com/embed/S85R1WgyKJ0?autoplay=1&amp;rel=0" data-title="His set with his band at TEMPO, Portimão, Alvor FM, YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Filmed: watch<span class="vh"> His set with his band at TEMPO, Portimão</span></a></span></li>
+<li><span class="d">04 Oct<small>2023</small></span><span><b>Portimão</b><span class="v">9.º Festival Acústico (Alvor FM), TEMPO, Teatro Municipal de Portimão</span><a class="p-film" href="https://www.youtube.com/watch?v=OyvGbs1fg7g" data-yt="https://www.youtube-nocookie.com/embed/OyvGbs1fg7g?autoplay=1&amp;rel=0" data-title="Alone with his guitar at the 9.º Festival Acústico, Portimão, Alvor FM, YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Filmed: watch<span class="vh"> Alone with his guitar at the 9.º Festival Acústico, Portimão</span></a></span></li>
 <li><span class="d">17 Sep<small>2023</small></span><span><b>Albufeira</b><span class="v">FNAC Algarve Shopping, Guia</span></span></li>
 <li><span class="d">09 Sep<small>2023</small></span><span><b>Faro</b><span class="v">Festival F</span></span></li>
 <li><span class="d">05 Sep<small>2023</small></span><span><b>Faro</b><span class="v">FNAC Faro</span></span></li>
@@ -144,8 +168,15 @@
 <footer class="dfoot">
 <p>Every fact names its public source and the date it was read: see <a href="/sources/">sources</a>. Photographs from his label, used with permission. Audio and video play from YouTube and Spotify. Lyric lines are quoted only as his own site shows them. Marc approves every change about him.</p>
 <p>Pages: <a href="/songs/">songs</a> · <a href="/algarve/">the Algarve</a> · <a href="/live/">live</a> · <a href="/about/">about</a> · <a href="/listen/">listen and book</a> · <a href="/videos/">every film</a> · <a href="/agents/">use with AI</a> · <a href="/index.md">index.md</a> · <a href="/behind-the-scenes/">behind the scenes</a></p>
+<p class="dcredit">Photographs: Epopeia Records (epopeia.eu), used with permission. Not covered by this site's licence. <small class="cite">Source: <a href="https://www.epopeia.eu/artistas/marc-noah">Epopeia photos</a>; read 2026-11-17.</small></p>
 <p>Made with the AgentiCCells site factory. Version __VERSION__ · design Tour Poster · code Apache-2.0, text and drawings CC BY 4.0</p>
 </footer>
+<dialog id="player" class="player" aria-labelledby="pl-t" aria-describedby="pl-k">
+<div class="pl-head"><h2 id="pl-t">Video</h2><form method="dialog"><button class="x" type="submit">Close</button></form></div>
+<p class="vh" id="pl-k">Close is the button before the film. Esc closes the player until the film takes the keyboard; after that, press Shift and Tab to reach Close, then Enter.</p>
+<div class="pbox"></div>
+<p class="pl-note">Playing from YouTube (youtube-nocookie.com). <a id="pl-yt" href="https://www.youtube.com/@marcnoahmusic">Open on YouTube</a></p>
+</dialog>
 <script>
 (function(){var d=document,op=null;
 function frame(src,title){var f=d.createElement('iframe');f.src=src;f.title=title;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';return f;}
@@ -161,7 +192,7 @@ var b=t.closest('button[data-f]');if(b){var w=b.closest('.watch'),g=b.getAttribu
 w.querySelectorAll('.group[data-g]').forEach(function(x){x.hidden=!(g==='all'||x.getAttribute('data-g')===g);});}});
 d.querySelectorAll('dialog').forEach(function(dl){dl.addEventListener('click',function(e){if(e.target!==dl)return;var r=dl.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dl.close();});
 dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});
-function show(i){if(!i.dataset.src)return;i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
+function show(i){if(!i.dataset.src)return;var s=i.parentNode.querySelector('source[data-srcset]');if(s){s.srcset=s.dataset.srcset;s.removeAttribute('data-srcset');}if(i.dataset.srcset)i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
 var lz=d.querySelectorAll('img.lz');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var r=e.target.closest('.rail,.sofa');(r?r.querySelectorAll('img.lz'):[e.target]).forEach(function(i){show(i);io.unobserve(i);});});},{rootMargin:'200px 0px'});lz.forEach(function(i){io.observe(i);});}else lz.forEach(show);})();
 </script>
 </body>

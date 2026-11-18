@@ -66,6 +66,15 @@ export const photo = (id, { eager = false, cls = '', pos = '', alt } = {}) => {
   return `<picture><source media="(max-width:699px)" srcset="${p.small}"><img src="${p.file}" width="${w}" height="${h}" alt="${esc(alt ?? p.alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}${cls ? ` class="${cls}"` : ''}${pos ? ` style="object-position:${pos}"` : ''}></picture>`;
 };
 export const photoById = id => P[id];
+// The deferred form of photo() (round 3, rule C4): the same <picture> (the 800 px file under 700 px), but a
+// blank placeholder of the photograph's own shape until our script sets the real files near the viewport,
+// as the round 2 posters are; the plain photo() copy stays in <noscript>.
+const blankOf = (w, h) => `data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 ${w} ${h}%27/%3E`;
+export const lazyPhoto = (id, { sizes = '(min-width:900px) 480px, 90vw', cls = '', pos = '' } = {}) => {
+  const p = P[id]; if (!p) throw new Error(`unknown photo ${id}`);
+  const [w, h] = p.size, B = blankOf(w, h);
+  return `<picture><source media="(max-width:699px)" srcset="${B}" data-srcset="${p.small}"><img class="lz${cls ? ` ${cls}` : ''}" src="${B}" data-src="${p.file}" sizes="${sizes}" width="${w}" height="${h}" alt="${esc(p.alt)}" loading="lazy" decoding="async"${pos ? ` style="object-position:${pos}"` : ''}></picture><noscript>${photo(id, { cls, pos })}</noscript>`;
+};
 
 // ---------- videos (round 2, change 1) ----------
 // Posters: each video's own YouTube poster frame, self-hosted in src/assets/video/ (<id>.jpg 1280 px,
@@ -88,6 +97,13 @@ export const playAttrs = v => `href="${ytUrl(v.id)}" data-yt="${esc(EMBEDS.youtu
 // every poster on the home at 1366 px); the plain <img> stays in <noscript>. sizes matches the drawn width,
 // so a 557 px card takes the 640 px file at 1366 px (the 1280 px file only on dense screens).
 const BLANK = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 9%27/%3E';
+// A film's still for the designs (round 3): its own YouTube frame, self-hosted, deferred like the posters;
+// alt="" because the link around it names the film.
+export const still = (id, { sizes = '320px' } = {}) => {
+  V(id);
+  const src = `/assets/video/${id}-640.jpg`, set = `${src} 640w, /assets/video/${id}.jpg 1280w`, rest = `sizes="${sizes}" width="640" height="360" alt=""`;
+  return `<img class="lz" src="${BLANK}" data-src="${src}" data-srcset="${set}" ${rest} loading="lazy" decoding="async"><noscript><img src="${src}" srcset="${set}" ${rest} loading="lazy" decoding="async"></noscript>`;
+};
 export const videoCard = (v, { cls = '', big = false, eager = false } = {}) => {
   const title = v.song || (v.event ? v.event.split(',')[0] : v.title);
   const sub = [v.caption, v.date ? fmtDate(v.date) : '', chan(v) === 'his own channel' ? 'his own channel' : chan(v)].filter(Boolean).join(' · ');
@@ -167,7 +183,7 @@ var b=t.closest('button[data-f]');if(b){var w=b.closest('.watch'),g=b.getAttribu
 w.querySelectorAll('.group[data-g]').forEach(function(x){x.hidden=!(g==='all'||x.getAttribute('data-g')===g);});}});
 d.querySelectorAll('dialog').forEach(function(dl){dl.addEventListener('click',function(e){if(e.target!==dl)return;var r=dl.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dl.close();});
 dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});
-function show(i){if(!i.dataset.src)return;i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
+function show(i){if(!i.dataset.src)return;var s=i.parentNode.querySelector('source[data-srcset]');if(s){s.srcset=s.dataset.srcset;s.removeAttribute('data-srcset');}if(i.dataset.srcset)i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
 var lz=d.querySelectorAll('img.lz');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var r=e.target.closest('.rail,.sofa');(r?r.querySelectorAll('img.lz'):[e.target]).forEach(function(i){show(i);io.unobserve(i);});});},{rootMargin:'200px 0px'});lz.forEach(function(i){io.observe(i);});}else lz.forEach(show);})();
 </script>`;
 

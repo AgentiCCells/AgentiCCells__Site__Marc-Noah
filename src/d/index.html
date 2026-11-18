@@ -114,7 +114,7 @@ var b=t.closest('button[data-f]');if(b){var w=b.closest('.watch'),g=b.getAttribu
 w.querySelectorAll('.group[data-g]').forEach(function(x){x.hidden=!(g==='all'||x.getAttribute('data-g')===g);});}});
 d.querySelectorAll('dialog').forEach(function(dl){dl.addEventListener('click',function(e){if(e.target!==dl)return;var r=dl.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dl.close();});
 dl.addEventListener('close',function(){var b=dl.querySelector('.pbox');if(b)b.replaceChildren();if(op){op.focus();op=null;}});});
-function show(i){if(!i.dataset.src)return;i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
+function show(i){if(!i.dataset.src)return;var s=i.parentNode.querySelector('source[data-srcset]');if(s){s.srcset=s.dataset.srcset;s.removeAttribute('data-srcset');}if(i.dataset.srcset)i.srcset=i.dataset.srcset;i.src=i.dataset.src;i.removeAttribute('data-src');}
 var lz=d.querySelectorAll('img.lz');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var r=e.target.closest('.rail,.sofa');(r?r.querySelectorAll('img.lz'):[e.target]).forEach(function(i){show(i);io.unobserve(i);});});},{rootMargin:'200px 0px'});lz.forEach(function(i){io.observe(i);});}else lz.forEach(show);})();
 </script>
 </body>
